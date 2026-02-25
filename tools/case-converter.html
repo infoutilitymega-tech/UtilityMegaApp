@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Converter - ToolSathi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+}
+
+header {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #243b55;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    background: #243b55;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1b2d40;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #243b55;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Case Converter</h1>
+</header>
+
+<div class="container">
+    <h2>Convert Text Case Instantly</h2>
+
+    <textarea id="textInput" rows="5" placeholder="Enter your text here..."></textarea>
+
+    <div class="buttons">
+        <button onclick="toUpper()">UPPERCASE</button>
+        <button onclick="toLower()">lowercase</button>
+        <button onclick="toTitle()">Title Case</button>
+        <button onclick="toSentence()">Sentence case</button>
+        <button onclick="toCapitalize()">Capitalize Each Word</button>
+        <button onclick="clearText()">Clear</button>
+    </div>
+
+    <a href="../index.html" class="back-btn">← Back to Dashboard</a>
+</div>
+
+<script>
+function toUpper() {
+    document.getElementById("textInput").value =
+        document.getElementById("textInput").value.toUpperCase();
+}
+
+function toLower() {
+    document.getElementById("textInput").value =
+        document.getElementById("textInput").value.toLowerCase();
+}
+
+function toTitle() {
+    let text = document.getElementById("textInput").value.toLowerCase();
+    document.getElementById("textInput").value =
+        text.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+function toSentence() {
+    let text = document.getElementById("textInput").value.toLowerCase();
+    document.getElementById("textInput").value =
+        text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function toCapitalize() {
+    let text = document.getElementById("textInput").value;
+    document.getElementById("textInput").value =
+        text.split(" ").map(word =>
+            word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        ).join(" ");
+}
+
+function clearText() {
+    document.getElementById("textInput").value = "";
+}
+</script>
+
+</body>
+</html>

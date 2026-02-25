@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Calculator - ToolSathi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+}
+
+header {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #243b55;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #243b55;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #1b2d40;
+}
+
+.result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #141e30;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #243b55;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>BMI Calculator</h1>
+</header>
+
+<div class="container">
+    <h2>Check Your BMI</h2>
+
+    <div class="input-group">
+        <label>Weight (kg)</label>
+        <input type="number" id="weight">
+    </div>
+
+    <div class="input-group">
+        <label>Height (cm)</label>
+        <input type="number" id="height">
+    </div>
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+
+    <div class="result" id="result"></div>
+
+    <a href="../index.html" class="back-btn">← Back to Dashboard</a>
+</div>
+
+<script>
+function calculateBMI() {
+    let weight = document.getElementById("weight").value;
+    let height = document.getElementById("height").value;
+
+    if(weight && height) {
+        let heightInMeters = height / 100;
+        let bmi = weight / (heightInMeters * heightInMeters);
+
+        let category = "";
+
+        if (bmi < 18.5) {
+            category = "Underweight";
+        } else if (bmi < 24.9) {
+            category = "Normal Weight";
+        } else if (bmi < 29.9) {
+            category = "Overweight";
+        } else {
+            category = "Obese";
+        }
+
+        document.getElementById("result").innerText =
+            "Your BMI: " + bmi.toFixed(2) + " (" + category + ")";
+    } else {
+        document.getElementById("result").innerText =
+            "Please enter weight and height.";
+    }
+}
+</script>
+
+</body>
+</html>

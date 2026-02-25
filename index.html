@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolSathi - All Online Tools Dashboard</title>
+<meta name="description" content="All-in-one free online tools: calculators, password generator, fancy text generator and more. Fast and easy to use.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+.search-box {
+    margin-top: 15px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 60%;
+    border-radius: 6px;
+    border: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #243b55;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tool-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+}
+
+.tool-card h3 {
+    margin-bottom: 10px;
+}
+
+.tool-card a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 15px;
+    background: #243b55;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.ad-space {
+    margin: 40px 0;
+    padding: 20px;
+    background: #eaeaea;
+    text-align: center;
+    border-radius: 10px;
+}
+
+footer {
+    background: #141e30;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>ToolSathi Dashboard</h1>
+    <p>All Free Online Calculators & Tools in One Place</p>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" onkeyup="searchTools()" placeholder="Search tools...">
+    </div>
+</header>
+
+<div class="container">
+
+<h2 class="section-title">📊 Calculators</h2>
+<div class="tools-grid" id="toolsList">
+
+<div class="tool-card">
+    <h3>EMI Calculator</h3>
+    <a href="calculators/emi.html">Open Tool</a>
+</div>
+
+<div class="tool-card">
+    <h3>Age Calculator</h3>
+    <a href="calculators/age.html">Open Tool</a>
+</div>
+
+<div class="tool-card">
+    <h3>Percentage Calculator</h3>
+    <a href="calculators/percentage.html">Open Tool</a>
+</div>
+
+<div class="tool-card">
+    <h3>BMI Calculator</h3>
+    <a href="calculators/bmi.html">Open Tool</a>
+</div>
+
+</div>
+
+<div class="ad-space">
+    Google AdSense Banner Area
+</div>
+
+<h2 class="section-title">🔐 Security Tools</h2>
+<div class="tools-grid">
+
+<div class="tool-card">
+    <h3>Password Generator</h3>
+    <a href="tools/password-generator.html">Open Tool</a>
+</div>
+
+<div class="tool-card">
+    <h3>Password Strength Checker</h3>
+    <a href="tools/password-checker.html">Open Tool</a>
+</div>
+
+</div>
+
+<h2 class="section-title">🎨 Text Tools</h2>
+<div class="tools-grid">
+
+<div class="tool-card">
+    <h3>Fancy Text Generator</h3>
+    <a href="tools/fancy-text.html">Open Tool</a>
+</div>
+
+<div class="tool-card">
+    <h3>Case Converter</h3>
+    <a href="tools/case-converter.html">Open Tool</a>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+    © 2026 ToolSathi | Privacy Policy | Disclaimer | Contact
+</footer>
+
+<script>
+function searchTools() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.querySelectorAll('.tool-card');
+
+    cards.forEach(card => {
+        let title = card.innerText.toLowerCase();
+        card.style.display = title.includes(input) ? "" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
