@@ -3,34 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<title>UtilityMega - All Online Tools Dashboard</title>-->
+
     <title>Free Online Calculators & Tools – EMI, Age, BMI, Password Generator | UtilityMega</title>
-    <!--<meta name="description" content="All-in-one free online tools: calculators, password generator, fancy text generator and more. Fast and easy to use.">-->
+
     <meta name="description" content="Use free online calculators and tools at UtilityMega. EMI Calculator, Age Calculator, BMI Calculator, Password Generator, Fancy Text Generator and more. Fast, secure and easy to use.">
     <meta name="keywords" content="EMI calculator, age calculator, BMI calculator, percentage calculator, password generator, fancy text generator, free online tools">
     <meta name="author" content="UtilityMega">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://utilitymega.com/">
+
     <meta property="og:title" content="Free Online Calculators & Tools | UtilityMega">
     <meta property="og:description" content="All free online calculators and tools in one place. Fast, secure and easy to use.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://utilitymega.com/">
     <meta property="og:image" content="https://utilitymega.com/preview.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+
+        /* ===== Sticky Footer Layout ===== */
+        html, body {
+            height: 100%;
         }
 
         body {
+            display: flex;
+            flex-direction: column;
             background: #f4f6fb;
             color: #333;
+            font-family: 'Poppins', sans-serif;
         }
 
+        /* Main content grows */
+        .main-content {
+            flex: 1;
+        }
+
+        /* ===== Header ===== */
         header {
             background: linear-gradient(135deg, #141e30, #243b55);
             color: white;
@@ -53,6 +63,7 @@
                 border: none;
             }
 
+        /* ===== Container ===== */
         .container {
             max-width: 1200px;
             margin: 40px auto;
@@ -98,6 +109,7 @@
                 font-size: 14px;
             }
 
+        /* ===== Ad Space ===== */
         .ad-space {
             margin: 40px 0;
             padding: 20px;
@@ -106,109 +118,126 @@
             border-radius: 10px;
         }
 
+        /* ===== Footer ===== */
         footer {
             background: #141e30;
             color: white;
             text-align: center;
             padding: 20px;
         }
+
+            footer a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
     </style>
 
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body>
 
-<header>
-    <h1>Utility Dashboard</h1>
-    <p>All Free Online Calculators & Tools in One Place</p>
+    <header>
+        <h1>UtilityMega</h1>
+        <p>All Free Online Calculators & Tools in One Place</p>
 
-    <div class="search-box">
-        <input type="text" id="searchInput" onkeyup="searchTools()" placeholder="Search tools...">
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="searchTools()" placeholder="Search tools...">
+        </div>
+    </header>
+
+    <div class="main-content">
+
+        <div class="container">
+
+            <h2 class="section-title">📊 Calculators</h2>
+
+            <div class="tools-grid" id="toolsList">
+
+                <div class="tool-card">
+                    <h3>EMI Calculator</h3>
+                    <a href="calculators/emi.html">Open Tool</a>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Age Calculator</h3>
+                    <a href="calculators/age.html">Open Tool</a>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Percentage Calculator</h3>
+                    <a href="calculators/percentage.html">Open Tool</a>
+                </div>
+
+                <div class="tool-card">
+                    <h3>BMI Calculator</h3>
+                    <a href="calculators/bmi.html">Open Tool</a>
+                </div>
+
+            </div>
+
+            <div class="ad-space">
+                Google AdSense Banner Area
+            </div>
+
+            <h2 class="section-title">🔐 Security Tools</h2>
+
+            <div class="tools-grid">
+
+                <div class="tool-card">
+                    <h3>Password Generator</h3>
+                    <a href="tools/password-generator.html">Open Tool</a>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Password Strength Checker</h3>
+                    <a href="tools/password-checker.html">Open Tool</a>
+                </div>
+
+            </div>
+
+            <h2 class="section-title">🎨 Text Tools</h2>
+
+            <div class="tools-grid">
+
+                <div class="tool-card">
+                    <h3>Fancy Text Generator</h3>
+                    <a href="tools/fancy-text.html">Open Tool</a>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Case Converter</h3>
+                    <a href="tools/case-converter.html">Open Tool</a>
+                </div>
+
+            </div>
+
+        </div>
     </div>
-</header>
 
-<div class="container">
+    <footer>
+        © 2026 UtilityMega |
+        <a href="about.html">About</a> |
+        <a href="privacy-policy.html">Privacy Policy</a> |
+        <!--<a href="disclaimer.html">Disclaimer</a> |-->
+        <a href="contact.html">Contact</a>
+    </footer>
 
-<h2 class="section-title">📊 Calculators</h2>
-<div class="tools-grid" id="toolsList">
+    <script>
+        function searchTools() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.querySelectorAll('.tool-card');
 
-<div class="tool-card">
-    <h3>EMI Calculator</h3>
-    <a href="calculators/emi.html">EMI Calculator</a>
-</div>
-
-<div class="tool-card">
-    <h3>Age Calculator</h3>
-    <a href="calculators/age.html">Age Calculator</a>
-</div>
-
-<div class="tool-card">
-    <h3>Percentage Calculator</h3>
-    <a href="calculators/percentage.html">Percentage Calculator</a>
-</div>
-
-<div class="tool-card">
-    <h3>BMI Calculator</h3>
-    <a href="calculators/bmi.html">BMI Calculator</a>
-</div>
-
-</div>
-
-<div class="ad-space">
-    Google AdSense Banner Area
-</div>
-
-<h2 class="section-title">🔐 Security Tools</h2>
-<div class="tools-grid">
-
-<div class="tool-card">
-    <h3>Password Generator</h3>
-    <a href="tools/password-generator.html">Password Generator</a>
-</div>
-
-<div class="tool-card">
-    <h3>Password Strength Checker</h3>
-    <a href="tools/password-checker.html">Password Strength Checker</a>
-</div>
-
-</div>
-
-<h2 class="section-title">🎨 Text Tools</h2>
-<div class="tools-grid">
-
-<div class="tool-card">
-    <h3>Fancy Text Generator</h3>
-    <a href="tools/fancy-text.html">Fancy Text Generator</a>
-</div>
-
-<div class="tool-card">
-    <h3>Case Converter</h3>
-    <a href="tools/case-converter.html">Case Converter</a>
-</div>
-
-</div>
-
-</div>
-
-<footer>
-    © 2026 Utility | Privacy Policy | Disclaimer | Contact
-</footer>
-
-<script>
-function searchTools() {
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    let cards = document.querySelectorAll('.tool-card');
-
-    cards.forEach(card => {
-        let title = card.innerText.toLowerCase();
-        card.style.display = title.includes(input) ? "" : "none";
-    });
-}
-</script>
+            cards.forEach(card => {
+                let title = card.innerText.toLowerCase();
+                card.style.display = title.includes(input) ? "" : "none";
+            });
+        }
+    </script>
 
 </body>
 </html>

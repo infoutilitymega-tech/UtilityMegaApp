@@ -1,0 +1,63 @@
+﻿/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f6fb;
+    color: #333;
+}
+
+/* ===== Header ===== */
+header {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+    header h1 {
+        font-size: 28px;
+    }
+
+/* ===== Container ===== */
+.page-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+    .page-container h2 {
+        margin-bottom: 15px;
+        color: #243b55;
+    }
+
+    .page-container p {
+        margin-bottom: 15px;
+        line-height: 1.7;
+    }
+
+/* ===== Footer ===== */
+footer {
+    background: #141e30;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
