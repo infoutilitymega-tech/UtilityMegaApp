@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Minifier Online Free | UtilityMega</title>
+    <meta name="description" content="Free online HTML minifier tool. Compress and minify HTML code instantly to reduce file size and improve website speed.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .tool-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 220px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            margin-bottom: 15px;
+        }
+
+        .btn-group {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            background: #2a5298;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+
+        .message {
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HTML Minifier</h1>
+    <p>Compress and minify HTML code instantly.</p>
+</header>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="index.html">Developer Tools</a>
+    <a href="../contact.html">Contact</a>
+</nav>
+
+<div class="tool-container">
+
+    <h2>Paste HTML Code</h2>
+    <textarea id="inputHTML" placeholder="Paste your HTML code here..."></textarea>
+
+    <div class="btn-group">
+        <button onclick="minifyHTML()">Minify HTML</button>
+        <button onclick="copyOutput()">Copy</button>
+        <button onclick="clearText()">Clear</button>
+    </div>
+
+    <h2>Minified Output</h2>
+    <textarea id="outputHTML" placeholder="Minified HTML will appear here..."></textarea>
+
+    <div id="message" class="message"></div>
+
+</div>
+
+<footer>
+    <p>© 2026 UtilityMega.com | All Rights Reserved</p>
+</footer>
+
+<script>
+function minifyHTML() {
+    const input = document.getElementById("inputHTML").value;
+    const output = document.getElementById("outputHTML");
+    const message = document.getElementById("message");
+
+    try {
+        let minified = input
+            .replace(/<!--[\s\S]*?-->/g, '')   // Remove comments
+            .replace(/\n/g, '')                // Remove line breaks
+            .replace(/\s{2,}/g, ' ')           // Remove extra spaces
+            .replace(/>\s+</g, '><')           // Remove space between tags
+            .trim();
+
+        output.value = minified;
+        message.innerHTML = "<span class='success'>HTML Minified Successfully ✔</span>";
+    } catch (e) {
+        message.innerHTML = "<span class='error'>Something went wrong ❌</span>";
+    }
+}
+
+function copyOutput() {
+    const output = document.getElementById("outputHTML");
+    output.select();
+    document.execCommand("copy");
+    document.getElementById("message").innerHTML = "<span class='success'>Copied to Clipboard ✔</span>";
+}
+
+function clearText() {
+    document.getElementById("inputHTML").value = "";
+    document.getElementById("outputHTML").value = "";
+    document.getElementById("message").innerHTML = "";
+}
+</script>
+
+</body>
+</html>

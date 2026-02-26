@@ -1,63 +1,115 @@
-﻿/* ===== Global Styles ===== */
+﻿/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
+/* Body */
 body {
-    background: #f4f6fb;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f9;
     color: #333;
+    line-height: 1.6;
 }
 
-/* ===== Header ===== */
+/* Header */
 header {
-    background: linear-gradient(135deg, #141e30, #243b55);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
-    padding: 25px;
     text-align: center;
+    padding: 40px 20px;
 }
 
-    header h1 {
-        font-size: 28px;
-    }
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
 
-/* ===== Container ===== */
-.page-container {
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    background: white;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+nav a {
+    text-decoration: none;
+    color: #2a5298;
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #1e3c72;
+}
+
+/* Tools Grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Tool Card */
+.tool-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.tool-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.tool-card a {
+    text-decoration: none;
+    color: #2a5298;
+}
+
+.tool-card a:hover {
+    text-decoration: underline;
+}
+
+.tool-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Content Section */
+section {
     max-width: 1000px;
     margin: 40px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 0 20px;
 }
 
-    .page-container h2 {
-        margin-bottom: 15px;
-        color: #243b55;
-    }
+section h2 {
+    margin-bottom: 15px;
+    color: #1e3c72;
+}
 
-    .page-container p {
-        margin-bottom: 15px;
-        line-height: 1.7;
-    }
-
-/* ===== Footer ===== */
+/* Footer */
 footer {
-    background: #141e30;
+    background: #1e3c72;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     margin-top: 40px;
 }
-
-    footer a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 10px;
-    }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
