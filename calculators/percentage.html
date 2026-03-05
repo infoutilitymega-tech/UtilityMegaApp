@@ -2,142 +2,171 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Percentage Calculator - ToolSathi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Percentage Calculator Online Free | UtilityMega</title>
+
+<meta name="description" content="Free percentage calculator. Quickly calculate percentages online such as X% of Y.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/x-icon" href="../assets/icon.webp">
+<link rel="stylesheet" href="../style.css">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+
+.tool-container{
+max-width:600px;
+margin:40px auto;
+padding:20px;
 }
 
-body {
-    background: #f4f6fb;
+.input-group{
+margin-bottom:15px;
 }
 
-header {
-    background: linear-gradient(135deg, #141e30, #243b55);
-    color: white;
-    padding: 25px;
-    text-align: center;
+.input-group label{
+display:block;
+margin-bottom:6px;
+font-weight:500;
 }
 
-.container {
-    max-width: 500px;
-    margin: 50px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+.input-group input{
+width:100%;
+padding:12px;
+font-size:14px;
+border-radius:8px;
+border:1px solid #ccc;
 }
 
-.container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #243b55;
+.btn-group{
+text-align:center;
+margin:20px 0;
 }
 
-.input-group {
-    margin-bottom: 15px;
+button{
+padding:10px 18px;
+margin:5px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+background:#2a5298;
+color:white;
+transition:0.3s;
 }
 
-.input-group label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
+button:hover{
+background:#1e3c72;
 }
 
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+textarea{
+width:100%;
+height:120px;
+padding:12px;
+font-family:monospace;
+font-size:14px;
+border-radius:8px;
+border:1px solid #ccc;
+resize:none;
+margin-top:10px;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background: #243b55;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
+.message{
+font-weight:bold;
+margin-top:10px;
+text-align:center;
 }
 
-button:hover {
-    background: #1b2d40;
+.success{
+color:green;
 }
 
-.result {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    color: #141e30;
+.error{
+color:red;
 }
 
-.back-btn {
-    display: inline-block;
-    margin-top: 15px;
-    text-decoration: none;
-    color: #243b55;
-    font-size: 14px;
-}
 </style>
 
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body>
 
 <header>
-    <h1>Percentage Calculator</h1>
+<h1>Percentage Calculator</h1>
+<p>Calculate percentages quickly and easily.</p>
 </header>
 
-<div class="container">
-    <h2>Calculate Percentage</h2>
+<nav>
+<a href="../index.html">Home</a> |
+    <a href="../calculators/index.html">Calculators</a> |
+    <a href="../developer-tools/index.html">Developer Tools</a> |
+    <a href="../security-tools/index.html">Security Tools</a> |
+    <a href="../text-tools/index.html">Text Tools</a>
+</nav>
 
-    <div class="input-group">
-        <label>Enter Value</label>
-        <input type="number" id="value">
-    </div>
+<div class="tool-container">
 
-    <div class="input-group">
-        <label>Enter Total</label>
-        <input type="number" id="total">
-    </div>
-
-    <button onclick="calculatePercentage()">Calculate</button>
-
-    <div class="result" id="result"></div>
-
-    <a href="../index.html" class="back-btn">← Back to Dashboard</a>
+<div class="input-group">
+<label>Percentage (%)</label>
+<input type="number" id="percent" placeholder="Enter percentage">
 </div>
 
-<script>
-function calculatePercentage() {
-    let value = document.getElementById("value").value;
-    let total = document.getElementById("total").value;
+<div class="input-group">
+<label>Number</label>
+<input type="number" id="number" placeholder="Enter number">
+</div>
 
-    if(value && total) {
-        let percent = (value / total) * 100;
-        document.getElementById("result").innerText =
-            "Percentage: " + percent.toFixed(2) + "%";
-    } else {
-        document.getElementById("result").innerText =
-            "Please enter both values.";
-    }
+<div class="btn-group">
+<button onclick="calculatePercentage()">Calculate</button>
+<button onclick="clearForm()">Clear</button>
+</div>
+
+<h2>Result</h2>
+
+<textarea id="result" readonly placeholder="Result will appear here..."></textarea>
+
+<div id="message" class="message"></div>
+
+</div>
+
+<footer>
+<p>© 2026 UtilityMega.com | All Rights Reserved</p>
+</footer>
+
+<script>
+
+function calculatePercentage(){
+
+let percent=document.getElementById("percent").value;
+let number=document.getElementById("number").value;
+
+let resultBox=document.getElementById("result");
+let message=document.getElementById("message");
+
+if(!percent || !number){
+
+message.innerHTML="<span class='error'>Please fill all fields ❌</span>";
+return;
+
 }
+
+let result=(percent/100)*number;
+
+resultBox.value=percent+"% of "+number+" = "+result;
+
+message.innerHTML="<span class='success'>Calculation Completed ✔</span>";
+
+}
+
+function clearForm(){
+
+document.getElementById("percent").value="";
+document.getElementById("number").value="";
+document.getElementById("result").value="";
+document.getElementById("message").innerHTML="";
+
+}
+
 </script>
 
 </body>

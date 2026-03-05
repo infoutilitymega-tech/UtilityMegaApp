@@ -1,243 +1,556 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Free Online Calculators & Tools – EMI, Age, BMI, Password Generator | UtilityMega</title>
+  <title>Free Online Tools | UtilityMega</title>
 
-    <meta name="description" content="Use free online calculators and tools at UtilityMega. EMI Calculator, Age Calculator, BMI Calculator, Password Generator, Fancy Text Generator and more. Fast, secure and easy to use.">
-    <meta name="keywords" content="EMI calculator, age calculator, BMI calculator, percentage calculator, password generator, fancy text generator, free online tools">
-    <meta name="author" content="UtilityMega">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://utilitymega.com/">
+  <meta name="description"
+    content="Use free online calculators and tools at UtilityMega. EMI Calculator, Age Calculator, BMI Calculator, Password Generator, Fancy Text Generator and more. Fast, secure and easy to use.">
+  <meta name="keywords"
+    content="EMI calculator, age calculator, BMI calculator, percentage calculator, password generator, fancy text generator, free online tools">
+  <meta name="author" content="UtilityMega">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://utilitymega.com/">
 
-    <meta property="og:title" content="Free Online Calculators & Tools | UtilityMega">
-    <meta property="og:description" content="All free online calculators and tools in one place. Fast, secure and easy to use.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://utilitymega.com/">
-    <meta property="og:image" content="https://utilitymega.com/preview.png">
+  <meta property="og:title" content="Free Online Calculators & Tools | UtilityMega">
+  <meta property="og:description"
+    content="All free online calculators and tools in one place. Fast, secure and easy to use.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://utilitymega.com/">
+  <meta property="og:image" content="https://utilitymega.com/preview.png">
+  <link rel="icon" type="image/x-icon" href="./assets/icon.webp">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial;
+    }
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    body {
+      background: #f4f6fb;
+    }
 
-    <style>
+    /* NAVBAR */
 
-        /* ===== Sticky Footer Layout ===== */
-        html, body {
-            height: 100%;
-        }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: linear-gradient(135deg, #0f1b42, #1a2980);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-        body {
-            display: flex;
-            flex-direction: column;
-            background: #f4f6fb;
-            color: #333;
-            font-family: 'Poppins', sans-serif;
-        }
+      padding: 0 25px;
+      color: white;
+      z-index: 1000;
+    }
 
-        /* Main content grows */
-        .main-content {
-            flex: 1;
-        }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-        /* ===== Header ===== */
-        header {
-            background: linear-gradient(135deg, #141e30, #243b55);
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
+    .menu-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
 
-            header h1 {
-                font-size: 28px;
-            }
+    .logo {
+      height: 40px;
+    }
 
-        .search-box {
-            margin-top: 15px;
-        }
+    .logo-text {
+      font-size: 20px;
+    }
 
-            .search-box input {
-                padding: 10px;
-                width: 60%;
-                border-radius: 6px;
-                border: none;
-            }
+    /* SIDEBAR */
 
-        /* ===== Container ===== */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+    .sidebar {
 
-        .section-title {
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: #243b55;
-        }
+      position: fixed;
+      top: 0;
+      right: -260px;
 
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+      width: 260px;
+      height: 100%;
 
-        .tool-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: 0.3s;
-            text-align: center;
-        }
+      background: white;
 
-            .tool-card:hover {
-                transform: translateY(-5px);
-            }
+      box-shadow: -3px 0 12px rgba(0, 0, 0, 0.2);
 
-            .tool-card h3 {
-                margin-bottom: 10px;
-            }
+      transition: 0.3s;
 
-            .tool-card a {
-                text-decoration: none;
-                display: inline-block;
-                padding: 8px 15px;
-                background: #243b55;
-                color: white;
-                border-radius: 6px;
-                font-size: 14px;
-            }
+      z-index: 999;
 
-        /* ===== Ad Space ===== */
-        .ad-space {
-            margin: 40px 0;
-            padding: 20px;
-            background: #eaeaea;
-            text-align: center;
-            border-radius: 10px;
-        }
+      padding-top: 70px;
 
-        /* ===== Footer ===== */
-        footer {
-            background: #141e30;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+    }
 
-            footer a {
-                color: white;
-                text-decoration: none;
-                margin: 0 10px;
-            }
+    /* OPEN STATE */
 
-                footer a:hover {
-                    text-decoration: underline;
-                }
-    </style>
+    .sidebar.active {
+      right: 0;
+    }
 
+    /* MENU */
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li a {
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 15px 20px;
+
+      text-decoration: none;
+      color: #444;
+
+      font-size: 15px;
+
+      transition: 0.2s;
+
+    }
+
+    .sidebar li a:hover {
+      background: #f2f5ff;
+      color: #1a2980;
+    }
+
+    /* OVERLAY */
+
+    .overlay {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.4);
+
+      display: none;
+
+      /* z-index:1000; */
+
+    }
+
+    .overlay.active {
+      display: block;
+    }
+
+    /* MAIN CONTENT */
+    /* 
+.main-content{
+
+margin-top:70px;
+
+padding:30px;
+
+} */
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .logo-text {
+      margin: 0;
+      font-size: 20px;
+      color: white;
+    }
+
+    .nav-logo {
+      height: 45px;
+      width: 45px;
+      object-fit: contain;
+      background: white;
+      padding: 6px;
+      border-radius: 50%;
+      border: 2px solid #d4a017;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px) {
+
+      .sidebar {
+        width: 240px;
+      }
+
+    }
+
+    /* ===== header ===== */
+    .page-header {
+      margin-top: 90px;
+      /* below fixed navbar */
+      padding: 20px 0;
+      background: #eaeaea;
+      text-align: center;
+
+    }
+
+    .page-header h1 {
+      font-size: 28px;
+      color: #243b55;
+      margin-bottom: 5px;
+    }
+
+    .page-header p {
+      font-size: 16px;
+      color: #556677;
+      margin-bottom: 15px;
+    }
+
+    .search-box {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .search-box input {
+      border: none;
+      padding: 10px 15px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .search-box i {
+      padding: 10px 15px;
+      color: #888;
+      background: #eaeaea;
+    }
+
+    /* ===== Main Content ===== */
+    .main-content {
+      flex: 1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #243b55;
+      padding-top: 20px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .tool-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tool-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .tool-card a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 15px;
+      background: linear-gradient(135deg, #0f1b42, #1a2980);
+      color: white;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    /* ===== Ad Space ===== */
+    .ad-space {
+      margin: 40px 0;
+      padding: 20px;
+      background: #eaeaea;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 0;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: linear-gradient(135deg, #0f1b42, #1a2980);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>UtilityMega</h1>
-        <p>All Free Online Calculators & Tools in One Place</p>
+  <!-- NAVBAR -->
 
-        <div class="search-box">
-            <input type="text" id="searchInput" onkeyup="searchTools()" placeholder="Search tools...">
-        </div>
-    </header>
+  <header class="navbar">
 
-    <div class="main-content">
+    <div class="nav-left">
 
-        <div class="container">
 
-            <h2 class="section-title">📊 Calculators</h2>
 
-            <div class="tools-grid" id="toolsList">
 
-                <div class="tool-card">
-                    <h3>EMI Calculator</h3>
-                    <a href="calculators/emi.html">Open Tool</a>
-                </div>
-
-                <div class="tool-card">
-                    <h3>Age Calculator</h3>
-                    <a href="calculators/age.html">Open Tool</a>
-                </div>
-
-                <div class="tool-card">
-                    <h3>Percentage Calculator</h3>
-                    <a href="calculators/percentage.html">Open Tool</a>
-                </div>
-
-                <div class="tool-card">
-                    <h3>BMI Calculator</h3>
-                    <a href="calculators/bmi.html">Open Tool</a>
-                </div>
-
-            </div>
-
-            <div class="ad-space">
-                Google AdSense Banner Area
-            </div>
-
-            <h2 class="section-title">🔐 Security Tools</h2>
-
-            <div class="tools-grid">
-
-                <div class="tool-card">
-                    <h3>Password Generator</h3>
-                    <a href="tools/password-generator.html">Open Tool</a>
-                </div>
-
-                <div class="tool-card">
-                    <h3>Password Strength Checker</h3>
-                    <a href="tools/password-checker.html">Open Tool</a>
-                </div>
-
-            </div>
-
-            <h2 class="section-title">🎨 Text Tools</h2>
-
-            <div class="tools-grid">
-
-                <div class="tool-card">
-                    <h3>Fancy Text Generator</h3>
-                    <a href="tools/fancy-text.html">Open Tool</a>
-                </div>
-
-                <div class="tool-card">
-                    <h3>Case Converter</h3>
-                    <a href="tools/case-converter.html">Open Tool</a>
-                </div>
-
-            </div>
-
-        </div>
+      <div class="logo-wrap">
+        <img src="./assets/icon.webp" alt="Utility Mega Logo" class="nav-logo">
+        <h2 class="logo-text">Utility Mega</h2>
+      </div>
+    </div>
+    <div>
+      <!-- <i class="fas fa-user-circle"></i> -->
+      <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
 
-    <footer>
-        © 2026 UtilityMega |
-        <a href="about.html">About</a> |
-        <a href="privacy-policy.html">Privacy Policy</a> |
-        <!--<a href="disclaimer.html">Disclaimer</a> |-->
-        <a href="contact.html">Contact</a>
-    </footer>
+  </header>
 
-    <script>
-        function searchTools() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let cards = document.querySelectorAll('.tool-card');
 
-            cards.forEach(card => {
-                let title = card.innerText.toLowerCase();
-                card.style.display = title.includes(input) ? "" : "none";
-            });
-        }
-    </script>
+  <!-- OVERLAY -->
+
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <ul>
+
+      <li>
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+      </li>
+
+      <li>
+        <a href="calculators/index.html"><i class="fas fa-calculator"></i> Calculators</a>
+      </li>
+
+      <li>
+        <a href="developer-tools/index.html"><i class="fas fa-code"></i> Developer Tools</a>
+      </li>
+       <li>
+        <a href="security-tools/index.html"><i class="fas fa-shield-alt"></i> Security Tools</a>
+      </li>
+
+      <li>
+        <a href="text-tools/index.html"><i class="fas fa-font"></i> Text Tools</a>
+      </li>
+
+      <li>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+      </li>
+
+      <li>
+        <a href="privacy-policy.html"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+      </li>
+      <li>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact </a>
+      </li>
+    </ul>
+
+  </aside>
+
+
+  <section class="page-header container">
+    <div class="container">
+      <h1>UtilityMega</h1>
+      <p>All Free Online Calculators & Tools in One Place</p>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" onkeyup="searchTools()" placeholder="Search tools...">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+  </section>
+  <!-- MAIN CONTENT -->
+
+  <div class="main-content">
+
+    <div class="container">
+
+      <h2 class="section-title">📊 Calculators</h2>
+
+      <div class="tools-grid" id="toolsList">
+
+        <div class="tool-card">
+          <h3>EMI Calculator</h3>
+          <a href="calculators/emi.html">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>Age Calculator</h3>
+          <a href="calculators/age.html">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>Percentage Calculator</h3>
+          <a href="calculators/percentage.html">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>BMI Calculator</h3>
+          <a href="calculators/bmi.html">Open Tool</a>
+        </div>
+
+      </div>
+
+      <!-- <div class="ad-space">
+        Google AdSense Banner Area
+      </div> -->
+
+      <h2 class="section-title">🛠 Developer Tools</h2>
+
+      <div class="tools-grid">
+
+        <div class="tool-card">
+          <h3>JSON Formatter</h3>
+          <a href="developer-tools/json-formatter.html">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>Base64 Encoder / Decoder</h3>
+          <a href="developer-tools/base64-encoder-decoder.html">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>URL Encoder / Decoder</h3>
+          <a href="developer-tools/url-encoder-decoder.html">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>HTML Minifier</h3>
+          <a href="developer-tools/html-minifier.html">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>CSS Minifier</h3>
+          <a href="developer-tools/css-minifier.html">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>JavaScript Minifier</h3>
+          <a href="developer-tools/js-minifier.html">Open Tool</a>
+        </div>
+        <div class="tool-card">
+          <h3>SQL Formatter</h3>
+          <a href="developer-tools/sql-formatter.html">Open Tool</a>
+        </div>
+        <div class="tool-card">
+          <h3>Regex Tester</h3>
+          <a href="developer-tools/regex-tester.html">Open Tool</a>
+        </div>
+        <div class="tool-card">
+          <h3>Timestamp Converter</h3>
+          <a href="developer-tools/timestamp-converter.html">Open Tool</a>
+        </div>
+      </div>
+      <h2 class="section-title">🔐 Security Tools</h2>
+
+      <div class="tools-grid">
+
+        <div class="tool-card">
+          <h3>Password Generator</h3>
+          <a href="security-tools/password-generator.html">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>Password Strength Checker</h3>
+          <a href="security-tools/password-checker.html">Open Tool</a>
+        </div>
+
+      </div>
+
+      <h2 class="section-title">🎨 Text Tools</h2>
+
+      <div class="tools-grid">
+
+        <div class="tool-card">
+          <h3>Fancy Text Generator</h3>
+          <a href="text-tools/fancy-text.html">Open Tool</a>
+        </div>
+
+        <div class="tool-card">
+          <h3>Case Converter</h3>
+          <a href="text-tools/case-converter.html">Open Tool</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2026 UtilityMega.com | All Rights Reserved
+
+  </footer>
+  <script>
+    function toggleMenu() {
+
+      document.getElementById("sidebar").classList.toggle("active");
+
+      document.getElementById("overlay").classList.toggle("active");
+
+    }
+    function searchTools() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let cards = document.querySelectorAll('.tool-card');
+
+      cards.forEach(card => {
+        let title = card.innerText.toLowerCase();
+        card.style.display = title.includes(input) ? "" : "none";
+      });
+    }
+
+  </script>
 
 </body>
+
 </html>
