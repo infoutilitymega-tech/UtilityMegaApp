@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Generator Online | Free QR Code Tool | UtilityMega</title>
+    <meta name="description" content="Free online QR Code Generator tool. Create QR codes for URL, text, email, phone instantly and download as image.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            background: #2a5298;
+            color: white;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+
+        #qrImage {
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 250px;
+            margin-top: 15px;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7NVQ7CMJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HJ7NVQ7CMJ');
+</script>
+       <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>QR Code Generator</h1>
+    <p>Generate QR codes for URL, text, email or phone instantly.</p>
+</header>
+
+<nav>
+   <a href="../index.html">Home</a> |
+    <a href="../calculators/index.html">Calculators</a> |
+    <a href="../developer-tools/index.html">Developer Tools</a> |
+    <a href="../security-tools/index.html">Security Tools</a> |
+    <a href="../text-tools/index.html">Text Tools</a>
+</nav>
+
+<div class="tool-container">
+
+    <input type="text" id="qrText" placeholder="Enter URL or text here...">
+
+    <button onclick="generateQR()">Generate QR</button>
+    <button onclick="downloadQR()">Download</button>
+    <button onclick="clearQR()">Clear</button>
+
+    <div id="qrImage"></div>
+
+</div>
+
+<footer>
+    <p>© 2026 UtilityMega.com | All Rights Reserved</p>
+</footer>
+
+<script>
+let currentQRUrl = "";
+
+function generateQR() {
+    const text = document.getElementById("qrText").value.trim();
+    if (!text) return;
+
+    const qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(text);
+
+    currentQRUrl = qrUrl;
+
+    document.getElementById("qrImage").innerHTML =
+        `<img src="${qrUrl}" alt="QR Code">`;
+}
+
+function downloadQR() {
+    if (!currentQRUrl) return;
+
+    const link = document.createElement("a");
+    link.href = currentQRUrl;
+    link.download = "qrcode.png";
+    link.click();
+}
+
+function clearQR() {
+    document.getElementById("qrText").value = "";
+    document.getElementById("qrImage").innerHTML = "";
+    currentQRUrl = "";
+}
+</script>
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+</html>

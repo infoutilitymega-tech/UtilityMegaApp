@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Picker Tool Online | HEX, RGB, HSL Converter | UtilityMega</title>
+    <meta name="description" content="Free online Color Picker tool. Select colors and get HEX, RGB, HSL values instantly. Perfect for designers and developers.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .color-preview {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            border-radius: 12px;
+            border: 2px solid #ddd;
+        }
+
+        input[type="color"] {
+            width: 100px;
+            height: 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .value-box {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-family: monospace;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #2a5298;
+            color: white;
+            font-size: 13px;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7NVQ7CMJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HJ7NVQ7CMJ');
+</script>
+       <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Color Picker Tool</h1>
+    <p>Select a color and get HEX, RGB & HSL values instantly.</p>
+</header>
+
+<nav>
+    <a href="../index.html">Home</a> |
+    <a href="../calculators/index.html">Calculators</a> |
+    <a href="../developer-tools/index.html">Developer Tools</a> |
+    <a href="../security-tools/index.html">Security Tools</a> |
+    <a href="../text-tools/index.html">Text Tools</a>
+</nav>
+
+<div class="tool-container">
+
+    <input type="color" id="colorInput" value="#2a5298" onchange="updateColor()">
+
+    <div id="colorPreview" class="color-preview"></div>
+
+    <div class="value-box">
+        HEX: <span id="hexValue"></span>
+        <button onclick="copyValue('hexValue')">Copy</button>
+    </div>
+
+    <div class="value-box">
+        RGB: <span id="rgbValue"></span>
+        <button onclick="copyValue('rgbValue')">Copy</button>
+    </div>
+
+    <div class="value-box">
+        HSL: <span id="hslValue"></span>
+        <button onclick="copyValue('hslValue')">Copy</button>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 UtilityMega.com | All Rights Reserved</p>
+</footer>
+
+<script>
+function updateColor() {
+    const color = document.getElementById("colorInput").value;
+    const preview = document.getElementById("colorPreview");
+
+    preview.style.backgroundColor = color;
+    document.getElementById("hexValue").innerText = color;
+
+    const rgb = hexToRgb(color);
+    document.getElementById("rgbValue").innerText =
+        `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+
+    const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+    document.getElementById("hslValue").innerText =
+        `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+}
+
+function hexToRgb(hex) {
+    const bigint = parseInt(hex.slice(1), 16);
+    return {
+        r: (bigint >> 16) & 255,
+        g: (bigint >> 8) & 255,
+        b: bigint & 255
+    };
+}
+
+function rgbToHsl(r, g, b) {
+    r /= 255; g /= 255; b /= 255;
+    const max = Math.max(r,g,b), min = Math.min(r,g,b);
+    let h, s, l = (max + min) / 2;
+
+    if(max === min){
+        h = s = 0;
+    } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+
+        switch(max){
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+        }
+
+        h /= 6;
+    }
+
+    return {
+        h: Math.round(h * 360),
+        s: Math.round(s * 100),
+        l: Math.round(l * 100)
+    };
+}
+
+function copyValue(id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text);
+}
+
+updateColor();
+</script>
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+</html>

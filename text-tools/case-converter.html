@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<title>Case Converter Online Free | UtilityMega</title>
+
+<meta name="description" content="Free online case converter. Convert text to uppercase, lowercase, title case, sentence case and more instantly.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/x-icon" href="../assets/icon.webp">
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+.tool-container{
+max-width:700px;
+margin:40px auto;
+padding:20px;
+}
+
+textarea{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+resize:none;
+margin-bottom:20px;
+font-size:16px;
+height:120px;
+}
+
+.buttons{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
+}
+
+button{
+padding:10px;
+background:#2a5298;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+transition:0.3s;
+}
+
+button:hover{
+background:#1e3c72;
+}
+
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7NVQ7CMJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HJ7NVQ7CMJ');
+</script>
+   <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body>
+
+<header>
+<h1>Case Converter</h1>
+<p>Convert text case instantly.</p>
+</header>
+
+<nav>
+<a href="../index.html">Home</a> |
+<a href="../calculators/index.html">Calculators</a> |
+<a href="../developer-tools/index.html">Developer Tools</a> |
+<a href="../security-tools/index.html">Security Tools</a> |
+<a href="../text-tools/index.html">Text Tools</a>
+</nav>
+
+<div class="tool-container">
+
+<h2>Enter Your Text</h2>
+
+<textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+
+<div class="buttons">
+<button onclick="toUpper()">UPPERCASE</button>
+<button onclick="toLower()">lowercase</button>
+<button onclick="toTitle()">Title Case</button>
+<button onclick="toSentence()">Sentence Case</button>
+<button onclick="toCapitalize()">Capitalize Words</button>
+<button onclick="clearText()">Clear</button>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 UtilityMega.com | All Rights Reserved</p>
+</footer>
+
+<script>
+
+function toUpper(){
+document.getElementById("textInput").value=
+document.getElementById("textInput").value.toUpperCase();
+}
+
+function toLower(){
+document.getElementById("textInput").value=
+document.getElementById("textInput").value.toLowerCase();
+}
+
+function toTitle(){
+let text=document.getElementById("textInput").value.toLowerCase();
+document.getElementById("textInput").value=
+text.replace(/\b\w/g,function(char){return char.toUpperCase();});
+}
+
+function toSentence(){
+let text=document.getElementById("textInput").value.toLowerCase();
+document.getElementById("textInput").value=
+text.charAt(0).toUpperCase()+text.slice(1);
+}
+
+function toCapitalize(){
+let text=document.getElementById("textInput").value;
+
+document.getElementById("textInput").value=
+text.split(" ").map(function(word){
+return word.charAt(0).toUpperCase()+word.slice(1).toLowerCase();
+}).join(" ");
+}
+
+function clearText(){
+document.getElementById("textInput").value="";
+}
+
+</script>
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+</html>

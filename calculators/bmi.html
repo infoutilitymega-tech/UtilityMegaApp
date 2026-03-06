@@ -2,43 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMI Calculator - ToolSathi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>BMI Calculator Online Free | UtilityMega</title>
+
+<meta name="description" content="Free BMI calculator tool. Calculate your Body Mass Index instantly using height and weight.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/x-icon" href="../assets/icon.webp">
+<link rel="stylesheet" href="../style.css">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background: #f4f6fb;
-}
-
-header {
-    background: linear-gradient(135deg, #141e30, #243b55);
-    color: white;
-    padding: 25px;
-    text-align: center;
-}
-
-.container {
-    max-width: 500px;
-    margin: 50px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-.container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #243b55;
+    .tool-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
 .input-group {
@@ -53,101 +31,172 @@ header {
 
 .input-group input {
     width: 100%;
-    padding: 10px;
-    border-radius: 6px;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
     border: 1px solid #ccc;
 }
 
+.btn-group {
+    text-align: center;
+    margin: 20px 0;
+}
+
 button {
-    width: 100%;
-    padding: 12px;
-    background: #243b55;
-    color: white;
+    padding: 10px 18px;
+    margin: 5px;
     border: none;
     border-radius: 6px;
-    font-size: 16px;
     cursor: pointer;
+    font-size: 14px;
+    background: #2a5298;
+    color: white;
     transition: 0.3s;
-    margin-top: 10px;
 }
 
 button:hover {
-    background: #1b2d40;
+    background: #1e3c72;
 }
 
-.result {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    color: #141e30;
-}
-
-.back-btn {
-    display: inline-block;
-    margin-top: 15px;
-    text-decoration: none;
-    color: #243b55;
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    font-family: monospace;
     font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+    margin-top: 10px;
+}
+
+.message {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
 }
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7NVQ7CMJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HJ7NVQ7CMJ');
+</script>
+   <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body>
 
 <header>
-    <h1>BMI Calculator</h1>
+<h1>BMI Calculator</h1>
+<p>Check your Body Mass Index instantly.</p>
 </header>
 
-<div class="container">
-    <h2>Check Your BMI</h2>
+<nav>
+<a href="../index.html">Home</a> |
+    <a href="../calculators/index.html">Calculators</a> |
+    <a href="../developer-tools/index.html">Developer Tools</a> |
+    <a href="../security-tools/index.html">Security Tools</a> |
+    <a href="../text-tools/index.html">Text Tools</a>
+</nav>
 
-    <div class="input-group">
-        <label>Weight (kg)</label>
-        <input type="number" id="weight">
-    </div>
+<div class="tool-container">
 
-    <div class="input-group">
-        <label>Height (cm)</label>
-        <input type="number" id="height">
-    </div>
+<!-- <h2>Enter Your Details</h2> -->
 
-    <button onclick="calculateBMI()">Calculate BMI</button>
-
-    <div class="result" id="result"></div>
-
-    <a href="../index.html" class="back-btn">← Back to Dashboard</a>
+<div class="input-group">
+<label>Weight (kg)</label>
+<input type="number" id="weight" placeholder="Enter weight in kg">
 </div>
 
+<div class="input-group">
+<label>Height (cm)</label>
+<input type="number" id="height" placeholder="Enter height in cm">
+</div>
+
+<div class="btn-group">
+<button onclick="calculateBMI()">Calculate BMI</button>
+<button onclick="clearForm()">Clear</button>
+</div>
+
+<h2>Result</h2>
+
+<textarea id="result" readonly placeholder="Your BMI result will appear here..."></textarea>
+
+<div id="message" class="message"></div>
+
+</div>
+
+<footer>
+<p>© 2026 UtilityMega.com | All Rights Reserved</p>
+</footer>
+
 <script>
-function calculateBMI() {
-    let weight = document.getElementById("weight").value;
-    let height = document.getElementById("height").value;
 
-    if(weight && height) {
-        let heightInMeters = height / 100;
-        let bmi = weight / (heightInMeters * heightInMeters);
+function calculateBMI(){
 
-        let category = "";
+let weight = document.getElementById("weight").value;
+let height = document.getElementById("height").value;
+let resultBox = document.getElementById("result");
+let message = document.getElementById("message");
 
-        if (bmi < 18.5) {
-            category = "Underweight";
-        } else if (bmi < 24.9) {
-            category = "Normal Weight";
-        } else if (bmi < 29.9) {
-            category = "Overweight";
-        } else {
-            category = "Obese";
-        }
+if(weight && height){
 
-        document.getElementById("result").innerText =
-            "Your BMI: " + bmi.toFixed(2) + " (" + category + ")";
-    } else {
-        document.getElementById("result").innerText =
-            "Please enter weight and height.";
-    }
+let heightMeters = height / 100;
+let bmi = weight / (heightMeters * heightMeters);
+
+let category = "";
+
+if (bmi < 18.5){
+category = "Underweight";
 }
+else if (bmi < 24.9){
+category = "Normal Weight";
+}
+else if (bmi < 29.9){
+category = "Overweight";
+}
+else{
+category = "Obese";
+}
+
+resultBox.value = "Your BMI: " + bmi.toFixed(2) + " (" + category + ")";
+message.innerHTML = "<span class='success'>Calculation Completed ✔</span>";
+
+}else{
+
+message.innerHTML = "<span class='error'>Please enter weight and height ❌</span>";
+
+}
+
+}
+
+function clearForm(){
+document.getElementById("weight").value = "";
+document.getElementById("height").value = "";
+document.getElementById("result").value = "";
+document.getElementById("message").innerHTML = "";
+}
+
 </script>
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 
 </body>
 </html>

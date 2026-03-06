@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base64 Encoder & Decoder Online Free | UtilityMega</title>
+    <meta name="description" content="Free online Base64 encoder and decoder tool. Encode text to Base64 or decode Base64 to text instantly. Fast and secure.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .tool-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            margin-bottom: 15px;
+        }
+
+        .btn-group {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            background: #2a5298;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+
+        .message {
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7NVQ7CMJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HJ7NVQ7CMJ');
+</script>
+       <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Base64 Encoder / Decoder</h1>
+    <p>Encode or decode Base64 strings instantly.</p>
+</header>
+
+<nav>
+   <a href="../index.html">Home</a> |
+    <a href="../calculators/index.html">Calculators</a> |
+    <a href="../developer-tools/index.html">Developer Tools</a> |
+    <a href="../security-tools/index.html">Security Tools</a> |
+    <a href="../text-tools/index.html">Text Tools</a>
+</nav>
+
+<div class="tool-container">
+
+    <h2>Input</h2>
+    <textarea id="inputText" placeholder="Enter text or Base64 string..."></textarea>
+
+    <div class="btn-group">
+        <button onclick="encodeBase64()">Encode</button>
+        <button onclick="decodeBase64()">Decode</button>
+        <button onclick="copyOutput()">Copy</button>
+        <button onclick="clearText()">Clear</button>
+    </div>
+
+    <h2>Output</h2>
+    <textarea id="outputText" placeholder="Result will appear here..."></textarea>
+
+    <div id="message" class="message"></div>
+
+</div>
+
+<footer>
+    <p>© 2026 UtilityMega.com | All Rights Reserved</p>
+</footer>
+
+<script>
+function encodeBase64() {
+    const input = document.getElementById("inputText").value;
+    const output = document.getElementById("outputText");
+    const message = document.getElementById("message");
+
+    try {
+        output.value = btoa(unescape(encodeURIComponent(input)));
+        message.innerHTML = "<span class='success'>Encoded Successfully ✔</span>";
+    } catch (e) {
+        message.innerHTML = "<span class='error'>Encoding Failed ❌</span>";
+    }
+}
+
+function decodeBase64() {
+    const input = document.getElementById("inputText").value;
+    const output = document.getElementById("outputText");
+    const message = document.getElementById("message");
+
+    try {
+        output.value = decodeURIComponent(escape(atob(input)));
+        message.innerHTML = "<span class='success'>Decoded Successfully ✔</span>";
+    } catch (e) {
+        message.innerHTML = "<span class='error'>Invalid Base64 String ❌</span>";
+    }
+}
+
+function copyOutput() {
+    const output = document.getElementById("outputText");
+    output.select();
+    document.execCommand("copy");
+    document.getElementById("message").innerHTML = "<span class='success'>Copied to Clipboard ✔</span>";
+}
+
+function clearText() {
+    document.getElementById("inputText").value = "";
+    document.getElementById("outputText").value = "";
+    document.getElementById("message").innerHTML = "";
+}
+</script>
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Fancy Text Generator Online Free | UtilityMega</title>
+
+<meta name="description" content="Free online fancy text generator. Create stylish fonts for Instagram, WhatsApp and social media instantly.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/x-icon" href="../assets/icon.webp">
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+.tool-container{
+max-width:600px;
+margin:40px auto;
+padding:20px;
+}
+
+.input-group{
+margin-bottom:15px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:6px;
+font-weight:500;
+}
+
+.input-group textarea{
+width:100%;
+padding:12px;
+font-size:14px;
+border-radius:8px;
+border:1px solid #ccc;
+height:90px;
+}
+
+.btn-group{
+text-align:center;
+margin:20px 0;
+}
+
+button{
+padding:10px 18px;
+margin:5px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+background:#2a5298;
+color:white;
+transition:0.3s;
+}
+
+button:hover{
+background:#1e3c72;
+}
+
+.output-box{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:8px;
+background:#fafafa;
+}
+
+.output-text{
+font-size:16px;
+}
+
+.copy-btn{
+padding:6px 10px;
+font-size:12px;
+}
+
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7NVQ7CMJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HJ7NVQ7CMJ');
+</script>
+   <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body>
+
+<header>
+<h1>Fancy Text Generator</h1>
+<p>Create stylish text instantly.</p>
+</header>
+
+<nav>
+<a href="../index.html">Home</a> |
+<a href="../calculators/index.html">Calculators</a> |
+<a href="../developer-tools/index.html">Developer Tools</a> |
+<a href="../security-tools/index.html">Security Tools</a> |
+<a href="../text-tools/index.html">Text Tools</a>
+</nav>
+
+<div class="tool-container">
+
+<div class="input-group">
+<label>Enter Your Text</label>
+<textarea id="inputText" placeholder="Type your text..." onkeyup="generateText()"></textarea>
+</div>
+
+<div class="btn-group">
+<button onclick="generateText()">Generate</button>
+<button onclick="clearForm()">Clear</button>
+</div>
+
+<div id="outputs"></div>
+
+</div>
+
+<footer>
+<p>© 2026 UtilityMega.com | All Rights Reserved</p>
+</footer>
+
+<script>
+
+function generateText(){
+
+let text=document.getElementById("inputText").value;
+let outputs=document.getElementById("outputs");
+
+outputs.innerHTML="";
+
+if(!text) return;
+
+let styles=[
+
+{name:"Bold", transform:t=>t.toUpperCase()},
+{name:"Lowercase", transform:t=>t.toLowerCase()},
+{name:"Spaced", transform:t=>t.split("").join(" ")},
+{name:"Reverse", transform:t=>t.split("").reverse().join("")},
+{name:"Stars", transform:t=>"★ "+t+" ★"},
+{name:"Wave", transform:t=>t.split("").map((c,i)=>i%2?c.toLowerCase():c.toUpperCase()).join("")},
+
+{name:"Fancy 1", transform:t=>"𝓕 "+t+" 𝓕"},
+{name:"Fancy 2", transform:t=>"𝔉 "+t+" 𝔉"},
+{name:"Fancy 3", transform:t=>"🅵 "+t+" 🅵"},
+{name:"Fancy 4", transform:t=>"𝔽 "+t+" 𝔽"},
+{name:"Fancy 5", transform:t=>"ꜰ "+t+" ꜰ"}
+
+];
+
+styles.forEach(style=>{
+
+let fancyText=style.transform(text);
+
+let box=document.createElement("div");
+box.className="output-box";
+
+box.innerHTML=`
+<div class="output-text">${fancyText}</div>
+<button class="copy-btn" onclick="copyText('${fancyText.replace(/'/g,"\\'")}')">Copy</button>
+`;
+
+outputs.appendChild(box);
+
+});
+
+}
+
+function copyText(text){
+navigator.clipboard.writeText(text);
+}
+
+function clearForm(){
+document.getElementById("inputText").value="";
+document.getElementById("outputs").innerHTML="";
+}
+
+</script>
+
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+</html>
