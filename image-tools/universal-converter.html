@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Universal Image Converter | UtilityMega</title>
+    <meta name="description"
+        content="Convert images between JPG, PNG, WebP online for free. Preview and download instantly.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="../assets/icon.webp">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .tool-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .btn-group {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            background: #2a5298;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+
+        #preview {
+            display: none;
+            max-width: 100%;
+            margin: 20px auto;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .message {
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7NVQ7CMJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HJ7NVQ7CMJ');
+    </script>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Universal Image Converter</h1>
+        <p>Select any image and convert it to a different format safely.</p>
+    </header>
+
+    <nav>
+        <a href="../index.html">Home</a> |
+        <a href="../calculators/index.html">Calculators</a> |
+        <a href="../image-tools/index.html">Image Tools</a> |
+        <a href="../developer-tools/index.html">Developer Tools</a> |
+        <a href="../security-tools/index.html">Security Tools</a> |
+        <a href="../text-tools/index.html">Text Tools</a>
+    </nav>
+
+    <div class="tool-container">
+
+        <div class="input-group">
+            <label>Select Image</label>
+            <input type="file" id="imgInput" accept="image/*">
+        </div>
+
+        <div class="input-group" hidden>
+            <label>Detected Type:</label>
+            <input type="text" id="currentType" readonly placeholder="No image selected">
+        </div>
+
+        <div class="input-group">
+            <label>Convert To:</label>
+            <select id="targetType">
+                <!-- Options will be dynamically populated -->
+            </select>
+        </div>
+
+        <div class="btn-group">
+            <button onclick="convertImage()">Convert Image</button>
+            <button onclick="clearForm()">Clear</button>
+            <button id="downloadBtn" style="display:none;" onclick="downloadImage()">Download</button>
+        </div>
+
+        <img id="preview" alt="Converted Image Preview">
+        <div id="message" class="message"></div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 UtilityMega.com | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        let convertedBlob = null;
+
+        // Dynamically update target dropdown based on selected image
+        document.getElementById('imgInput').addEventListener('change', function () {
+            const file = this.files[0];
+            const targetType = document.getElementById('targetType');
+            if (!file) return;
+
+            const originalType = file.type; // e.g., image/png or image/jpeg
+            document.getElementById('currentType').value = originalType || 'Unknown';
+
+            // Define all possible options
+            const formats = [
+                { value: 'image/jpeg', label: 'JPG' },
+                { value: 'image/png', label: 'PNG' },
+                { value: 'image/webp', label: 'WebP' }
+            ];
+
+            // Clear previous options
+            targetType.innerHTML = '';
+
+            // Add options excluding original type
+            formats.forEach(f => {
+                if (f.value !== originalType) {
+                    const opt = document.createElement('option');
+                    opt.value = f.value;
+                    opt.textContent = f.label;
+                    targetType.appendChild(opt);
+                }
+            });
+
+            clearPreview();
+        });
+
+        function convertImage() {
+            const fileInput = document.getElementById('imgInput');
+            const preview = document.getElementById('preview');
+            const message = document.getElementById('message');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const targetType = document.getElementById('targetType').value;
+
+            if (!fileInput.files || fileInput.files.length === 0) {
+                message.innerHTML = "<span class='error'>Please select an image ❌</span>";
+                downloadBtn.style.display = 'none';
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const img = new Image();
+                img.src = e.target.result;
+
+                img.onload = function () {
+                    const MAX_DIM = 1024;
+                    const ratio = Math.min(MAX_DIM / img.width, MAX_DIM / img.height, 1);
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width * ratio;
+                    canvas.height = img.height * ratio;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                    canvas.toBlob(function (blob) {
+                        convertedBlob = blob;
+                        const url = URL.createObjectURL(blob);
+                        preview.src = url;
+                        preview.style.display = 'block';
+                        message.innerHTML = "<span class='success'>Conversion completed ✔</span>";
+                        downloadBtn.style.display = 'inline-block';
+                    }, targetType, 0.9);
+                };
+
+                img.onerror = function () {
+                    message.innerHTML = "<span class='error'>Failed to load image ❌</span>";
+                    downloadBtn.style.display = 'none';
+                };
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        function downloadImage() {
+            if (!convertedBlob) return;
+            const link = document.createElement('a');
+            const ext = document.getElementById('targetType').value.split('/')[1];
+            link.href = URL.createObjectURL(convertedBlob);
+            link.download = 'converted.' + ext;
+            link.click();
+        }
+
+        function clearForm() {
+            document.getElementById('imgInput').value = '';
+            document.getElementById('currentType').value = '';
+            clearPreview();
+            document.getElementById('downloadBtn').style.display = 'none';
+            convertedBlob = null;
+        }
+
+        function clearPreview() {
+            const preview = document.getElementById('preview');
+            preview.src = '';
+            preview.style.display = 'none';
+            document.getElementById('message').innerHTML = '';
+        }
+    </script>
+     <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+
+</html>

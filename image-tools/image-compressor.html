@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Image Compressor Online Free | UtilityMega</title>
+<meta name="description" content="Free Image Compressor tool. Reduce image file size without losing quality.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/x-icon" href="../assets/icon.webp">
+<link rel="stylesheet" href="../style.css">
+
+<style>
+.tool-container{
+  max-width:600px;
+  margin:40px auto;
+  padding:20px;
+}
+
+.input-group{
+  margin-bottom:15px;
+}
+
+.input-group label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:500;
+}
+
+.input-group input{
+  width:100%;
+  padding:12px;
+  font-size:14px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.btn-group{
+  text-align:center;
+  margin:20px 0;
+}
+
+button{
+  padding:10px 18px;
+  margin:5px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px;
+  background:#2a5298;
+  color:white;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#1e3c72;
+}
+
+#preview {
+  display:block;
+  max-width:100%;
+  margin:20px auto;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.message{
+  font-weight:bold;
+  margin-top:10px;
+  text-align:center;
+}
+
+.success{
+  color:green;
+}
+
+.error{
+  color:red;
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7NVQ7CMJ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HJ7NVQ7CMJ');
+</script>
+<script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<header>
+<h1>Image Compressor</h1>
+<p>Reduce your image file size quickly and easily.</p>
+</header>
+
+<nav>
+<a href="../index.html">Home</a> |
+<a href="../calculators/index.html">Calculators</a> |
+<a href="../image-tools/index.html">Image Tools</a> |
+<a href="../developer-tools/index.html">Developer Tools</a> |
+<a href="../security-tools/index.html">Security Tools</a> |
+<a href="../text-tools/index.html">Text Tools</a>
+</nav>
+
+<div class="tool-container">
+
+<div class="input-group">
+  <label>Select Image</label>
+  <input type="file" id="imageInput" accept="image/*">
+</div>
+
+<div class="input-group">
+  <label>Compression Quality (%)</label>
+  <input type="number" id="quality" min="10" max="100" value="70">
+</div>
+
+<div class="btn-group">
+  <button onclick="compressImage()">Compress Image</button>
+  <button onclick="clearForm()">Clear</button>
+  <button id="downloadBtn" style="display:none;" onclick="downloadImage()">Download Image</button>
+</div>
+
+<img id="preview" alt="Compressed Image Preview">
+
+<div id="message" class="message"></div>
+
+</div>
+
+<footer>
+<p>© 2026 UtilityMega.com | All Rights Reserved</p>
+</footer>
+
+<script>
+let compressedBlob = null; // store compressed image blob
+
+function compressImage() {
+  let fileInput = document.getElementById("imageInput");
+  let quality = parseInt(document.getElementById("quality").value)/100;
+  let preview = document.getElementById("preview");
+  let message = document.getElementById("message");
+  let downloadBtn = document.getElementById("downloadBtn");
+
+  if(!fileInput.files || fileInput.files.length === 0){
+    message.innerHTML = "<span class='error'>Please select an image ❌</span>";
+    downloadBtn.style.display = "none";
+    return;
+  }
+
+  let file = fileInput.files[0];
+  let reader = new FileReader();
+
+  reader.onload = function(event){
+    let img = new Image();
+    img.src = event.target.result;
+
+    img.onload = function(){
+      const MAX_DIMENSION = 1024; // max width or height
+      let ratio = Math.min(MAX_DIMENSION / img.width, MAX_DIMENSION / img.height, 1);
+      let canvas = document.createElement('canvas');
+      canvas.width = img.width * ratio;
+      canvas.height = img.height * ratio;
+      let ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      canvas.toBlob(function(blob){
+        compressedBlob = blob; // store blob for download
+        let url = URL.createObjectURL(blob);
+        preview.src = url;
+        message.innerHTML = "<span class='success'>Image compressed successfully ✔</span>";
+        downloadBtn.style.display = "inline-block"; // show download button
+      }, 'image/jpeg', quality);
+    }
+
+    img.onerror = function() {
+      message.innerHTML = "<span class='error'>Failed to load image ❌</span>";
+      downloadBtn.style.display = "none";
+    }
+  }
+
+  reader.readAsDataURL(file);
+}
+
+function downloadImage(){
+  if(!compressedBlob) return;
+  let link = document.createElement('a');
+  link.href = URL.createObjectURL(compressedBlob);
+  link.download = "compressed-image.jpg";
+  link.click();
+}
+
+function clearForm(){
+  document.getElementById("imageInput").value = "";
+  document.getElementById("quality").value = 70;
+  document.getElementById("preview").src = "";
+  document.getElementById("message").innerHTML = "";
+  document.getElementById("downloadBtn").style.display = "none";
+  compressedBlob = null;
+}
+</script>
+ <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+</html>
