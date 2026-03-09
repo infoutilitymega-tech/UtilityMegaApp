@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Block internal system folders
+Disallow: /assets/
+Disallow: /scripts/
+Disallow: /_vercel/
+
+# Allow important sections
+Allow: /calculators/
+Allow: /image-tools/
+Allow: /developer-tools/
+Allow: /security-tools/
+Allow: /text-tools/
+
+# Sitemap location
+Sitemap: https://utilitymega.com/sitemap.xml
