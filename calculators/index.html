@@ -1,106 +1,1631 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Free Online Calculators – EMI, Age, BMI & Percentage | UtilityMega</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Online Calculators – EMI, SIP, BMI, BMR & More | UtilityMega</title>
     <meta name="description"
-        content="Free online calculators including EMI calculator, Age calculator, BMI calculator and Percentage calculator. Fast, secure and easy to use tools by UtilityMega.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../assets/icon.png">
-    <link rel="stylesheet" href="../style.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7NVQ7CMJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        content="Free online calculators for EMI, SIP, BMI, BMR, Age, Retirement, GST, Percentage and more. Fast, accurate and mobile-friendly calculators at UtilityMega." />
+    <link rel="canonical" href="https://utilitymega.com/calculators/" />
+    <meta property="og:title" content="Free Online Calculators | UtilityMega" />
+    <meta property="og:description" content="15+ free calculators for finance, health, and math. No signup needed." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #fafaf7;
+            --bg2: #f2f1ec;
+            --surface: #ffffff;
+            --surface2: #f7f6f1;
+            --border: #e4e2d8;
+            --text: #18170f;
+            --text2: #6b6a61;
+            --text3: #9b9a92;
+            --accent: #4f46e5;
+            --accent-h: #4338ca;
+            --accent-s: #818cf8;
+            --accent-bg: #eef2ff;
+            --accent-bd: #c7d2fe;
+            --emerald: #059669;
+            --em-bg: #d1fae5;
+            --amber: #d97706;
+            --am-bg: #fef3c7;
+            --rose: #e11d48;
+            --ro-bg: #ffe4e6;
+            --sky: #0284c7;
+            --sk-bg: #e0f2fe;
+            --violet: #7c3aed;
+            --vi-bg: #ede9fe;
+            --nav-h: 64px;
+            --sw: 288px;
+            --r: 14px;
+            --r-lg: 20px;
+            --sh: 0 1px 3px rgba(0, 0, 0, .06), 0 4px 16px rgba(0, 0, 0, .07);
+            --sh-lg: 0 8px 32px rgba(0, 0, 0, .10);
+            --sh-xl: 0 24px 64px rgba(0, 0, 0, .13);
+            --tr: .22s cubic-bezier(.4, 0, .2, 1)
+        }
 
-        gtag('config', 'G-HJ7NVQ7CMJ');
-    </script>
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+        [data-theme="dark"] {
+            --bg: #0d0d0a;
+            --bg2: #161610;
+            --surface: #1c1c16;
+            --surface2: #222219;
+            --border: #2e2e24;
+            --text: #f0efe8;
+            --text2: #a0a098;
+            --text3: #68675f;
+            --accent: #6366f1;
+            --accent-h: #818cf8;
+            --accent-s: #a5b4fc;
+            --accent-bg: #1e1b4b;
+            --accent-bd: #3730a3;
+            --emerald: #34d399;
+            --em-bg: #064e3b;
+            --amber: #fbbf24;
+            --am-bg: #451a03;
+            --rose: #fb7185;
+            --ro-bg: #4c0519;
+            --sky: #38bdf8;
+            --sk-bg: #0c4a6e;
+            --violet: #a78bfa;
+            --vi-bg: #2e1065;
+            --sh: 0 1px 3px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .4);
+            --sh-lg: 0 8px 32px rgba(0, 0, 0, .5);
+            --sh-xl: 0 24px 64px rgba(0, 0, 0, .6)
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background var(--tr), color var(--tr)
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            background: none
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg2)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent)
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .55);
+            z-index: 199;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--tr);
+            backdrop-filter: blur(3px)
+        }
+
+        .overlay.on {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        /* Sidebar */
+        .sb {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sw);
+            height: 100vh;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(-100%);
+            transition: transform .32s cubic-bezier(.4, 0, .2, 1)
+        }
+
+        .sb.on {
+            transform: translateX(0)
+        }
+
+        .sb-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 18px 14px;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0
+        }
+
+        .sb-logo {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -.02em
+        }
+
+        .sb-logo b {
+            color: var(--accent)
+        }
+
+        .sb-x {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: var(--bg2);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all var(--tr)
+        }
+
+        .sb-x:hover {
+            background: var(--accent);
+            color: #fff
+        }
+
+        .sb-srch {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0
+        }
+
+        .sb-srch-w {
+            position: relative
+        }
+
+        .sb-srch-w svg {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text3);
+            pointer-events: none
+        }
+
+        .sb-srch input {
+            width: 100%;
+            padding: 8px 12px 8px 34px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            background: var(--bg2);
+            color: var(--text);
+            font-size: .83rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color var(--tr)
+        }
+
+        .sb-srch input:focus {
+            border-color: var(--accent)
+        }
+
+        .sb-nav {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px 10px 16px
+        }
+
+        .sb-lbl {
+            font-size: .67rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text3);
+            padding: 10px 8px 5px
+        }
+
+        .sb-link {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 10px;
+            border-radius: 9px;
+            font-size: .875rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: background var(--tr), color var(--tr);
+            cursor: pointer;
+            user-select: none
+        }
+
+        .sb-link:hover {
+            background: var(--bg2)
+        }
+
+        .sb-link.cur {
+            background: var(--accent-bg);
+            color: var(--accent)
+        }
+
+        .sb-ico {
+            width: 30px;
+            height: 30px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .95rem;
+            flex-shrink: 0
+        }
+
+        .sb-txt {
+            flex: 1
+        }
+
+        .sb-arr {
+            transition: transform var(--tr);
+            color: var(--text3);
+            font-size: .65rem
+        }
+
+        .sb-item.exp .sb-arr {
+            transform: rotate(90deg)
+        }
+
+        .sb-sub {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .28s ease;
+            padding-left: 10px
+        }
+
+        .sb-item.exp .sb-sub {
+            max-height: 500px
+        }
+
+        .sb-sub a {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 10px;
+            border-radius: 7px;
+            font-size: .81rem;
+            color: var(--text2);
+            transition: color var(--tr), background var(--tr)
+        }
+
+        .sb-sub a:hover,
+        .sb-sub a.cur {
+            color: var(--accent);
+            background: var(--accent-bg)
+        }
+
+        .sb-sub a::before {
+            content: '';
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--border);
+            flex-shrink: 0
+        }
+
+        .sb-sub a:hover::before,
+        .sb-sub a.cur::before {
+            background: var(--accent)
+        }
+
+        .sb-foot {
+            padding: 14px;
+            border-top: 1px solid var(--border);
+            flex-shrink: 0
+        }
+
+        .sb-theme {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 14px;
+            border-radius: 9px;
+            border: 1.5px solid var(--border);
+            background: var(--bg2);
+            color: var(--text);
+            font-size: .83rem;
+            font-weight: 500;
+            transition: all var(--tr);
+            width: 100%
+        }
+
+        .sb-theme:hover {
+            border-color: var(--accent);
+            color: var(--accent)
+        }
+
+        /* Navbar */
+        .nav {
+            position: sticky;
+            top: 0;
+            height: var(--nav-h);
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 14px;
+            transition: background var(--tr), box-shadow var(--tr)
+        }
+
+        .nav.scrolled {
+            box-shadow: var(--sh)
+        }
+
+        .nav-burger {
+            width: 38px;
+            height: 38px;
+            border-radius: 9px;
+            background: var(--bg2);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--tr)
+        }
+
+        .nav-burger:hover {
+            background: var(--accent);
+            color: #fff
+        }
+
+        .logo {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            font-size: 1.35rem;
+            letter-spacing: -.03em;
+            flex-shrink: 0
+        }
+
+        .logo b {
+            color: var(--accent)
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            flex: 1;
+            justify-content: center
+        }
+
+        .nl-a {
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: .85rem;
+            font-weight: 500;
+            color: var(--text2);
+            transition: color var(--tr), background var(--tr);
+            white-space: nowrap
+        }
+
+        .nl-a:hover,
+        .nl-a.active {
+            color: var(--text);
+            background: var(--bg2)
+        }
+
+        .nl-a.active {
+            color: var(--accent) !important;
+            background: var(--accent-bg) !important
+        }
+
+        .nav-r {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0
+        }
+
+        .nav-srch {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            color: var(--text2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--tr)
+        }
+
+        .nav-srch:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg)
+        }
+
+        .th-pill {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px 5px 6px;
+            border-radius: 100px;
+            border: 1.5px solid var(--border);
+            background: var(--bg2);
+            color: var(--text2);
+            font-size: .78rem;
+            font-weight: 500;
+            transition: all var(--tr)
+        }
+
+        .th-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent)
+        }
+
+        .th-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .7rem
+        }
+
+        /* Breadcrumb */
+        .bc {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: .8rem;
+            color: var(--text3);
+            flex-wrap: wrap
+        }
+
+        .bc a {
+            color: var(--text2);
+            transition: color var(--tr)
+        }
+
+        .bc a:hover {
+            color: var(--accent)
+        }
+
+        .bc-sep {
+            color: var(--border)
+        }
+
+        .bc span {
+            color: var(--accent);
+            font-weight: 500
+        }
+
+        /* Page hero */
+        .page-hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 24px 48px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap
+        }
+
+        .ph-left {
+            flex: 1;
+            min-width: 260px
+        }
+
+        .ph-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            background: var(--accent-bg);
+            border: 1px solid var(--accent-bd);
+            color: var(--accent);
+            font-size: .75rem;
+            font-weight: 600;
+            margin-bottom: 16px
+        }
+
+        .ph-h1 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            line-height: 1.1;
+            letter-spacing: -.035em;
+            margin-bottom: 12px
+        }
+
+        .ph-h1 span {
+            color: var(--accent)
+        }
+
+        .ph-desc {
+            font-size: .9rem;
+            color: var(--text2);
+            line-height: 1.75;
+            max-width: 520px;
+            margin-bottom: 20px
+        }
+
+        .ph-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap
+        }
+
+        .ph-stat {
+            background: var(--surface);
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 18px;
+            text-align: center
+        }
+
+        .ph-stat-n {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--accent)
+        }
+
+        .ph-stat-l {
+            font-size: .72rem;
+            color: var(--text2);
+            margin-top: 1px
+        }
+
+        .ph-right {
+            width: 200px;
+            height: 160px;
+            border-radius: var(--r-lg);
+            background: linear-gradient(135deg, var(--accent-bg), var(--vi-bg));
+            border: 1.5px solid var(--accent-bd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            flex-shrink: 0
+        }
+
+        /* Filter bar */
+        .filter-bar {
+            max-width: 1200px;
+            margin: 0 auto 28px;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .f-search {
+            flex: 1;
+            min-width: 200px;
+            position: relative
+        }
+
+        .f-search input {
+            width: 100%;
+            padding: 10px 16px 10px 38px;
+            border-radius: 10px;
+            border: 1.5px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-size: .86rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color var(--tr)
+        }
+
+        .f-search input:focus {
+            border-color: var(--accent)
+        }
+
+        .f-search svg {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text3)
+        }
+
+        .f-tabs {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap
+        }
+
+        .f-tab {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            background: var(--surface);
+            color: var(--text2);
+            font-size: .81rem;
+            font-weight: 500;
+            transition: all var(--tr)
+        }
+
+        .f-tab:hover,
+        .f-tab.on {
+            border-color: var(--accent-bd);
+            color: var(--accent);
+            background: var(--accent-bg)
+        }
+
+        /* Tools grid */
+        .tools-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 24px
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px
+        }
+
+        .tc {
+            background: var(--surface);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 24px;
+            display: flex;
+            gap: 16px;
+            transition: all var(--tr);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden
+        }
+
+        .tc:hover {
+            border-color: var(--accent-bd);
+            box-shadow: var(--sh-lg);
+            transform: translateY(-3px)
+        }
+
+        .tc-ico {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            background: var(--accent-bg)
+        }
+
+        .tc-body {
+            flex: 1;
+            min-width: 0
+        }
+
+        .tc-name {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 600;
+            font-size: .98rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px
+        }
+
+        .tc-desc {
+            font-size: .81rem;
+            color: var(--text2);
+            line-height: 1.55;
+            margin-bottom: 12px
+        }
+
+        .tc-tags {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap
+        }
+
+        .tc-tag {
+            font-size: .7rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 5px;
+            background: var(--bg2);
+            color: var(--text2)
+        }
+
+        .tc-arrow {
+            position: absolute;
+            top: 20px;
+            right: 18px;
+            color: var(--text3);
+            font-size: .9rem;
+            opacity: 0;
+            transform: translateX(-4px);
+            transition: all var(--tr)
+        }
+
+        .tc:hover .tc-arrow {
+            opacity: 1;
+            transform: translateX(0)
+        }
+
+        .badge {
+            font-size: .62rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: .04em
+        }
+
+        .badge.hot {
+            background: var(--ro-bg);
+            color: var(--rose)
+        }
+
+        .badge.new {
+            background: var(--em-bg);
+            color: var(--emerald)
+        }
+
+        .badge.pop {
+            background: var(--accent-bg);
+            color: var(--accent)
+        }
+
+        /* no results */
+        .no-res {
+            text-align: center;
+            padding: 48px 24px;
+            color: var(--text2)
+        }
+
+        .no-res-ico {
+            font-size: 3rem;
+            margin-bottom: 12px
+        }
+
+        .no-res p {
+            font-size: .9rem
+        }
+
+        /* Related categories */
+        .related {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 60px
+        }
+
+        .rel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 10px
+        }
+
+        .rel-card {
+            background: var(--surface);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r);
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all var(--tr);
+            font-size: .85rem;
+            font-weight: 500
+        }
+
+        .rel-card:hover {
+            border-color: var(--accent-bd);
+            background: var(--accent-bg);
+            color: var(--accent)
+        }
+
+        .rel-ico {
+            font-size: 1.1rem
+        }
+
+        /* SEO */
+        .seo-w {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 60px
+        }
+
+        .seo-box {
+            background: var(--surface);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 36px
+        }
+
+        .seo-box h2 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 12px
+        }
+
+        .seo-box p {
+            font-size: .85rem;
+            color: var(--text2);
+            line-height: 1.85;
+            margin-bottom: 10px
+        }
+
+        .seo-box h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 600;
+            font-size: .92rem;
+            margin: 16px 0 8px
+        }
+
+        /* FAQ */
+        .faq-w {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 60px
+        }
+
+        .faq-t {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 20px
+        }
+
+        .faq-t span {
+            color: var(--accent)
+        }
+
+        .faq-item {
+            background: var(--surface);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r);
+            margin-bottom: 8px;
+            overflow: hidden;
+            transition: border-color var(--tr)
+        }
+
+        .faq-item.open {
+            border-color: var(--accent-bd)
+        }
+
+        .faq-q {
+            padding: 16px 18px;
+            font-weight: 600;
+            font-size: .88rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        .faq-q:hover {
+            color: var(--accent)
+        }
+
+        .faq-icon {
+            font-size: .75rem;
+            transition: transform var(--tr);
+            color: var(--text3);
+            flex-shrink: 0
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+            color: var(--accent)
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .28s ease;
+            font-size: .83rem;
+            color: var(--text2);
+            line-height: 1.75
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 200px
+        }
+
+        .faq-a-inner {
+            padding: 0 18px 16px
+        }
+
+        /* Footer */
+        footer {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 44px 24px 22px
+        }
+
+        .ft-in {
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .ft-g {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 36px;
+            margin-bottom: 32px
+        }
+
+        .ft-brand-logo {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            display: block;
+            margin-bottom: 10px;
+            letter-spacing: -.02em
+        }
+
+        .ft-brand-logo b {
+            color: var(--accent)
+        }
+
+        .ft-desc {
+            font-size: .81rem;
+            color: var(--text2);
+            line-height: 1.7;
+            margin-bottom: 18px
+        }
+
+        .ft-soc {
+            display: flex;
+            gap: 7px
+        }
+
+        .ft-soc a {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+            border: 1.5px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .8rem;
+            color: var(--text2);
+            transition: all var(--tr)
+        }
+
+        .ft-soc a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-bg)
+        }
+
+        .ft-col h4 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: 600;
+            font-size: .82rem;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            margin-bottom: 14px
+        }
+
+        .ft-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .ft-links a {
+            font-size: .81rem;
+            color: var(--text2);
+            transition: color var(--tr)
+        }
+
+        .ft-links a:hover {
+            color: var(--accent)
+        }
+
+        .ft-bot {
+            border-top: 1px solid var(--border);
+            padding-top: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .ft-bot p {
+            font-size: .78rem;
+            color: var(--text3)
+        }
+
+        .ft-bot-l {
+            display: flex;
+            gap: 14px
+        }
+
+        .ft-bot-l a {
+            font-size: .78rem;
+            color: var(--text3);
+            transition: color var(--tr)
+        }
+
+        .ft-bot-l a:hover {
+            color: var(--accent)
+        }
+
+        .btt {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            width: 42px;
+            height: 42px;
+            border-radius: 11px;
+            background: var(--accent);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .95rem;
+            box-shadow: 0 4px 16px rgba(79, 70, 229, .4);
+            transition: all var(--tr);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(8px);
+            z-index: 99
+        }
+
+        .btt.on {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0)
+        }
+
+        .btt:hover {
+            transform: translateY(-3px)
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .fu {
+            animation: fadeUp .5s ease forwards
+        }
+
+        .fu1 {
+            animation-delay: .08s;
+            opacity: 0
+        }
+
+        .fu2 {
+            animation-delay: .16s;
+            opacity: 0
+        }
+
+        .fu3 {
+            animation-delay: .24s;
+            opacity: 0
+        }
+
+        @media(max-width:920px) {
+            .nav-links {
+                display: none
+            }
+
+            .ft-g {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .ph-right {
+                display: none
+            }
+        }
+
+        @media(max-width:640px) {
+            .ft-g {
+                grid-template-columns: 1fr;
+                gap: 22px
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr
+            }
+
+            .ph-stats {
+                gap: 10px
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="overlay" id="ov" onclick="sbClose()"></div>
 
+    <!-- Sidebar (same structure) -->
+    <aside class="sb" id="sb">
+        <div class="sb-head">
+            <div class="sb-logo">Utility<b>Mega</b></div><button class="sb-x" onclick="sbClose()">✕</button>
+        </div>
+        <div class="sb-srch">
+            <div class="sb-srch-w"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg><input id="sbQ" type="text" placeholder="Search tools…" autocomplete="off" /></div>
+        </div>
+        <nav class="sb-nav">
+            <div class="sb-lbl">Main</div>
+            <a class="sb-link" href="../index.html"><span class="sb-ico"
+                    style="background:var(--accent-bg)">🏠</span><span class="sb-txt">Home</span></a>
+            <div class="sb-lbl">Categories</div>
+            <div class="sb-item exp" id="si-calc">
+                <div class="sb-link cur" onclick="sbToggle('si-calc')"><span class="sb-ico"
+                        style="background:var(--accent-bg)">🧮</span><span class="sb-txt">Calculators</span><span
+                        class="sb-arr">▶</span></div>
+                <div class="sb-sub">
+                    <a href="emi-calculator.html">EMI Calculator</a>
+                    <a href="sip-calculator.html">SIP Calculator</a>
+                    <a href="bmi-calculator.html">BMI Calculator</a>
+                    <a href="bmr-calculator.html">BMR Calculator</a>
+                    <a href="age-calculator.html">Age Calculator</a>
+                    <a href="retirement-calculator.html">Retirement Calc</a>
+                    <a href="percentage-calculator.html">Percentage Calc</a>
+                    <a href="unit-converter.html">Unit Converter</a>
+                </div>
+            </div>
+            <div class="sb-item" id="si-img">
+                <div class="sb-link" onclick="sbToggle('si-img')"><span class="sb-ico"
+                        style="background:var(--ro-bg)">🖼️</span><span class="sb-txt">Image Tools</span><span
+                        class="sb-arr">▶</span></div>
+                <div class="sb-sub"><a href="../image-tools/image-compressor.html">Image Compressor</a><a
+                        href="../image-tools/cropper.html">Image Cropper</a><a
+                        href="../image-tools/meme-generator.html">Meme Generator</a></div>
+            </div>
+            <div class="sb-item" id="si-dev">
+                <div class="sb-link" onclick="sbToggle('si-dev')"><span class="sb-ico"
+                        style="background:#ccfbf1">💻</span><span class="sb-txt">Developer Tools</span><span
+                        class="sb-arr">▶</span></div>
+                <div class="sb-sub"><a href="../developer-tools/json-formatter.html">JSON Formatter</a><a
+                        href="../developer-tools/css-minifier.html">CSS Minifier</a><a
+                        href="../developer-tools/js-minifier.html">JS Minifier</a></div>
+            </div>
+            <div class="sb-item" id="si-sec">
+                <div class="sb-link" onclick="sbToggle('si-sec')"><span class="sb-ico"
+                        style="background:var(--am-bg)">🔒</span><span class="sb-txt">Security Tools</span><span
+                        class="sb-arr">▶</span></div>
+                <div class="sb-sub"><a href="../security-tools/password-generator.html">Password Generator</a><a
+                        href="../security-tools/hash-generator.html">Hash Generator</a></div>
+            </div>
+            <div class="sb-item" id="si-txt">
+                <div class="sb-link" onclick="sbToggle('si-txt')"><span class="sb-ico"
+                        style="background:var(--sk-bg)">📝</span><span class="sb-txt">Text Tools</span><span
+                        class="sb-arr">▶</span></div>
+                <div class="sb-sub"><a href="../text-tools/word-counter.html">Word Counter</a><a
+                        href="../text-tools/case-converter.html">Case Converter</a></div>
+            </div>
+        </nav>
+        <div class="sb-foot"><button class="sb-theme" onclick="thToggle()"><span id="sbThIco">🌙</span><span
+                    id="sbThTxt">Dark Mode</span></button></div>
+    </aside>
+
+    <!-- Navbar -->
     <header>
-        <h1>Online Calculators</h1>
-        <p>Free financial and daily-use calculators – fast, secure & easy to use.</p>
+        <nav class="nav" id="nav">
+            <button class="nav-burger" onclick="sbOpen()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.2">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg></button>
+            <a href="../index.html" class="logo">Utility<b>Mega</b></a>
+            <div class="nav-links">
+                <a href="index.html" class="nl-a active">Calculators</a>
+                <a href="../image-tools/index.html" class="nl-a">Image Tools</a>
+                <a href="../video-tools/index.html" class="nl-a">Video Tools</a>
+                <a href="../developer-tools/index.html" class="nl-a">Dev Tools</a>
+                <a href="../security-tools/index.html" class="nl-a">Security</a>
+                <a href="../text-tools/index.html" class="nl-a">Text Tools</a>
+                <a href="../farmers-tools/index.html" class="nl-a">Farmers</a>
+            </div>
+            <div class="nav-r">
+                <button class="th-pill" onclick="thToggle()"><span class="th-dot" id="thDot">☀️</span><span
+                        id="thTxt">Light</span></button>
+            </div>
+        </nav>
     </header>
 
-    <nav>
-        <a href="../index.html">Home</a> |
-        <a href="../calculators/index.html">Calculators</a> |
-        <a href="../image-tools/index.html">Image Tools</a> |
-        <a href="../developer-tools/index.html">Developer Tools</a> |
-        <a href="../security-tools/index.html">Security Tools</a> |
-        <a href="../text-tools/index.html">Text Tools</a>
+    <!-- Breadcrumb -->
+    <nav class="bc" aria-label="Breadcrumb">
+        <a href="../index.html">🏠 Home</a>
+        <span class="bc-sep">›</span>
+        <span>Calculators</span>
     </nav>
 
-    <hr>
-
-    <section class="tools-grid">
-
-        <div class="tool-card">
-            <h2><a href="sip-calculator.html">SIP Calculator</a></h2>
-            <p>Calculate your monthly investment returns and expected profit over time.</p>
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <div class="ph-left">
+            <div class="ph-tag fu fu1">🧮 Calculator Hub</div>
+            <h1 class="ph-h1 fu fu1">Free Online<br><span>Calculators</span></h1>
+            <p class="ph-desc fu fu2">Accurate, fast and free calculators for finance, health, math and everyday needs.
+                No signup, no ads, just results — instantly on any device.</p>
+            <div class="ph-stats fu fu3">
+                <div class="ph-stat">
+                    <div class="ph-stat-n">15+</div>
+                    <div class="ph-stat-l">Calculators</div>
+                </div>
+                <div class="ph-stat">
+                    <div class="ph-stat-n">100%</div>
+                    <div class="ph-stat-l">Free</div>
+                </div>
+                <div class="ph-stat">
+                    <div class="ph-stat-n">0</div>
+                    <div class="ph-stat-l">Signup</div>
+                </div>
+            </div>
         </div>
+        <div class="ph-right">🧮</div>
+    </div>
 
-        <div class="tool-card">
-            <h2><a href="emi.html">EMI Calculator</a></h2>
-            <p>Calculate your monthly investment returns and expected profit over time.</p>
+    <!-- Filter bar -->
+    <div class="filter-bar">
+        <div class="f-search">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+            </svg>
+            <input id="filterQ" type="text" placeholder="Filter calculators…" autocomplete="off" />
         </div>
-
-        <div class="tool-card">
-            <h2><a href="gst-calculator.html">GST Calculator</a></h2>
-            <p>Quickly calculate GST amount and total price for any product or service.</p>
+        <div class="f-tabs">
+            <button class="f-tab on" data-filter="all">All</button>
+            <button class="f-tab" data-filter="finance">Finance</button>
+            <button class="f-tab" data-filter="health">Health</button>
+            <button class="f-tab" data-filter="math">Math</button>
         </div>
+    </div>
 
+    <!-- Tools Grid -->
+    <div class="tools-section">
+        <div class="tools-grid" id="toolsGrid">
 
-        <div class="tool-card">
-            <h2><a href="age.html">Age Calculator</a></h2>
-            <p>Find your exact age in years, months and days.</p>
+            <a href="emi-calculator.html" class="tc" data-cat="finance" data-name="emi calculator loan repayment">
+                <div class="tc-ico">💰</div>
+                <div class="tc-body">
+                    <div class="tc-name">EMI Calculator <span class="badge hot">HOT</span></div>
+                    <div class="tc-desc">Calculate your monthly loan EMI for home, car or personal loans. See full
+                        amortization schedule.</div>
+                    <div class="tc-tags"><span class="tc-tag">Loan</span><span class="tc-tag">Finance</span><span
+                            class="tc-tag">Monthly</span></div>
+                </div>
+                <span class="tc-arrow">→</span>
+            </a>
+
+            <a href="sip-calculator.html" class="tc" data-cat="finance"
+                data-name="sip calculator mutual fund investment">
+                <div class="tc-ico" style="background:var(--em-bg)">📈</div>
+                <div class="tc-body">
+                    <div class="tc-name">SIP Calculator <span class="badge new">NEW</span></div>
+                    <div class="tc-desc">Calculate returns on your Systematic Investment Plan. See wealth growth over
+                        time with charts.</div>
+                    <div class="tc-tags"><span class="tc-tag">Investment</span><span class="tc-tag">SIP</span><span
+                            class="tc-tag">Returns</span></div>
+                </div>
+                <span class="tc-arrow">→</span>
+            </a>
+
+            <a href="bmi-calculator.html" class="tc" data-cat="health" data-name="bmi body mass index weight height">
+                <div class="tc-ico" style="background:var(--sk-bg)">⚖️</div>
+                <div class="tc-body">
+                    <div class="tc-name">BMI Calculator <span class="badge pop">POPULAR</span></div>
+                    <div class="tc-desc">Check your Body Mass Index to understand your weight status. Supports metric
+                        and imperial units.</div>
+                    <div class="tc-tags"><span class="tc-tag">Health</span><span class="tc-tag">Weight</span><span
+                            class="tc-tag">BMI</span></div>
+                </div>
+                <span class="tc-arrow">→</span>
+            </a>
+
+            <a href="bmr-calculator.html" class="tc" data-cat="health"
+                data-name="bmr basal metabolic rate calories burn">
+                <div class="tc-ico" style="background:var(--ro-bg)">🔥</div>
+                <div class="tc-body">
+                    <div class="tc-name">BMR Calculator</div>
+                    <div class="tc-desc">Calculate your Basal Metabolic Rate to understand daily calorie requirements
+                        for your body.</div>
+                    <div class="tc-tags"><span class="tc-tag">Health</span><span class="tc-tag">Calories</span><span
+                            class="tc-tag">BMR</span></div>
+                </div>
+                <span class="tc-arrow">→</span>
+            </a>
+
+            <a href="age-calculator.html" class="tc" data-cat="math" data-name="age calculator birthday date birth">
+                <div class="tc-ico" style="background:var(--vi-bg)">🎂</div>
+                <div class="tc-body">
+                    <div class="tc-name">Age Calculator</div>
+                    <div class="tc-desc">Find your exact age in years, months and days. Calculate age between any two
+                        dates.</div>
+                    <div class="tc-tags"><span class="tc-tag">Age</span><span class="tc-tag">Birthday</span><span
+                            class="tc-tag">Date</span></div>
+                </div>
+                <span class="tc-arrow">→</span>
+            </a>
+
+            <a href="retirement-calculator.html" class="tc" data-cat="finance"
+                data-name="retirement calculator savings future pension">
+                <div class="tc-ico" style="background:var(--am-bg)">🏖️</div>
+                <div class="tc-body">
+                    <div class="tc-name">Retirement Calculator</div>
+                    <div class="tc-desc">Plan your retirement savings. Calculate how much you need to save monthly to
+                        reach your goal.</div>
+                    <div class="tc-tags"><span class="tc-tag">Retirement</span><span class="tc-tag">Savings</span><span
+                            class="tc-tag">Planning</span></div>
+                </div>
+                <span class="tc-arrow">→</span>
+            </a>
+
+            <a href="percentage-calculator.html" class="tc" data-cat="math"
+                data-name="percentage calculator percent discount">
+                <div class="tc-ico">💯</div>
+                <div class="tc-body">
+                    <div class="tc-name">Percentage Calculator</div>
+                    <div class="tc-desc">Calculate percentages, percentage change, increase/decrease and discount values
+                        instantly.</div>
+                    <div class="tc-tags"><span class="tc-tag">Math</span><span class="tc-tag">Percentage</span><span
+                            class="tc-tag">Discount</span></div>
+                </div>
+                <span class="tc-arrow">→</span>
+            </a>
+
+            <a href="unit-converter.html" class="tc" data-cat="math"
+                data-name="unit converter length weight temperature volume">
+                <div class="tc-ico" style="background:#ccfbf1">🔄</div>
+                <div class="tc-body">
+                    <div class="tc-name">Unit Converter</div>
+                    <div class="tc-desc">Convert between all units — length, weight, temperature, area, speed, volume
+                        and many more.</div>
+                    <div class="tc-tags"><span class="tc-tag">Units</span><span class="tc-tag">Convert</span><span
+                            class="tc-tag">Metric</span></div>
+                </div>
+                <span class="tc-arrow">→</span>
+            </a>
+
         </div>
-
-        <div class="tool-card">
-            <h2><a href="percentage.html">Percentage Calculator</a></h2>
-            <p>Calculate percentage increase, decrease and percentage values quickly.</p>
+        <div class="no-res" id="noRes" style="display:none">
+            <div class="no-res-ico">🔍</div>
+            <p>No calculators found. Try a different search.</p>
         </div>
+    </div>
 
-        <div class="tool-card">
-            <h2><a href="bmi.html">BMI Calculator</a></h2>
-            <p>Check your Body Mass Index and health category instantly.</p>
+    <!-- Related Categories -->
+    <div class="related">
+        <h2 style="font-family:'Clash Display',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:16px">Related
+            <span style="color:var(--accent)">Categories</span></h2>
+        <div class="rel-grid">
+            <a href="../text-tools/index.html" class="rel-card"><span class="rel-ico">📝</span>Text Tools</a>
+            <a href="../image-tools/index.html" class="rel-card"><span class="rel-ico">🖼️</span>Image Tools</a>
+            <a href="../developer-tools/index.html" class="rel-card"><span class="rel-ico">💻</span>Developer Tools</a>
+            <a href="../security-tools/index.html" class="rel-card"><span class="rel-ico">🔒</span>Security Tools</a>
+            <a href="../farmers-tools/index.html" class="rel-card"><span class="rel-ico">🌾</span>Farmers Tools</a>
+            <a href="../video-tools/index.html" class="rel-card"><span class="rel-ico">🎬</span>Video Tools</a>
         </div>
+    </div>
 
-    </section>
+    <!-- SEO -->
+    <div class="seo-w">
+        <div class="seo-box">
+            <h2>Free Online Calculators — All in One Place</h2>
+            <p>UtilityMega's calculator collection covers everything from financial planning to health monitoring.
+                Whether you need to calculate your EMI before taking a loan, figure out your SIP returns for wealth
+                building, or check your BMI for health awareness — our tools give you instant, accurate answers.</p>
+            <h3>Financial Calculators</h3>
+            <p>Our financial calculators include EMI Calculator for loan planning, SIP Calculator for investment
+                returns, Retirement Calculator for future savings, and Percentage Calculator for quick math. All tools
+                use standard financial formulas trusted by banks and financial institutions.</p>
+            <h3>Health Calculators</h3>
+            <p>Stay on top of your health with our BMI Calculator and BMR Calculator. Get detailed health insights and
+                understand your ideal weight range, daily caloric needs, and more — all in seconds.</p>
+        </div>
+    </div>
 
-    <hr>
+    <!-- FAQ -->
+    <div class="faq-w">
+        <h2 class="faq-t">Frequently Asked <span>Questions</span></h2>
+        <div class="faq-item" onclick="faqToggle(this)">
+            <div class="faq-q">Are all calculators on UtilityMega free? <span class="faq-icon">▼</span></div>
+            <div class="faq-a">
+                <div class="faq-a-inner">Yes! Every calculator on UtilityMega is completely free. No signup, no
+                    subscription, no hidden charges. All tools are available to use unlimited times.</div>
+            </div>
+        </div>
+        <div class="faq-item" onclick="faqToggle(this)">
+            <div class="faq-q">How accurate are these calculators? <span class="faq-icon">▼</span></div>
+            <div class="faq-a">
+                <div class="faq-a-inner">Our calculators use standard mathematical and financial formulas. The EMI
+                    calculator uses the standard reducing balance method, SIP uses compound interest formula, and health
+                    calculators use WHO-approved formulas.</div>
+            </div>
+        </div>
+        <div class="faq-item" onclick="faqToggle(this)">
+            <div class="faq-q">Do I need to download anything? <span class="faq-icon">▼</span></div>
+            <div class="faq-a">
+                <div class="faq-a-inner">No downloads required. All calculators run directly in your browser. They work
+                    on mobile, tablet, and desktop without any app installation.</div>
+            </div>
+        </div>
+        <div class="faq-item" onclick="faqToggle(this)">
+            <div class="faq-q">Is my data stored or shared? <span class="faq-icon">▼</span></div>
+            <div class="faq-a">
+                <div class="faq-a-inner">No. All calculations happen locally in your browser. We do not store, transmit
+                    or share any data you enter into our calculators.</div>
+            </div>
+        </div>
+    </div>
 
-    <section>
-        <h2>About Our Online Calculators</h2>
-        <p>
-            UtilityMega provides free online calculators designed to help with everyday
-            financial, health, and mathematical calculations. Our tools work instantly
-            in your browser without requiring downloads or sign-ups.
-        </p>
-
-        <p>
-            Whether you need to calculate loan EMI, find your age, check BMI, or calculate
-            percentages, UtilityMega tools are fast, secure and mobile-friendly.
-        </p>
-    </section>
-
+    <!-- Footer -->
     <footer>
-        <p>© 2026 UtilityMega.com | All Rights Reserved</p>
+        <div class="ft-in">
+            <div class="ft-g">
+                <div><span class="ft-brand-logo">Utility<b>Mega</b></span>
+                    <p class="ft-desc">100+ free tools. No signup. Fast & accurate.</p>
+                    <div class="ft-soc"><a href="#">𝕏</a><a href="#">f</a><a href="#">ig</a></div>
+                </div>
+                <div>
+                    <h4>Calculators</h4>
+                    <ul class="ft-links">
+                        <li><a href="emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="sip-calculator.html">SIP Calculator</a></li>
+                        <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                        <li><a href="age-calculator.html">Age Calculator</a></li>
+                        <li><a href="retirement-calculator.html">Retirement</a></li>
+                        <li><a href="unit-converter.html">Unit Converter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Other Tools</h4>
+                    <ul class="ft-links">
+                        <li><a href="../image-tools/index.html">Image Tools</a></li>
+                        <li><a href="../developer-tools/index.html">Dev Tools</a></li>
+                        <li><a href="../security-tools/index.html">Security</a></li>
+                        <li><a href="../text-tools/index.html">Text Tools</a></li>
+                        <li><a href="../farmers-tools/index.html">Farmers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul class="ft-links">
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../privacy-policy.html">Privacy</a></li>
+                        <li><a href="../terms.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ft-bot">
+                <p>© 2025 UtilityMega. All rights reserved.</p>
+                <div class="ft-bot-l"><a href="../privacy-policy.html">Privacy</a><a href="../terms.html">Terms</a><a
+                        href="../sitemap.xml">Sitemap</a></div>
+            </div>
+        </div>
     </footer>
+    <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+    <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Are all calculators on UtilityMega free?","acceptedAnswer":{"@type":"Answer","text":"Yes! Every calculator is completely free. No signup, no subscription."}},
+    {"@type":"Question","name":"How accurate are these calculators?","acceptedAnswer":{"@type":"Answer","text":"Our calculators use standard mathematical and financial formulas trusted by professionals."}},
+    {"@type":"Question","name":"Do I need to download anything?","acceptedAnswer":{"@type":"Answer","text":"No downloads required. All calculators run in your browser on any device."}},
+    {"@type":"Question","name":"Is my data stored or shared?","acceptedAnswer":{"@type":"Answer","text":"No. All calculations happen locally in your browser. We do not store any data."}}
+  ]
+}
+</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://utilitymega.com"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://utilitymega.com/calculators/"}]}</script>
 
     <script>
-        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+        // Sidebar
+        function sbOpen() { document.getElementById('sb').classList.add('on'); document.getElementById('ov').classList.add('on'); document.body.style.overflow = 'hidden' }
+        function sbClose() { document.getElementById('sb').classList.remove('on'); document.getElementById('ov').classList.remove('on'); document.body.style.overflow = '' }
+        function sbToggle(id) { const el = document.getElementById(id), exp = el.classList.contains('exp'); document.querySelectorAll('.sb-item.exp').forEach(e => e.classList.remove('exp')); if (!exp) el.classList.add('exp') }
 
+        // Theme
+        const html = document.documentElement;
+        function thToggle() { const d = html.getAttribute('data-theme') === 'dark'; html.setAttribute('data-theme', d ? 'light' : 'dark'); localStorage.setItem('um-theme', d ? 'light' : 'dark'); updTh(!d) }
+        function updTh(dark) { const d = document.getElementById('thDot'), t = document.getElementById('thTxt'), si = document.getElementById('sbThIco'), st = document.getElementById('sbThTxt'); if (d) d.textContent = dark ? '🌙' : '☀️'; if (t) t.textContent = dark ? 'Dark' : 'Light'; if (si) si.textContent = dark ? '☀️' : '🌙'; if (st) st.textContent = dark ? 'Light Mode' : 'Dark Mode' }
+        const saved = localStorage.getItem('um-theme') || 'light'; html.setAttribute('data-theme', saved); updTh(saved === 'dark');
+
+        // Filter
+        let activeFilter = 'all';
+        function filterTools() {
+            const q = document.getElementById('filterQ').value.toLowerCase();
+            const cards = document.querySelectorAll('.tc');
+            let vis = 0;
+            cards.forEach(c => {
+                const name = c.dataset.name || '';
+                const cat = c.dataset.cat || '';
+                const matchQ = !q || name.includes(q) || c.textContent.toLowerCase().includes(q);
+                const matchF = activeFilter === 'all' || cat === activeFilter;
+                const show = matchQ && matchF;
+                c.style.display = show ? '' : 'none';
+                if (show) vis++;
+            });
+            document.getElementById('noRes').style.display = vis ? 'none' : 'block';
+        }
+        document.getElementById('filterQ').addEventListener('input', filterTools);
+        document.querySelectorAll('.f-tab').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.f-tab').forEach(b => b.classList.remove('on'));
+                this.classList.add('on');
+                activeFilter = this.dataset.filter;
+                filterTools();
+            });
+        });
+
+        // FAQ
+        function faqToggle(el) { el.classList.toggle('open') }
+
+        // Scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+            document.getElementById('btt').classList.toggle('on', window.scrollY > 400);
+        });
+
+        // Animate
+        const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; obs.unobserve(e.target) } }) }, { threshold: .08 });
+        document.querySelectorAll('.tc,.rel-card,.how-card').forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(16px)'; el.style.transition = 'opacity .4s ease, transform .4s ease, border-color .22s, box-shadow .22s'; obs.observe(el) });
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') sbClose() });
+    </script>
 </body>
 
 </html>

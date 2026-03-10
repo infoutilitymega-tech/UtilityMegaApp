@@ -1,669 +1,2396 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Free Online Calculators & Developer Tools – EMI, Age, JSON Formatter | UtilityMega</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UtilityMega – Free Online Tools for Everyday Tasks</title>
   <meta name="description"
-    content="UtilityMega offers free online calculators and developer tools including EMI Calculator, Age Calculator, Percentage Calculator, JSON Formatter, Password Generator, Fancy Text Generator and more. Fast, secure and easy to use tools.">
-
-  <meta name="author" content="UtilityMega">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://utilitymega.com/">
-
-  <meta property="og:title" content="Free Online Calculators & Tools | UtilityMega">
-  <meta property="og:description"
-    content="All free online calculators and tools in one place. Fast, secure and easy to use.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://utilitymega.com/">
-  <meta property="og:image" content="https://utilitymega.com/favicon.ico">
-  
-  <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="icon" type="image/png" href="/assets/icon.png">
-<link rel="apple-touch-icon" href="/assets/icon.png">
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJ7NVQ7CMJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-HJ7NVQ7CMJ');
-  </script>
+    content="UtilityMega offers 100+ free online tools including calculators, image tools, developer tools, text tools, security tools and more." />
+  <link rel="canonical" href="https://utilitymega.com/" />
+  <meta property="og:title" content="UtilityMega – Free Online Tools" />
+  <meta property="og:description" content="100+ free online tools. No signup needed." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
+    :root {
+      --bg: #fafaf7;
+      --bg2: #f2f1ec;
+      --surface: #ffffff;
+      --surface2: #f7f6f1;
+      --border: #e4e2d8;
+      --text: #18170f;
+      --text2: #6b6a61;
+      --text3: #9b9a92;
+      --accent: #4f46e5;
+      --accent-h: #4338ca;
+      --accent-s: #818cf8;
+      --accent-bg: #eef2ff;
+      --accent-bd: #c7d2fe;
+      --emerald: #059669;
+      --em-bg: #d1fae5;
+      --amber: #d97706;
+      --am-bg: #fef3c7;
+      --rose: #e11d48;
+      --ro-bg: #ffe4e6;
+      --sky: #0284c7;
+      --sk-bg: #e0f2fe;
+      --violet: #7c3aed;
+      --vi-bg: #ede9fe;
+      --nav-h: 64px;
+      --sw: 288px;
+      --r: 14px;
+      --r-lg: 20px;
+      --sh: 0 1px 3px rgba(0, 0, 0, .06), 0 4px 16px rgba(0, 0, 0, .07);
+      --sh-lg: 0 8px 32px rgba(0, 0, 0, .10), 0 2px 8px rgba(0, 0, 0, .06);
+      --sh-xl: 0 24px 64px rgba(0, 0, 0, .13);
+      --tr: .22s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0d0d0a;
+      --bg2: #161610;
+      --surface: #1c1c16;
+      --surface2: #222219;
+      --border: #2e2e24;
+      --text: #f0efe8;
+      --text2: #a0a098;
+      --text3: #68675f;
+      --accent: #6366f1;
+      --accent-h: #818cf8;
+      --accent-s: #a5b4fc;
+      --accent-bg: #1e1b4b;
+      --accent-bd: #3730a3;
+      --emerald: #34d399;
+      --em-bg: #064e3b;
+      --amber: #fbbf24;
+      --am-bg: #451a03;
+      --rose: #fb7185;
+      --ro-bg: #4c0519;
+      --sky: #38bdf8;
+      --sk-bg: #0c4a6e;
+      --violet: #a78bfa;
+      --vi-bg: #2e1065;
+      --sh: 0 1px 3px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .4);
+      --sh-lg: 0 8px 32px rgba(0, 0, 0, .5);
+      --sh-xl: 0 24px 64px rgba(0, 0, 0, .6);
+    }
+
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
-      font-family: Arial;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
     }
 
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #f4f6f9;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background var(--tr), color var(--tr)
     }
 
-    body {
-      background: #f4f6fb;
+    a {
+      color: inherit;
+      text-decoration: none
     }
 
-    /* NAVBAR */
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
-      background: linear-gradient(135deg, #0f1b42, #1a2980);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      padding: 0 25px;
-      color: white;
-      z-index: 1000;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .menu-btn {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 22px;
+    button {
       cursor: pointer;
+      font-family: inherit;
+      border: none;
+      background: none
     }
 
-    .logo {
-      height: 40px;
+    ::-webkit-scrollbar {
+      width: 5px
     }
 
-    .logo-text {
-      font-size: 20px;
+    ::-webkit-scrollbar-track {
+      background: var(--bg2)
     }
 
-    /* SIDEBAR */
-
-    .sidebar {
-
-      position: fixed;
-      top: 0;
-      right: -260px;
-
-      width: 260px;
-      height: 100%;
-
-      background: white;
-
-      box-shadow: -3px 0 12px rgba(0, 0, 0, 0.2);
-
-      transition: 0.3s;
-
-      z-index: 999;
-
-      padding-top: 70px;
-
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px
     }
 
-    /* OPEN STATE */
-
-    .sidebar.active {
-      right: 0;
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent)
     }
 
-    /* MENU */
-
-    .sidebar ul {
-      list-style: none;
-    }
-
-    .sidebar li a {
-
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      padding: 15px 20px;
-
-      text-decoration: none;
-      color: #444;
-
-      font-size: 15px;
-
-      transition: 0.2s;
-
-    }
-
-    .sidebar li a:hover {
-      background: #f2f5ff;
-      color: #1a2980;
-    }
-
-    /* OVERLAY */
-
+    /* ─── OVERLAY ─── */
     .overlay {
-
       position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .55);
+      z-index: 199;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--tr);
+      backdrop-filter: blur(3px)
+    }
 
+    .overlay.on {
+      opacity: 1;
+      pointer-events: all
+    }
+
+    /* ─── SIDEBAR ─── */
+    .sb {
+      position: fixed;
       top: 0;
       left: 0;
-
-      width: 100%;
-      height: 100%;
-
-      background: rgba(0, 0, 0, 0.4);
-
-      display: none;
-
-      /* z-index:1000; */
-
+      width: var(--sw);
+      height: 100vh;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(-100%);
+      transition: transform .32s cubic-bezier(.4, 0, .2, 1)
     }
 
-    .overlay.active {
-      display: block;
+    .sb.on {
+      transform: translateX(0)
     }
 
-    /* MAIN CONTENT */
-    /* 
-.main-content{
+    .sb-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 18px 14px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0
+    }
 
-margin-top:70px;
+    .sb-logo {
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -.02em
+    }
 
-padding:30px;
+    .sb-logo b {
+      color: var(--accent)
+    }
 
-} */
-
-    .logo-wrap {
+    .sb-x {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--bg2);
+      color: var(--text);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      font-size: 1rem;
+      transition: all var(--tr)
     }
 
-    .logo-text {
-      margin: 0;
-      font-size: 20px;
-      color: white;
+    .sb-x:hover {
+      background: var(--accent);
+      color: #fff
     }
 
-    .nav-logo {
-      height: 45px;
-      width: 45px;
-      object-fit: contain;
-      background: white;
-      padding: 6px;
+    .sb-srch {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0
+    }
+
+    .sb-srch-w {
+      position: relative
+    }
+
+    .sb-srch-w svg {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text3);
+      pointer-events: none
+    }
+
+    .sb-srch input {
+      width: 100%;
+      padding: 8px 12px 8px 34px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: var(--bg2);
+      color: var(--text);
+      font-size: .83rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color var(--tr)
+    }
+
+    .sb-srch input:focus {
+      border-color: var(--accent)
+    }
+
+    .sb-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px 10px 16px
+    }
+
+    .sb-nav::-webkit-scrollbar {
+      width: 2px
+    }
+
+    .sb-lbl {
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text3);
+      padding: 10px 8px 5px
+    }
+
+    .sb-link {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 10px;
+      border-radius: 9px;
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: background var(--tr), color var(--tr);
+      cursor: pointer;
+      user-select: none
+    }
+
+    .sb-link:hover {
+      background: var(--bg2)
+    }
+
+    .sb-link.cur {
+      background: var(--accent-bg);
+      color: var(--accent)
+    }
+
+    .sb-ico {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+      flex-shrink: 0
+    }
+
+    .sb-txt {
+      flex: 1
+    }
+
+    .sb-arr {
+      transition: transform var(--tr);
+      color: var(--text3);
+      font-size: .65rem
+    }
+
+    .sb-item.exp .sb-arr {
+      transform: rotate(90deg)
+    }
+
+    .sb-sub {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .28s ease;
+      padding-left: 10px
+    }
+
+    .sb-item.exp .sb-sub {
+      max-height: 500px
+    }
+
+    .sb-sub a {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 10px;
+      border-radius: 7px;
+      font-size: .81rem;
+      color: var(--text2);
+      transition: color var(--tr), background var(--tr)
+    }
+
+    .sb-sub a:hover {
+      color: var(--accent);
+      background: var(--accent-bg)
+    }
+
+    .sb-sub a::before {
+      content: '';
+      width: 3px;
+      height: 3px;
       border-radius: 50%;
-      border: 2px solid #d4a017;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      background: var(--border);
+      flex-shrink: 0
     }
 
-    /* MOBILE */
+    .sb-sub a:hover::before {
+      background: var(--accent)
+    }
 
-    @media(max-width:768px) {
+    .sb-foot {
+      padding: 14px;
+      border-top: 1px solid var(--border);
+      flex-shrink: 0
+    }
 
-      .sidebar {
-        width: 240px;
+    .sb-theme {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 9px;
+      border: 1.5px solid var(--border);
+      background: var(--bg2);
+      color: var(--text);
+      font-size: .83rem;
+      font-weight: 500;
+      transition: all var(--tr);
+      width: 100%
+    }
+
+    .sb-theme:hover {
+      border-color: var(--accent);
+      color: var(--accent)
+    }
+
+    /* ─── NAVBAR ─── */
+    .nav {
+      position: sticky;
+      top: 0;
+      height: var(--nav-h);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 14px;
+      transition: background var(--tr), box-shadow var(--tr)
+    }
+
+    .nav.scrolled {
+      box-shadow: var(--sh)
+    }
+
+    .nav-burger {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background: var(--bg2);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--tr)
+    }
+
+    .nav-burger:hover {
+      background: var(--accent);
+      color: #fff
+    }
+
+    .logo {
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: -.03em;
+      flex-shrink: 0
+    }
+
+    .logo b {
+      color: var(--accent)
+    }
+
+    .logo sup {
+      font-size: .4em;
+      color: var(--text3);
+      vertical-align: super;
+      margin-left: 1px
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      flex: 1;
+      justify-content: center
+    }
+
+    .nl {
+      position: relative
+    }
+
+    .nl-a {
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--text2);
+      transition: color var(--tr), background var(--tr);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px
+    }
+
+    .nl-a:hover,
+    .nl-a.active {
+      color: var(--text);
+      background: var(--bg2)
+    }
+
+    .nl-a svg {
+      transition: transform var(--tr)
+    }
+
+    .nl:hover .nl-a svg {
+      transform: rotate(180deg)
+    }
+
+    /* Dropdown */
+    .nd {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: var(--sh-xl);
+      min-width: 480px;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s, transform .18s;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px
+    }
+
+    .nl:hover .nd {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(-50%) translateY(0)
+    }
+
+    .nd-it {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 11px;
+      border-radius: 10px;
+      transition: background var(--tr)
+    }
+
+    .nd-it:hover {
+      background: var(--bg2)
+    }
+
+    .nd-ico {
+      font-size: 1.2rem;
+      margin-bottom: 3px
+    }
+
+    .nd-t {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text)
+    }
+
+    .nd-d {
+      font-size: .73rem;
+      color: var(--text2)
+    }
+
+    .nav-r {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0
+    }
+
+    .nav-srch {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--text2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--tr)
+    }
+
+    .nav-srch:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-bg)
+    }
+
+    /* theme pill */
+    .th-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px 5px 6px;
+      border-radius: 100px;
+      border: 1.5px solid var(--border);
+      background: var(--bg2);
+      color: var(--text2);
+      font-size: .78rem;
+      font-weight: 500;
+      transition: all var(--tr)
+    }
+
+    .th-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent)
+    }
+
+    .th-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .7rem
+    }
+
+    /* ─── SEARCH OVERLAY ─── */
+    .srch-ov {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .6);
+      z-index: 300;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 90px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+      backdrop-filter: blur(5px)
+    }
+
+    .srch-ov.on {
+      opacity: 1;
+      pointer-events: all
+    }
+
+    .srch-box {
+      background: var(--surface);
+      border-radius: 18px;
+      box-shadow: var(--sh-xl);
+      width: 100%;
+      max-width: 580px;
+      margin: 0 20px;
+      overflow: hidden;
+      border: 1px solid var(--border)
+    }
+
+    .srch-in {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .srch-in svg {
+      color: var(--text3);
+      flex-shrink: 0
+    }
+
+    .srch-in input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 1rem;
+      color: var(--text);
+      font-family: inherit
+    }
+
+    .srch-in input::placeholder {
+      color: var(--text3)
+    }
+
+    .srch-esc {
+      padding: 4px 8px;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      color: var(--text3);
+      font-size: .72rem
+    }
+
+    .srch-res {
+      padding: 10px;
+      max-height: 340px;
+      overflow-y: auto
+    }
+
+    .sr-item {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 9px 11px;
+      border-radius: 9px;
+      transition: background var(--tr)
+    }
+
+    .sr-item:hover {
+      background: var(--bg2)
+    }
+
+    .sr-ico {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+      flex-shrink: 0;
+      background: var(--bg2)
+    }
+
+    .sr-name {
+      font-size: .85rem;
+      font-weight: 500
+    }
+
+    .sr-cat {
+      font-size: .72rem;
+      color: var(--text2)
+    }
+
+    .srch-hint {
+      padding: 10px 18px;
+      font-size: .74rem;
+      color: var(--text3);
+      display: flex;
+      gap: 14px;
+      border-top: 1px solid var(--border)
+    }
+
+    .srch-hint kbd {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: .7rem
+    }
+
+    /* ─── ANNOUNCE BAR ─── */
+    .ann {
+      background: linear-gradient(90deg, var(--accent) 0%, var(--violet) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 9px 48px;
+      font-size: .8rem;
+      font-weight: 500;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px
+    }
+
+    .ann a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 2px
+    }
+
+    .ann-x {
+      position: absolute;
+      right: 14px;
+      color: #fff;
+      font-size: .95rem;
+      opacity: .8;
+      transition: opacity var(--tr)
+    }
+
+    .ann-x:hover {
+      opacity: 1
+    }
+
+    /* ─── TICKER ─── */
+    .tick {
+      overflow: hidden;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0
+    }
+
+    .tick-t {
+      display: flex;
+      gap: 40px;
+      animation: tick 28s linear infinite;
+      width: max-content
+    }
+
+    .tick-t:hover {
+      animation-play-state: paused
+    }
+
+    @keyframes tick {
+      from {
+        transform: translateX(0)
       }
 
+      to {
+        transform: translateX(-50%)
+      }
     }
 
-    /* ===== header ===== */
-    .page-header {
-      margin-top: 90px;
-      /* below fixed navbar */
-      padding: 20px 0;
-      background: #eaeaea;
+    .ti {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .79rem;
+      color: var(--text2);
+      white-space: nowrap
+    }
+
+    .ti strong {
+      color: var(--text)
+    }
+
+    .ti-dot {
+      color: var(--accent);
+      font-size: .6rem
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 24px 56px;
       text-align: center;
-
+      position: relative
     }
 
-    .page-header h1 {
-      font-size: 28px;
-      color: #243b55;
-      margin-bottom: 5px;
+    /* geometric deco */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(ellipse at center, rgba(79, 70, 229, .07) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0
     }
 
-    .page-header p {
-      font-size: 16px;
-      color: #556677;
-      margin-bottom: 15px;
+    .hero>* {
+      position: relative;
+      z-index: 1
     }
 
-    .search-box {
+    .hero-tag {
       display: inline-flex;
       align-items: center;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      overflow: hidden;
-      background: white;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      background: var(--accent-bg);
+      border: 1px solid var(--accent-bd);
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 600;
+      margin-bottom: 22px
     }
 
-    .search-box input {
-      border: none;
-      padding: 10px 15px;
-      font-size: 14px;
+    .hero-tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: blink 2s infinite
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .4;
+        transform: scale(1.4)
+      }
+    }
+
+    .hero h1 {
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      margin-bottom: 18px
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .hero-p {
+      font-size: clamp(.95rem, 2vw, 1.1rem);
+      color: var(--text2);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.75
+    }
+
+    /* hero search */
+    .h-srch {
+      max-width: 560px;
+      margin: 0 auto 36px;
+      position: relative
+    }
+
+    .h-srch input {
+      width: 100%;
+      padding: 15px 110px 15px 48px;
+      border-radius: var(--r-lg);
+      border: 2px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: .92rem;
+      font-family: inherit;
       outline: none;
+      box-shadow: var(--sh);
+      transition: border-color var(--tr), box-shadow var(--tr)
     }
 
-    .search-box i {
-      padding: 10px 15px;
-      color: #888;
-      background: #eaeaea;
+    .h-srch input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(79, 70, 229, .1), var(--sh)
     }
 
-    /* ===== Main Content ===== */
-    .main-content {
-      flex: 1;
+    .h-srch-ico {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text3)
     }
 
-    .container {
+    .h-srch-btn {
+      position: absolute;
+      right: 7px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 8px 18px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: .83rem;
+      transition: background var(--tr)
+    }
+
+    .h-srch-btn:hover {
+      background: var(--accent-h)
+    }
+
+    /* cta */
+    .hero-cta {
+      display: flex;
+      gap: 11px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 44px
+    }
+
+    .btn-p {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 13px 26px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: .92rem;
+      transition: all var(--tr);
+      box-shadow: 0 4px 18px rgba(79, 70, 229, .35)
+    }
+
+    .btn-p:hover {
+      background: var(--accent-h);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(79, 70, 229, .45)
+    }
+
+    .btn-o {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 13px 26px;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--text);
+      font-weight: 600;
+      font-size: .92rem;
+      border: 1.5px solid var(--border);
+      transition: all var(--tr)
+    }
+
+    .btn-o:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-bg)
+    }
+
+    /* stats */
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap
+    }
+
+    .h-stat-n {
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: -.02em
+    }
+
+    .h-stat-n span {
+      color: var(--accent)
+    }
+
+    .h-stat-l {
+      font-size: .77rem;
+      color: var(--text3);
+      margin-top: 1px
+    }
+
+    .h-div {
+      width: 1px;
+      height: 36px;
+      background: var(--border)
+    }
+
+    /* ─── SECTION ─── */
+    .sec {
       max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
+      margin: 0 auto;
+      padding: 0 24px 60px
     }
 
-    .section-title {
-      font-size: 22px;
-      margin-bottom: 20px;
-      color: #243b55;
-      padding-top: 20px;
+    .sec-h {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 26px;
+      gap: 14px;
+      flex-wrap: wrap
     }
 
+    .sec-t {
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      letter-spacing: -.025em
+    }
+
+    .sec-t span {
+      color: var(--accent)
+    }
+
+    .sec-s {
+      font-size: .86rem;
+      color: var(--text2);
+      margin-top: 3px
+    }
+
+    .sec-more {
+      font-size: .84rem;
+      font-weight: 600;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap var(--tr)
+    }
+
+    .sec-more:hover {
+      gap: 8px
+    }
+
+    /* ─── CATEGORY CARDS ─── */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+      gap: 14px
+    }
+
+    .cat-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 22px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--tr), box-shadow var(--tr), border-color var(--tr)
+    }
+
+    .cat-card::after {
+      content: '→';
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity var(--tr), transform var(--tr)
+    }
+
+    .cat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sh-lg);
+      border-color: transparent
+    }
+
+    .cat-card:hover::after {
+      opacity: .4;
+      transform: translateX(0)
+    }
+
+    .cat-card:hover .cat-ico {
+      transform: scale(1.08)
+    }
+
+    .cat-ico {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+      transition: transform var(--tr)
+    }
+
+    .cat-n {
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 600;
+      font-size: .98rem;
+      margin-bottom: 5px
+    }
+
+    .cat-d {
+      font-size: .8rem;
+      color: var(--text2);
+      line-height: 1.55;
+      margin-bottom: 14px
+    }
+
+    .cat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 100px
+    }
+
+    /* card color variants */
+    .cc-indigo .cat-ico {
+      background: var(--accent-bg)
+    }
+
+    .cc-indigo:hover {
+      border-color: var(--accent-bd) !important;
+      box-shadow: 0 8px 32px rgba(79, 70, 229, .12)
+    }
+
+    .cc-indigo .cat-badge {
+      background: var(--accent-bg);
+      color: var(--accent)
+    }
+
+    .cc-emerald .cat-ico {
+      background: var(--em-bg)
+    }
+
+    .cc-emerald:hover {
+      border-color: #a7f3d0 !important;
+      box-shadow: 0 8px 32px rgba(5, 150, 105, .1)
+    }
+
+    .cc-emerald .cat-badge {
+      background: var(--em-bg);
+      color: var(--emerald)
+    }
+
+    .cc-violet .cat-ico {
+      background: var(--vi-bg)
+    }
+
+    .cc-violet:hover {
+      border-color: #ddd6fe !important;
+      box-shadow: 0 8px 32px rgba(124, 58, 237, .1)
+    }
+
+    .cc-violet .cat-badge {
+      background: var(--vi-bg);
+      color: var(--violet)
+    }
+
+    .cc-sky .cat-ico {
+      background: var(--sk-bg)
+    }
+
+    .cc-sky:hover {
+      border-color: #bae6fd !important;
+      box-shadow: 0 8px 32px rgba(2, 132, 199, .1)
+    }
+
+    .cc-sky .cat-badge {
+      background: var(--sk-bg);
+      color: var(--sky)
+    }
+
+    .cc-amber .cat-ico {
+      background: var(--am-bg)
+    }
+
+    .cc-amber:hover {
+      border-color: #fde68a !important;
+      box-shadow: 0 8px 32px rgba(217, 119, 6, .1)
+    }
+
+    .cc-amber .cat-badge {
+      background: var(--am-bg);
+      color: var(--amber)
+    }
+
+    .cc-rose .cat-ico {
+      background: var(--ro-bg)
+    }
+
+    .cc-rose:hover {
+      border-color: #fecdd3 !important;
+      box-shadow: 0 8px 32px rgba(225, 29, 72, .1)
+    }
+
+    .cc-rose .cat-badge {
+      background: var(--ro-bg);
+      color: var(--rose)
+    }
+
+    .cc-teal .cat-ico {
+      background: #ccfbf1
+    }
+
+    .cc-teal:hover {
+      box-shadow: 0 8px 32px rgba(13, 148, 136, .1)
+    }
+
+    .cc-teal .cat-badge {
+      background: #ccfbf1;
+      color: #0d9488
+    }
+
+    [data-theme="dark"] .cc-teal .cat-ico {
+      background: #134e4a
+    }
+
+    [data-theme="dark"] .cc-teal .cat-badge {
+      background: #134e4a;
+      color: #2dd4bf
+    }
+
+    /* ─── TOOL CARDS ─── */
     .tools-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+      gap: 12px
     }
 
     .tool-card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      transition: 0.3s;
-      text-align: center;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r);
+      padding: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: all var(--tr);
+      cursor: pointer
     }
 
     .tool-card:hover {
-      transform: translateY(-5px);
+      border-color: var(--accent-bd);
+      box-shadow: 0 4px 20px rgba(79, 70, 229, .1);
+      transform: translateY(-2px)
     }
 
-    .tool-card h3 {
-      margin-bottom: 10px;
+    .t-ico {
+      width: 40px;
+      height: 40px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      background: var(--accent-bg)
     }
 
-    .tool-card a {
-      text-decoration: none;
-      display: inline-block;
-      padding: 8px 15px;
-      background: linear-gradient(135deg, #0f1b42, #1a2980);
-      color: white;
-      border-radius: 6px;
-      font-size: 14px;
+    .t-name {
+      font-weight: 600;
+      font-size: .85rem;
+      margin-bottom: 2px
     }
 
-    /* ===== Ad Space ===== */
-    .ad-space {
-      margin: 40px 0;
-      padding: 20px;
-      background: #eaeaea;
+    .t-desc {
+      font-size: .74rem;
+      color: var(--text2);
+      line-height: 1.4
+    }
+
+    .t-tag {
+      font-size: .62rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-left: 4px
+    }
+
+    .t-tag.new {
+      background: var(--em-bg);
+      color: var(--emerald)
+    }
+
+    .t-tag.hot {
+      background: rgba(225, 29, 72, .1);
+      color: var(--rose)
+    }
+
+    [data-theme="dark"] .t-tag.new {
+      background: var(--em-bg);
+      color: #34d399
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+      gap: 16px
+    }
+
+    .how-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r);
+      padding: 26px 22px;
       text-align: center;
-      border-radius: 10px;
-      margin-bottom: 0;
+      transition: border-color var(--tr), box-shadow var(--tr)
     }
 
-    /* ===== Footer ===== */
+    .how-card:hover {
+      border-color: var(--accent-bd);
+      box-shadow: var(--sh)
+    }
+
+    .how-n {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--violet));
+      color: #fff;
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, .3)
+    }
+
+    .how-t {
+      font-weight: 600;
+      font-size: .92rem;
+      margin-bottom: 7px
+    }
+
+    .how-p {
+      font-size: .8rem;
+      color: var(--text2);
+      line-height: 1.6
+    }
+
+    /* ─── SEO BOX ─── */
+    .seo-box {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 38px
+    }
+
+    .seo-box h2 {
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin-bottom: 14px
+    }
+
+    .seo-box p {
+      font-size: .86rem;
+      color: var(--text2);
+      line-height: 1.85;
+      margin-bottom: 10px
+    }
+
+    .seo-box h3 {
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 600;
+      font-size: .95rem;
+      margin: 18px 0 8px
+    }
+
+    /* ─── AD ─── */
+    .ad-w {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 0 24px
+    }
+
+    .ad-ph {
+      background: var(--surface2);
+      border: 2px dashed var(--border);
+      border-radius: var(--r);
+      padding: 18px;
+      text-align: center;
+      color: var(--text3);
+      font-size: .78rem
+    }
+
+    .ad-ph span {
+      display: block;
+      font-size: .68rem;
+      opacity: .6;
+      margin-top: 2px
+    }
+
+    /* ─── FOOTER ─── */
     footer {
-      background: linear-gradient(135deg, #0f1b42, #1a2980);
-      color: white;
-      text-align: center;
-      padding: 20px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 44px 24px 22px
     }
 
-    footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
+    .ft-in {
+      max-width: 1200px;
+      margin: 0 auto
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    .ft-g {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 36px;
+      margin-bottom: 32px
     }
 
-    section {
-      max-width: 85%;
-      margin: 40px auto;
-      padding: 0 20px;
+    .ft-brand-logo {
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      display: block;
+      margin-bottom: 10px;
+      letter-spacing: -.02em
     }
 
-    section h2 {
-      margin-bottom: 15px;
-      color: #1e3c72;
+    .ft-brand-logo b {
+      color: var(--accent)
+    }
+
+    .ft-desc {
+      font-size: .81rem;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-bottom: 18px
+    }
+
+    .ft-soc {
+      display: flex;
+      gap: 7px
+    }
+
+    .ft-soc a {
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      color: var(--text2);
+      transition: all var(--tr)
+    }
+
+    .ft-soc a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-bg)
+    }
+
+    .ft-col h4 {
+      font-family: 'Clash Display', sans-serif;
+      font-weight: 600;
+      font-size: .82rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      color: var(--text)
+    }
+
+    .ft-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .ft-links a {
+      font-size: .81rem;
+      color: var(--text2);
+      transition: color var(--tr)
+    }
+
+    .ft-links a:hover {
+      color: var(--accent)
+    }
+
+    .ft-bot {
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .ft-bot p {
+      font-size: .78rem;
+      color: var(--text3)
+    }
+
+    .ft-bot-l {
+      display: flex;
+      gap: 14px
+    }
+
+    .ft-bot-l a {
+      font-size: .78rem;
+      color: var(--text3);
+      transition: color var(--tr)
+    }
+
+    .ft-bot-l a:hover {
+      color: var(--accent)
+    }
+
+    /* ─── BACK TOP ─── */
+    .btt {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+      box-shadow: 0 4px 16px rgba(79, 70, 229, .4);
+      transition: all var(--tr);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      z-index: 99
+    }
+
+    .btt.on {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0)
+    }
+
+    .btt:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(79, 70, 229, .5)
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .fu {
+      animation: fadeUp .5s ease forwards
+    }
+
+    .fu1 {
+      animation-delay: .08s;
+      opacity: 0
+    }
+
+    .fu2 {
+      animation-delay: .16s;
+      opacity: 0
+    }
+
+    .fu3 {
+      animation-delay: .24s;
+      opacity: 0
+    }
+
+    .fu4 {
+      animation-delay: .32s;
+      opacity: 0
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:920px) {
+      .nav-links {
+        display: none
+      }
+
+      .ft-g {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:640px) {
+      .hero {
+        padding: 48px 18px 36px
+      }
+
+      .cat-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .ft-g {
+        grid-template-columns: 1fr;
+        gap: 22px
+      }
+
+      .h-div {
+        display: none
+      }
+
+      .hero-stats {
+        gap: 14px
+      }
+
+      .seo-box {
+        padding: 22px 18px
+      }
+
+      .ann {
+        font-size: .74rem
+      }
+    }
+
+    @media(max-width:400px) {
+
+      .cat-grid,
+      .tools-grid {
+        grid-template-columns: 1fr
+      }
     }
   </style>
-  <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "WebSite",
- "name": "UtilityMega",
- "url": "https://utilitymega.com/",
- "description": "Free online calculators and developer tools like EMI Calculator, Age Calculator, Password Generator, JSON Formatter and more.",
- "potentialAction": {
-   "@type": "SearchAction",
-   "target": "https://utilitymega.com/?search={search_term_string}",
-   "query-input": "required name=search_term_string"
- }
-}
-</script>
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- Announce -->
+  <div class="ann" id="ann">
+    🎉 100+ Free Tools — No Account Needed!&nbsp;
+    <a href="#cats">Explore All →</a>
+    <button class="ann-x" onclick="this.closest('.ann').remove()">✕</button>
+  </div>
 
-  <header class="navbar">
+  <!-- Overlay -->
+  <div class="overlay" id="ov" onclick="sbClose()"></div>
 
-    <div class="nav-left">
-
-
-
-
-      <div class="logo-wrap">
-        <img src="./assets/icon.png" alt="Utility Mega Logo" class="nav-logo">
-        <h2 class="logo-text">Utility Mega</h2>
+  <!-- ════ SIDEBAR ════ -->
+  <aside class="sb" id="sb">
+    <div class="sb-head">
+      <div class="sb-logo">Utility<b>Mega</b></div>
+      <button class="sb-x" onclick="sbClose()">✕</button>
+    </div>
+    <div class="sb-srch">
+      <div class="sb-srch-w">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input id="sbQ" type="text" placeholder="Search tools…" autocomplete="off" />
       </div>
     </div>
-    <div>
-      <!-- <i class="fas fa-user-circle"></i> -->
-      <button class="menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
+    <nav class="sb-nav" id="sbNav">
+      <div class="sb-lbl">Main</div>
+      <a class="sb-link cur" href="index.html">
+        <span class="sb-ico" style="background:var(--accent-bg)">🏠</span>
+        <span class="sb-txt">Home</span>
+      </a>
+      <div class="sb-lbl">Categories</div>
+
+      <!-- Calculators -->
+      <div class="sb-item" id="si-calc">
+        <div class="sb-link" onclick="sbToggle('si-calc')">
+          <span class="sb-ico" style="background:var(--accent-bg)">🧮</span>
+          <span class="sb-txt">Calculators</span>
+          <span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="calculators/emi-calculator.html">EMI Calculator</a>
+          <a href="calculators/sip-calculator.html">SIP Calculator</a>
+          <a href="calculators/bmi-calculator.html">BMI Calculator</a>
+          <a href="calculators/bmr-calculator.html">BMR Calculator</a>
+          <a href="calculators/age-calculator.html">Age Calculator</a>
+          <a href="calculators/retirement-calculator.html">Retirement Calc</a>
+          <a href="calculators/percentage-calculator.html">Percentage Calc</a>
+          <a href="calculators/unit-converter.html">Unit Converter</a>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="sb-item" id="si-img">
+        <div class="sb-link" onclick="sbToggle('si-img')">
+          <span class="sb-ico" style="background:var(--ro-bg)">🖼️</span>
+          <span class="sb-txt">Image Tools</span>
+          <span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="image-tools/image-compressor.html">Image Compressor</a>
+          <a href="image-tools/cropper.html">Image Cropper</a>
+          <a href="image-tools/meme-generator.html">Meme Generator</a>
+        </div>
+      </div>
+
+      <!-- Video -->
+      <div class="sb-item" id="si-vid">
+        <div class="sb-link" onclick="sbToggle('si-vid')">
+          <span class="sb-ico" style="background:var(--vi-bg)">🎬</span>
+          <span class="sb-txt">Video Tools</span>
+          <span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="video-tools/video-compressor.html">Video Compressor</a>
+          <a href="video-tools/video-converter.html">Video Converter</a>
+          <a href="video-tools/gif-maker.html">GIF Maker</a>
+        </div>
+      </div>
+
+      <!-- Farmers -->
+      <div class="sb-item" id="si-farm">
+        <div class="sb-link" onclick="sbToggle('si-farm')">
+          <span class="sb-ico" style="background:var(--em-bg)">🌾</span>
+          <span class="sb-txt">Farmers Tools</span>
+          <span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="farmers-tools/crop-calculator.html">Crop Calculator</a>
+          <a href="farmers-tools/fertilizer-calculator.html">Fertilizer Calc</a>
+          <a href="farmers-tools/irrigation-planner.html">Irrigation Planner</a>
+        </div>
+      </div>
+
+      <!-- Dev -->
+      <div class="sb-item" id="si-dev">
+        <div class="sb-link" onclick="sbToggle('si-dev')">
+          <span class="sb-ico" style="background:#ccfbf1">💻</span>
+          <span class="sb-txt">Developer Tools</span>
+          <span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="developer-tools/json-formatter.html">JSON Formatter</a>
+          <a href="developer-tools/css-minifier.html">CSS Minifier</a>
+          <a href="developer-tools/js-minifier.html">JS Minifier</a>
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="sb-item" id="si-sec">
+        <div class="sb-link" onclick="sbToggle('si-sec')">
+          <span class="sb-ico" style="background:var(--am-bg)">🔒</span>
+          <span class="sb-txt">Security Tools</span>
+          <span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="security-tools/password-generator.html">Password Generator</a>
+          <a href="security-tools/hash-generator.html">Hash Generator</a>
+          <a href="security-tools/otp-validator.html">OTP Validator</a>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="sb-item" id="si-txt">
+        <div class="sb-link" onclick="sbToggle('si-txt')">
+          <span class="sb-ico" style="background:var(--sk-bg)">📝</span>
+          <span class="sb-txt">Text Tools</span>
+          <span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="text-tools/word-counter.html">Word Counter</a>
+          <a href="text-tools/character-counter.html">Character Counter</a>
+          <a href="text-tools/case-converter.html">Case Converter</a>
+          <a href="text-tools/text-sorter.html">Text Sorter</a>
+        </div>
+      </div>
+
+      <div class="sb-lbl">Info</div>
+      <a class="sb-link" href="about.html"><span class="sb-ico" style="background:var(--vi-bg)">ℹ️</span><span
+          class="sb-txt">About</span></a>
+      <a class="sb-link" href="contact.html"><span class="sb-ico" style="background:var(--em-bg)">✉️</span><span
+          class="sb-txt">Contact</span></a>
+      <a class="sb-link" href="faq.html"><span class="sb-ico" style="background:var(--sk-bg)">❓</span><span
+          class="sb-txt">FAQ</span></a>
+    </nav>
+    <div class="sb-foot">
+      <button class="sb-theme" onclick="thToggle()">
+        <span id="sbThIco">🌙</span>
+        <span id="sbThTxt">Dark Mode</span>
       </button>
     </div>
-
-  </header>
-
-
-  <!-- OVERLAY -->
-
-  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-
-
-  <!-- SIDEBAR -->
-
-  <aside class="sidebar" id="sidebar">
-
-    <ul>
-
-      <li>
-        <a href="#"><i class="fas fa-home"></i> Home</a>
-      </li>
-
-      <li>
-        <a href="calculators/index.html"><i class="fas fa-calculator"></i> Calculators</a>
-      </li>
-      <li>
-        <a href="image-tools/index.html"><i class="fas fa-image"></i> Image Tools</a>
-      </li>
-      <li>
-        <a href="developer-tools/index.html"><i class="fas fa-code"></i> Developer Tools</a>
-      </li>
-      <li>
-        <a href="security-tools/index.html"><i class="fas fa-shield-alt"></i> Security Tools</a>
-      </li>
-
-      <li>
-        <a href="text-tools/index.html"><i class="fas fa-font"></i> Text Tools</a>
-      </li>
-
-      <li>
-        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-      </li>
-
-      <li>
-        <a href="privacy-policy.html"><i class="fas fa-user-shield"></i> Privacy Policy</a>
-      </li>
-      <li>
-        <a href="contact.html"><i class="fas fa-envelope"></i> Contact </a>
-      </li>
-      <li>
-        <a href="faq.html"><i class="fas fa-question-circle"></i> FAQs </a>
-      </li>
-    </ul>
-
   </aside>
 
+  <!-- ════ NAVBAR ════ -->
+  <header>
+    <nav class="nav" id="nav">
+      <button class="nav-burger" onclick="sbOpen()" aria-label="Open menu">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+      <a href="index.html" class="logo">Utility<b>Mega</b><sup>β</sup></a>
 
-  <section class="page-header container">
-    <div class="container">
-      <h1>Free Online Calculators & Developer Tools</h1>
-      <p>UtilityMega – All Free Online Tools in One Place</p>
-
-      <div class="search-box">
-        <input type="text" id="searchInput" onkeyup="searchTools()" placeholder="Search tools...">
-        <i class="fas fa-search"></i>
-      </div>
-    </div>
-  </section>
-  <!-- MAIN CONTENT -->
-
-  <div class="main-content">
-
-    <div class="container">
-
-      <h2 class="section-title">📊 Calculators</h2>
-
-      <div class="tools-grid" id="toolsList">
-
-        <div class="tool-card">
-          <h3>SIP Calculator</h3>
-          <a href="calculators/sip-calculator.html">Open Tool</a>
+      <div class="nav-links">
+        <div class="nl">
+          <a href="calculators/index.html" class="nl-a">Calculators
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <div class="nd">
+            <a href="calculators/emi-calculator.html" class="nd-it">
+              <div class="nd-ico">💰</div>
+              <div class="nd-t">EMI Calculator</div>
+              <div class="nd-d">Loan repayment planner</div>
+            </a>
+            <a href="calculators/sip-calculator.html" class="nd-it">
+              <div class="nd-ico">📈</div>
+              <div class="nd-t">SIP Calculator</div>
+              <div class="nd-d">Mutual fund returns</div>
+            </a>
+            <a href="calculators/bmi-calculator.html" class="nd-it">
+              <div class="nd-ico">⚖️</div>
+              <div class="nd-t">BMI Calculator</div>
+              <div class="nd-d">Body mass index</div>
+            </a>
+            <a href="calculators/age-calculator.html" class="nd-it">
+              <div class="nd-ico">🎂</div>
+              <div class="nd-t">Age Calculator</div>
+              <div class="nd-d">Exact age</div>
+            </a>
+            <a href="calculators/retirement-calculator.html" class="nd-it">
+              <div class="nd-ico">🏖️</div>
+              <div class="nd-t">Retirement Calc</div>
+              <div class="nd-d">Plan your future</div>
+            </a>
+            <a href="calculators/unit-converter.html" class="nd-it">
+              <div class="nd-ico">🔄</div>
+              <div class="nd-t">Unit Converter</div>
+              <div class="nd-d">Convert any unit</div>
+            </a>
+          </div>
         </div>
-
-        <div class="tool-card">
-          <h3>EMI Calculator</h3>
-          <a href="calculators/emi.html">Open Tool</a>
+        <div class="nl">
+          <a href="image-tools/index.html" class="nl-a">Image Tools
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <div class="nd" style="min-width:320px;grid-template-columns:1fr 1fr">
+            <a href="image-tools/image-compressor.html" class="nd-it">
+              <div class="nd-ico">🗜️</div>
+              <div class="nd-t">Compressor</div>
+              <div class="nd-d">Reduce file size</div>
+            </a>
+            <a href="image-tools/cropper.html" class="nd-it">
+              <div class="nd-ico">✂️</div>
+              <div class="nd-t">Cropper</div>
+              <div class="nd-d">Crop & resize</div>
+            </a>
+            <a href="image-tools/meme-generator.html" class="nd-it">
+              <div class="nd-ico">😂</div>
+              <div class="nd-t">Meme Gen</div>
+              <div class="nd-d">Create memes</div>
+            </a>
+          </div>
         </div>
-
-        <div class="tool-card">
-          <h3>GST Calculator</h3>
-          <a href="calculators/gst-calculator.html">Open Tool</a>
+        <div class="nl">
+          <a href="developer-tools/index.html" class="nl-a">Dev Tools
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <div class="nd" style="min-width:320px;grid-template-columns:1fr 1fr">
+            <a href="developer-tools/json-formatter.html" class="nd-it">
+              <div class="nd-ico">{ }</div>
+              <div class="nd-t">JSON Formatter</div>
+              <div class="nd-d">Format & validate</div>
+            </a>
+            <a href="developer-tools/css-minifier.html" class="nd-it">
+              <div class="nd-ico">#</div>
+              <div class="nd-t">CSS Minifier</div>
+              <div class="nd-d">Compress CSS</div>
+            </a>
+            <a href="developer-tools/js-minifier.html" class="nd-it">
+              <div class="nd-ico">JS</div>
+              <div class="nd-t">JS Minifier</div>
+              <div class="nd-d">Compress JS</div>
+            </a>
+          </div>
         </div>
-
-        <div class="tool-card">
-          <h3>Age Calculator</h3>
-          <a href="calculators/age.html">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-          <h3>Percentage Calculator</h3>
-          <a href="calculators/percentage.html">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-          <h3>BMI Calculator</h3>
-          <a href="calculators/bmi.html">Open Tool</a>
-        </div>
-
-      </div>
-
-      <div class="ad-space">
-        Google AdSense Banner
-      </div>
-
-      <h2 class="section-title">🖼️ Image Tools</h2>
-
-      <div class="tools-grid">
-
-        <div class="tool-card">
-          <h3>Universal Image Converter</h3>
-          <a href="image-tools/universal-converter.html">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-          <h3>Image Compressor</h3>
-          <a href="image-tools/image-compressor.html">Open Tool</a>
-        </div>
-
-      </div>
-
-      <h2 class="section-title">🛠 Developer Tools</h2>
-
-      <div class="tools-grid">
-
-        <div class="tool-card">
-          <h3>JSON Formatter</h3>
-          <a href="developer-tools/json-formatter.html">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-          <h3>Base64 Encoder / Decoder</h3>
-          <a href="developer-tools/base64-encoder-decoder.html">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-          <h3>URL Encoder / Decoder</h3>
-          <a href="developer-tools/url-encoder-decoder.html">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-          <h3>HTML Minifier</h3>
-          <a href="developer-tools/html-minifier.html">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-          <h3>CSS Minifier</h3>
-          <a href="developer-tools/css-minifier.html">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-          <h3>JavaScript Minifier</h3>
-          <a href="developer-tools/js-minifier.html">Open Tool</a>
-        </div>
-        <div class="tool-card">
-          <h3>SQL Formatter</h3>
-          <a href="developer-tools/sql-formatter.html">Open Tool</a>
-        </div>
-        <div class="tool-card">
-          <h3>Regex Tester</h3>
-          <a href="developer-tools/regex-tester.html">Open Tool</a>
-        </div>
-        <div class="tool-card">
-          <h3>Timestamp Converter</h3>
-          <a href="developer-tools/timestamp-converter.html">Open Tool</a>
-        </div>
+        <a href="text-tools/index.html" class="nl-a">Text Tools</a>
+        <a href="security-tools/index.html" class="nl-a">Security</a>
+        <a href="farmers-tools/index.html" class="nl-a">Farmers</a>
       </div>
 
-      <h2 class="section-title">🔐 Security Tools</h2>
-
-      <div class="tools-grid">
-
-        <div class="tool-card">
-          <h3>Password Generator</h3>
-          <a href="security-tools/password-generator.html">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-          <h3>Password Strength Checker</h3>
-          <a href="security-tools/password-checker.html">Open Tool</a>
-        </div>
-
+      <div class="nav-r">
+        <button class="nav-srch" onclick="sOpen()" aria-label="Search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+        </button>
+        <button class="th-pill" onclick="thToggle()">
+          <span class="th-dot" id="thDot">☀️</span>
+          <span id="thTxt">Light</span>
+        </button>
       </div>
+    </nav>
+  </header>
 
-      <h2 class="section-title">🎨 Text Tools</h2>
-
-      <div class="tools-grid">
-
-        <div class="tool-card">
-          <h3>Fancy Text Generator</h3>
-          <a href="text-tools/fancy-text.html">Open Tool</a>
-        </div>
-
-        <div class="tool-card">
-          <h3>Case Converter</h3>
-          <a href="text-tools/case-converter.html">Open Tool</a>
-        </div>
-
+  <!-- Search Overlay -->
+  <div class="srch-ov" id="sOv" onclick="sHandleClick(event)">
+    <div class="srch-box" id="sBox">
+      <div class="srch-in">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input id="sQ" type="text" placeholder="Search 100+ tools…" autocomplete="off" />
+        <button class="srch-esc" onclick="sClose()">ESC</button>
       </div>
-
+      <div class="srch-res" id="sRes"></div>
+      <div class="srch-hint"><span><kbd>↑↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>ESC</kbd>
+          close</span></div>
     </div>
   </div>
-  <hr />
-  <section>
-    <h2>Free Online Calculators and Developer Tools</h2>
 
-    <p>
-      UtilityMega is a free online platform offering useful calculators and
-      developer tools for everyday tasks. Our tools help students,
-      developers, designers and professionals perform quick calculations
-      and data formatting without installing software.
-    </p>
+  <!-- Ticker -->
+  <div class="tick">
+    <div class="tick-t">
+      <span class="ti"><span class="ti-dot">◆</span><strong>EMI Calculator</strong> — Loan planner</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>SIP Calculator</strong> — Grow wealth</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>Image Compressor</strong> — Shrink images</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>Password Generator</strong> — Stay secure</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>JSON Formatter</strong> — Format & validate</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>BMI Calculator</strong> — Check health</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>Meme Generator</strong> — Create fun</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>Word Counter</strong> — Instant count</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>EMI Calculator</strong> — Loan planner</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>SIP Calculator</strong> — Grow wealth</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>Image Compressor</strong> — Shrink images</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>Password Generator</strong> — Stay secure</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>JSON Formatter</strong> — Format & validate</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>BMI Calculator</strong> — Check health</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>Meme Generator</strong> — Create fun</span>
+      <span class="ti"><span class="ti-dot">◆</span><strong>Word Counter</strong> — Instant count</span>
+    </div>
+  </div>
 
-    <p>
-      Popular tools on UtilityMega include EMI Calculator, Age Calculator,
-      Percentage Calculator, JSON Formatter, Base64 Encoder, Password
-      Generator and Fancy Text Generator. All tools are fast, secure and
-      work directly in your browser.
-    </p>
-  </section>
+  <!-- ════ MAIN ════ -->
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-tag fu fu1"><span class="hero-tag-dot"></span>100+ Free Tools Available</div>
+      <h1 class="fu fu2">Free Online Tools<br>for <em>Everyday Tasks</em></h1>
+      <p class="hero-p fu fu3">UtilityMega gives you powerful calculators, image tools, developer utilities, and more —
+        all free, all instant, zero account needed.</p>
+      <div class="h-srch fu fu3">
+        <svg class="h-srch-ico" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input id="hQ" type="text" placeholder="Search tools… EMI, JSON, Compress…" autocomplete="off" />
+        <button class="h-srch-btn" onclick="sOpen()">Search</button>
+      </div>
+      <div class="hero-cta fu fu4">
+        <a href="#cats" class="btn-p">🚀 Explore Tools</a>
+        <a href="about.html" class="btn-o">Learn More →</a>
+      </div>
+      <div class="hero-stats fu fu4">
+        <div>
+          <div class="h-stat-n">100<span>+</span></div>
+          <div class="h-stat-l">Free Tools</div>
+        </div>
+        <div class="h-div"></div>
+        <div>
+          <div class="h-stat-n">7<span>+</span></div>
+          <div class="h-stat-l">Categories</div>
+        </div>
+        <div class="h-div"></div>
+        <div>
+          <div class="h-stat-n">0</div>
+          <div class="h-stat-l">Signup Needed</div>
+        </div>
+        <div class="h-div"></div>
+        <div>
+          <div class="h-stat-n">∞</div>
+          <div class="h-stat-l">Always Free</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ad -->
+    <div class="ad-w">
+      <div class="ad-ph">Google AdSense — 728×90 Leaderboard<span>Advertisement Placement</span></div>
+    </div>
+
+    <!-- Categories -->
+    <section class="sec" id="cats">
+      <div class="sec-h">
+        <div>
+          <h2 class="sec-t">Browse by <span>Category</span></h2>
+          <p class="sec-s">Find the right tool for your task</p>
+        </div>
+        <a href="#" class="sec-more">All Categories →</a>
+      </div>
+      <div class="cat-grid">
+        <a href="calculators/index.html" class="cat-card cc-indigo">
+          <div class="cat-ico">🧮</div>
+          <div class="cat-n">Calculators</div>
+          <div class="cat-d">EMI, SIP, BMI, BMR, Age, GST, retirement and many more financial & health tools.</div>
+          <span class="cat-badge">📦 15+ Tools</span>
+        </a>
+        <a href="image-tools/index.html" class="cat-card cc-rose">
+          <div class="cat-ico">🖼️</div>
+          <div class="cat-n">Image Tools</div>
+          <div class="cat-d">Compress, crop, convert and resize images. Create memes and more online.</div>
+          <span class="cat-badge">📦 10+ Tools</span>
+        </a>
+        <a href="video-tools/index.html" class="cat-card cc-violet">
+          <div class="cat-ico">🎬</div>
+          <div class="cat-n">Video Tools</div>
+          <div class="cat-d">Compress, convert, cut videos and create animated GIFs online.</div>
+          <span class="cat-badge">📦 8+ Tools</span>
+        </a>
+        <a href="farmers-tools/index.html" class="cat-card cc-emerald">
+          <div class="cat-ico">🌾</div>
+          <div class="cat-n">Farmers Tools</div>
+          <div class="cat-d">Crop planning, fertilizer dosage, irrigation scheduling and weather tools.</div>
+          <span class="cat-badge">📦 8+ Tools</span>
+        </a>
+        <a href="developer-tools/index.html" class="cat-card cc-teal">
+          <div class="cat-ico">💻</div>
+          <div class="cat-n">Developer Tools</div>
+          <div class="cat-d">JSON formatter, CSS/JS minifier, Base64 encoder and many dev utilities.</div>
+          <span class="cat-badge">📦 12+ Tools</span>
+        </a>
+        <a href="security-tools/index.html" class="cat-card cc-amber">
+          <div class="cat-ico">🔒</div>
+          <div class="cat-n">Security Tools</div>
+          <div class="cat-d">Password generator, hash generator, QR scanner and OTP validator.</div>
+          <span class="cat-badge">📦 8+ Tools</span>
+        </a>
+        <a href="text-tools/index.html" class="cat-card cc-sky">
+          <div class="cat-ico">📝</div>
+          <div class="cat-n">Text Tools</div>
+          <div class="cat-d">Word/character counter, case converter, text sorter and whitespace remover.</div>
+          <span class="cat-badge">📦 10+ Tools</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Popular Tools -->
+    <section class="sec">
+      <div class="sec-h">
+        <div>
+          <h2 class="sec-t">🔥 Popular <span>Tools</span></h2>
+          <p class="sec-s">Most used tools today</p>
+        </div>
+        <a href="#" class="sec-more">View All →</a>
+      </div>
+      <div class="tools-grid">
+        <a href="calculators/emi-calculator.html" class="tool-card">
+          <div class="t-ico">💰</div>
+          <div>
+            <div class="t-name">EMI Calculator<span class="t-tag hot">HOT</span></div>
+            <div class="t-desc">Monthly loan repayment</div>
+          </div>
+        </a>
+        <a href="calculators/bmi-calculator.html" class="tool-card">
+          <div class="t-ico" style="background:var(--em-bg)">⚖️</div>
+          <div>
+            <div class="t-name">BMI Calculator</div>
+            <div class="t-desc">Body mass index</div>
+          </div>
+        </a>
+        <a href="image-tools/image-compressor.html" class="tool-card">
+          <div class="t-ico" style="background:var(--ro-bg)">🗜️</div>
+          <div>
+            <div class="t-name">Image Compressor<span class="t-tag hot">HOT</span></div>
+            <div class="t-desc">Reduce image file size</div>
+          </div>
+        </a>
+        <a href="security-tools/password-generator.html" class="tool-card">
+          <div class="t-ico" style="background:var(--am-bg)">🔑</div>
+          <div>
+            <div class="t-name">Password Generator</div>
+            <div class="t-desc">Create strong passwords</div>
+          </div>
+        </a>
+        <a href="developer-tools/json-formatter.html" class="tool-card">
+          <div class="t-ico" style="background:#ccfbf1">{ }</div>
+          <div>
+            <div class="t-name">JSON Formatter<span class="t-tag new">NEW</span></div>
+            <div class="t-desc">Format & validate JSON</div>
+          </div>
+        </a>
+        <a href="text-tools/word-counter.html" class="tool-card">
+          <div class="t-ico" style="background:var(--sk-bg)">📊</div>
+          <div>
+            <div class="t-name">Word Counter</div>
+            <div class="t-desc">Words & characters</div>
+          </div>
+        </a>
+        <a href="calculators/sip-calculator.html" class="tool-card">
+          <div class="t-ico">📈</div>
+          <div>
+            <div class="t-name">SIP Calculator<span class="t-tag new">NEW</span></div>
+            <div class="t-desc">Mutual fund returns</div>
+          </div>
+        </a>
+        <a href="image-tools/meme-generator.html" class="tool-card">
+          <div class="t-ico" style="background:var(--vi-bg)">😂</div>
+          <div>
+            <div class="t-name">Meme Generator</div>
+            <div class="t-desc">Create funny memes</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div class="ad-w">
+      <div class="ad-ph">Google AdSense — 300×250 Rectangle<span>Advertisement Placement</span></div>
+    </div>
+
+    <!-- Recently Added -->
+    <section class="sec">
+      <div class="sec-h">
+        <div>
+          <h2 class="sec-t">✨ Recently <span>Added</span></h2>
+          <p class="sec-s">Fresh tools just launched</p>
+        </div>
+      </div>
+      <div class="tools-grid">
+        <a href="farmers-tools/crop-calculator.html" class="tool-card">
+          <div class="t-ico" style="background:var(--em-bg)">🌱</div>
+          <div>
+            <div class="t-name">Crop Calculator<span class="t-tag new">NEW</span></div>
+            <div class="t-desc">Yield & cost planning</div>
+          </div>
+        </a>
+        <a href="farmers-tools/fertilizer-calculator.html" class="tool-card">
+          <div class="t-ico" style="background:var(--em-bg)">🧪</div>
+          <div>
+            <div class="t-name">Fertilizer Calc<span class="t-tag new">NEW</span></div>
+            <div class="t-desc">Dosage calculator</div>
+          </div>
+        </a>
+        <a href="security-tools/hash-generator.html" class="tool-card">
+          <div class="t-ico" style="background:var(--am-bg)">🔐</div>
+          <div>
+            <div class="t-name">Hash Generator<span class="t-tag new">NEW</span></div>
+            <div class="t-desc">MD5, SHA-1, SHA-256</div>
+          </div>
+        </a>
+        <a href="text-tools/case-converter.html" class="tool-card">
+          <div class="t-ico" style="background:var(--sk-bg)">🔡</div>
+          <div>
+            <div class="t-name">Case Converter<span class="t-tag new">NEW</span></div>
+            <div class="t-desc">UPPER, lower, Title</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="sec">
+      <div class="sec-h">
+        <div>
+          <h2 class="sec-t">How It <span>Works</span></h2>
+          <p class="sec-s">Get your task done in 3 steps</p>
+        </div>
+      </div>
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-n">1</div>
+          <div class="how-t">Choose a Tool</div>
+          <div class="how-p">Browse 7+ categories or search from 100+ tools instantly.</div>
+        </div>
+        <div class="how-card">
+          <div class="how-n">2</div>
+          <div class="how-t">Enter Your Data</div>
+          <div class="how-p">Clean, intuitive inputs with helpful descriptions for each tool.</div>
+        </div>
+        <div class="how-card">
+          <div class="how-n">3</div>
+          <div class="how-t">Get Instant Results</div>
+          <div class="how-p">Click and get results instantly. Copy, download or share easily.</div>
+        </div>
+        <div class="how-card">
+          <div class="how-n">4</div>
+          <div class="how-t">Always Free</div>
+          <div class="how-p">No account, no credit card, no limits. 100% free forever.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO -->
+    <section class="sec">
+      <div class="seo-box">
+        <h2>What is UtilityMega?</h2>
+        <p>UtilityMega is a comprehensive collection of free online tools designed for individuals, students,
+          professionals and businesses. From financial calculators to image tools, developer utilities to agricultural
+          planning — everything in one place.</p>
+        <p>Our mission is simple: provide high-quality, accurate, and fast tools with no account required. Every tool is
+          built with a clean interface, instant results, and mobile-friendly layout.</p>
+        <h3>Why Choose UtilityMega?</h3>
+        <p>Unlike cluttered tool websites, UtilityMega is fast, ad-minimal, and works on all devices. We continuously
+          add new tools based on user feedback, keeping our collection relevant and useful for everyone.</p>
+        <h3>Our Categories</h3>
+        <p>We cover 7+ categories: Calculators (financial, health, math), Image Tools, Video Tools, Farmers Tools,
+          Developer Tools, Security Tools, and Text Tools. Browse any category to discover tools built for your exact
+          need.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
   <footer>
-    © 2026 UtilityMega.com | All Rights Reserved
-
+    <div class="ft-in">
+      <div class="ft-g">
+        <div>
+          <span class="ft-brand-logo">Utility<b>Mega</b></span>
+          <p class="ft-desc">100+ free online tools. No signup needed. Fast, accurate, and free forever.</p>
+          <div class="ft-soc">
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div>
+          <h4>Tools</h4>
+          <ul class="ft-links">
+            <li><a href="calculators/index.html">Calculators</a></li>
+            <li><a href="image-tools/index.html">Image Tools</a></li>
+            <li><a href="video-tools/index.html">Video Tools</a></li>
+            <li><a href="farmers-tools/index.html">Farmers Tools</a></li>
+            <li><a href="developer-tools/index.html">Dev Tools</a></li>
+            <li><a href="security-tools/index.html">Security</a></li>
+            <li><a href="text-tools/index.html">Text Tools</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Popular</h4>
+          <ul class="ft-links">
+            <li><a href="calculators/emi-calculator.html">EMI Calculator</a></li>
+            <li><a href="calculators/bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="image-tools/image-compressor.html">Image Compressor</a></li>
+            <li><a href="security-tools/password-generator.html">Password Gen</a></li>
+            <li><a href="developer-tools/json-formatter.html">JSON Formatter</a></li>
+            <li><a href="text-tools/word-counter.html">Word Counter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="ft-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ft-bot">
+        <p>© 2025 UtilityMega. All rights reserved. Made with ❤️ for everyone.</p>
+        <div class="ft-bot-l">
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"UtilityMega","url":"https://utilitymega.com","description":"100+ free online tools."}</script>
+
   <script>
-    function toggleMenu() {
+    const TOOLS = [
+      { n: "EMI Calculator", c: "Calculators", i: "💰", u: "calculators/emi-calculator.html" },
+      { n: "SIP Calculator", c: "Calculators", i: "📈", u: "calculators/sip-calculator.html" },
+      { n: "BMI Calculator", c: "Calculators", i: "⚖️", u: "calculators/bmi-calculator.html" },
+      { n: "BMR Calculator", c: "Calculators", i: "🔥", u: "calculators/bmr-calculator.html" },
+      { n: "Age Calculator", c: "Calculators", i: "🎂", u: "calculators/age-calculator.html" },
+      { n: "Retirement Calculator", c: "Calculators", i: "🏖️", u: "calculators/retirement-calculator.html" },
+      { n: "Percentage Calculator", c: "Calculators", i: "💯", u: "calculators/percentage-calculator.html" },
+      { n: "Unit Converter", c: "Calculators", i: "🔄", u: "calculators/unit-converter.html" },
+      { n: "Image Compressor", c: "Image Tools", i: "🗜️", u: "image-tools/image-compressor.html" },
+      { n: "Image Cropper", c: "Image Tools", i: "✂️", u: "image-tools/cropper.html" },
+      { n: "Meme Generator", c: "Image Tools", i: "😂", u: "image-tools/meme-generator.html" },
+      { n: "JSON Formatter", c: "Developer Tools", i: "{}", u: "developer-tools/json-formatter.html" },
+      { n: "CSS Minifier", c: "Developer Tools", i: "#", u: "developer-tools/css-minifier.html" },
+      { n: "JS Minifier", c: "Developer Tools", i: "JS", u: "developer-tools/js-minifier.html" },
+      { n: "Password Generator", c: "Security Tools", i: "🔑", u: "security-tools/password-generator.html" },
+      { n: "Hash Generator", c: "Security Tools", i: "🔐", u: "security-tools/hash-generator.html" },
+      { n: "OTP Validator", c: "Security Tools", i: "🛡️", u: "security-tools/otp-validator.html" },
+      { n: "Word Counter", c: "Text Tools", i: "📊", u: "text-tools/word-counter.html" },
+      { n: "Character Counter", c: "Text Tools", i: "🔤", u: "text-tools/character-counter.html" },
+      { n: "Case Converter", c: "Text Tools", i: "🔡", u: "text-tools/case-converter.html" },
+      { n: "Text Sorter", c: "Text Tools", i: "🔢", u: "text-tools/text-sorter.html" },
+      { n: "Crop Calculator", c: "Farmers Tools", i: "🌱", u: "farmers-tools/crop-calculator.html" },
+      { n: "Fertilizer Calculator", c: "Farmers Tools", i: "🧪", u: "farmers-tools/fertilizer-calculator.html" },
+      { n: "Irrigation Planner", c: "Farmers Tools", i: "💧", u: "farmers-tools/irrigation-planner.html" },
+    ];
 
-      document.getElementById("sidebar").classList.toggle("active");
-
-      document.getElementById("overlay").classList.toggle("active");
-
-    }
-    function searchTools() {
-      let input = document.getElementById("searchInput").value.toLowerCase();
-      let cards = document.querySelectorAll(".tool-card");
-      let found = false;
-
-      cards.forEach(card => {
-        let title = card.innerText.toLowerCase();
-
-        if (title.includes(input)) {
-          card.style.display = "";
-          found = true;
-        } else {
-          card.style.display = "none";
-        }
+    // Sidebar
+    function sbOpen() { document.getElementById('sb').classList.add('on'); document.getElementById('ov').classList.add('on'); document.body.style.overflow = 'hidden'; setTimeout(() => document.getElementById('sbQ').focus(), 300) }
+    function sbClose() { document.getElementById('sb').classList.remove('on'); document.getElementById('ov').classList.remove('on'); document.body.style.overflow = '' }
+    function sbToggle(id) { const el = document.getElementById(id), exp = el.classList.contains('exp'); document.querySelectorAll('.sb-item.exp').forEach(e => e.classList.remove('exp')); if (!exp) el.classList.add('exp') }
+    document.getElementById('sbQ').addEventListener('input', function () {
+      const q = this.value.toLowerCase();
+      document.querySelectorAll('.sb-item').forEach(el => {
+        el.style.display = (!q || el.textContent.toLowerCase().includes(q)) ? '' : 'none';
+        if (q && el.textContent.toLowerCase().includes(q)) el.classList.add('exp');
       });
+    });
 
-      if (!found) {
-        document.getElementById("noResult").style.display = "block";
-      }
+    // Theme
+    const html = document.documentElement;
+    function thToggle() { const d = html.getAttribute('data-theme') === 'dark'; html.setAttribute('data-theme', d ? 'light' : 'dark'); localStorage.setItem('um-theme', d ? 'light' : 'dark'); updTh(!d) }
+    function updTh(dark) {
+      const d = document.getElementById('thDot'), t = document.getElementById('thTxt'), si = document.getElementById('sbThIco'), st = document.getElementById('sbThTxt');
+      if (d) d.textContent = dark ? '🌙' : '☀️'; if (t) t.textContent = dark ? 'Dark' : 'Light';
+      if (si) si.textContent = dark ? '☀️' : '🌙'; if (st) st.textContent = dark ? 'Light Mode' : 'Dark Mode';
     }
+    const saved = localStorage.getItem('um-theme') || 'light';
+    html.setAttribute('data-theme', saved); updTh(saved === 'dark');
 
+    // Search
+    function sOpen() { document.getElementById('sOv').classList.add('on'); document.body.style.overflow = 'hidden'; document.getElementById('sQ').focus(); renderSR('') }
+    function sClose() { document.getElementById('sOv').classList.remove('on'); document.body.style.overflow = '' }
+    function sHandleClick(e) { if (e.target === document.getElementById('sOv')) sClose() }
+    function renderSR(q) {
+      const el = document.getElementById('sRes');
+      const res = q.trim() ? TOOLS.filter(t => t.n.toLowerCase().includes(q.toLowerCase()) || t.c.toLowerCase().includes(q.toLowerCase())) : TOOLS.slice(0, 8);
+      if (!res.length) { el.innerHTML = `<div style="padding:18px;text-align:center;color:var(--text2);font-size:.83rem">No results for "${q}"</div>`; return }
+      el.innerHTML = res.slice(0, 8).map(t => `<a href="${t.u}" class="sr-item" onclick="sClose()"><div class="sr-ico">${t.i}</div><div><div class="sr-name">${t.n}</div><div class="sr-cat">${t.c}</div></div><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text3);margin-left:auto"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>`).join('')
+    }
+    document.getElementById('sQ').addEventListener('input', function () { renderSR(this.value) });
+    document.getElementById('hQ').addEventListener('focus', sOpen);
+    document.getElementById('hQ').addEventListener('keydown', e => { if (e.key === 'Enter') sOpen() });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { sClose(); sbClose() } });
+
+    // Scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+      document.getElementById('btt').classList.toggle('on', window.scrollY > 400);
+    });
+
+    // Scroll animations
+    const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; obs.unobserve(e.target) } }) }, { threshold: .1 });
+    document.querySelectorAll('.cat-card,.tool-card,.how-card').forEach(el => {
+      el.style.opacity = '0'; el.style.transform = 'translateY(18px)';
+      el.style.transition = 'opacity .45s ease, transform .45s ease, border-color .22s, box-shadow .22s';
+      obs.observe(el);
+    });
   </script>
-
-  <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
-
 </body>
 
 </html>
