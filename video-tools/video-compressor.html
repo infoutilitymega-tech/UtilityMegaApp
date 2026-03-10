@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Video Compressor Online Free | UtilityMega</title>
+<meta name="description" content="Free Video Compressor tool. Reduce video file size quickly in your browser.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+font-family:Arial;
+background:#f4f4f4;
+text-align:center;
+padding:40px;
+}
+
+.tool-container{
+max-width:600px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+button{
+padding:10px 18px;
+margin:5px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+background:#2a5298;
+color:white;
+}
+
+video{
+width:100%;
+margin-top:20px;
+border-radius:8px;
+}
+
+.message{
+margin-top:10px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="tool-container">
+
+<h2>Video Compressor</h2>
+
+<input type="file" id="videoInput" accept="video/*">
+
+<br><br>
+
+<button onclick="compressVideo()">Compress Video</button>
+<button onclick="clearForm()">Clear</button>
+<button id="downloadBtn" style="display:none;" onclick="downloadVideo()">Download</button>
+
+<video id="preview" controls></video>
+
+<p id="sizeInfo"></p>
+
+<div id="message" class="message"></div>
+
+</div>
+
+<script>
+
+let compressedBlob=null;
+
+function compressVideo(){
+
+let fileInput=document.getElementById("videoInput");
+let preview=document.getElementById("preview");
+let message=document.getElementById("message");
+let downloadBtn=document.getElementById("downloadBtn");
+let sizeInfo=document.getElementById("sizeInfo");
+
+if(!fileInput.files.length){
+message.innerHTML="Please select a video ❌";
+return;
+}
+
+let file=fileInput.files[0];
+
+let originalSize=(file.size/1024/1024).toFixed(2);
+
+let video=document.createElement("video");
+video.src=URL.createObjectURL(file);
+
+video.onloadedmetadata=function(){
+
+let canvas=document.createElement("canvas");
+canvas.width=video.videoWidth/2;
+canvas.height=video.videoHeight/2;
+
+let ctx=canvas.getContext("2d");
+
+let stream=canvas.captureStream();
+
+let recorder=new MediaRecorder(stream,{
+mimeType:"video/webm",
+videoBitsPerSecond:500000
+});
+
+let chunks=[];
+
+recorder.ondataavailable=e=>chunks.push(e.data);
+
+recorder.onstop=function(){
+
+compressedBlob=new Blob(chunks,{type:"video/webm"});
+
+let compressedSize=(compressedBlob.size/1024/1024).toFixed(2);
+
+preview.src=URL.createObjectURL(compressedBlob);
+
+sizeInfo.innerHTML=
+"Original: "+originalSize+" MB | Compressed: "+compressedSize+" MB";
+
+message.innerHTML="Video compressed successfully ✔";
+
+downloadBtn.style.display="inline-block";
+
+};
+
+recorder.start();
+
+let draw=function(){
+ctx.drawImage(video,0,0,canvas.width,canvas.height);
+requestAnimationFrame(draw);
+};
+
+video.play();
+draw();
+
+setTimeout(()=>{
+recorder.stop();
+},5000);
+
+};
+
+}
+
+function downloadVideo(){
+
+let link=document.createElement("a");
+link.href=URL.createObjectURL(compressedBlob);
+link.download="compressed-video.webm";
+link.click();
+
+}
+
+function clearForm(){
+
+document.getElementById("videoInput").value="";
+document.getElementById("preview").src="";
+document.getElementById("message").innerHTML="";
+document.getElementById("sizeInfo").innerHTML="";
+document.getElementById("downloadBtn").style.display="none";
+compressedBlob=null;
+
+}
+
+</script>
+
+</body>
+</html>

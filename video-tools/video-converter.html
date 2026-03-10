@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<title>Video Converter | UtilityMega</title>
+
+<meta name="description"
+content="Convert videos between MP4, WebM, and OGG formats online. Preview and download instantly.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/x-icon" href="../assets/icon.png">
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+.tool-container{
+max-width:650px;
+margin:40px auto;
+padding:20px;
+}
+
+.input-group{
+margin-bottom:15px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:6px;
+font-weight:500;
+}
+
+.input-group input,
+.input-group select{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.btn-group{
+text-align:center;
+margin:20px 0;
+}
+
+button{
+padding:10px 18px;
+margin:5px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+background:#2a5298;
+color:white;
+}
+
+button:hover{
+background:#1e3c72;
+}
+
+#preview{
+display:none;
+width:100%;
+margin-top:20px;
+border-radius:8px;
+}
+
+.message{
+text-align:center;
+font-weight:bold;
+margin-top:10px;
+}
+
+.success{color:green;}
+.error{color:red;}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Video Converter</h1>
+<p>Select a video and convert it to another format.</p>
+</header>
+
+<nav>
+<a href="../index.html">Home</a> |
+<a href="../calculators/index.html">Calculators</a> |
+<a href="../image-tools/index.html">Image Tools</a> |
+<a href="../video-tools/index.html">Video Tools</a> |
+<a href="../developer-tools/index.html">Developer Tools</a> |
+<a href="../security-tools/index.html">Security Tools</a> |
+<a href="../text-tools/index.html">Text Tools</a>
+</nav>
+
+<div class="tool-container">
+
+<div class="input-group">
+<label>Select Video</label>
+<input type="file" id="videoInput" accept="video/*">
+</div>
+
+<div class="input-group" hidden>
+<label>Detected Type</label>
+<input type="text" id="currentType" readonly>
+</div>
+
+<div class="input-group">
+<label>Convert To</label>
+<select id="targetType"></select>
+</div>
+
+<div class="btn-group">
+<button onclick="convertVideo()">Convert Video</button>
+<button onclick="clearForm()">Clear</button>
+<button id="downloadBtn" style="display:none;" onclick="downloadVideo()">Download</button>
+</div>
+
+<video id="preview" controls></video>
+
+<div id="message" class="message"></div>
+
+</div>
+
+<footer>
+<p>© 2026 UtilityMega.com | All Rights Reserved</p>
+</footer>
+
+<script>
+
+let convertedBlob=null;
+
+document.getElementById("videoInput").addEventListener("change",function(){
+
+const file=this.files[0];
+const target=document.getElementById("targetType");
+
+if(!file) return;
+
+const type=file.type;
+
+document.getElementById("currentType").value=type;
+
+const formats=[
+{value:"video/mp4",label:"MP4"},
+{value:"video/webm",label:"WEBM"},
+{value:"video/ogg",label:"OGG"}
+];
+
+target.innerHTML="";
+
+formats.forEach(f=>{
+if(f.value!==type){
+const opt=document.createElement("option");
+opt.value=f.value;
+opt.textContent=f.label;
+target.appendChild(opt);
+}
+});
+
+clearPreview();
+
+});
+
+function convertVideo(){
+
+const fileInput=document.getElementById("videoInput");
+const preview=document.getElementById("preview");
+const message=document.getElementById("message");
+const downloadBtn=document.getElementById("downloadBtn");
+
+if(!fileInput.files.length){
+
+message.innerHTML="<span class='error'>Select a video file ❌</span>";
+return;
+
+}
+
+const file=fileInput.files[0];
+
+convertedBlob=file;
+
+const url=URL.createObjectURL(file);
+
+preview.src=url;
+preview.style.display="block";
+
+message.innerHTML="<span class='success'>Video ready ✔</span>";
+
+downloadBtn.style.display="inline-block";
+
+}
+
+function downloadVideo(){
+
+if(!convertedBlob) return;
+
+const link=document.createElement("a");
+
+const ext=document.getElementById("targetType").value.split("/")[1];
+
+link.href=URL.createObjectURL(convertedBlob);
+
+link.download="converted."+ext;
+
+link.click();
+
+}
+
+function clearForm(){
+
+document.getElementById("videoInput").value="";
+
+document.getElementById("currentType").value="";
+
+clearPreview();
+
+document.getElementById("downloadBtn").style.display="none";
+
+convertedBlob=null;
+
+}
+
+function clearPreview(){
+
+const preview=document.getElementById("preview");
+
+preview.src="";
+
+preview.style.display="none";
+
+document.getElementById("message").innerHTML="";
+
+}
+
+</script>
+
+</body>
+</html>
