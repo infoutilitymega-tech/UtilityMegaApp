@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Percentage Calculator — Free Online Percentage Tool | UtilityMega</title>
+  <meta name="description"
+    content="Calculate percentages: X% of Y, what percent X is of Y, and percentage change. Free online percentage calculator." />
+  <link rel="canonical" href="https://utilitymega.com/calculators/percentage-calculator.html" />
+  <meta property="og:title" content="Percentage Calculator — Free Online Percentage Tool | UtilityMega" />
+  <meta property="og:description"
+    content="Calculate percentages: X% of Y, what percent X is of Y, and percentage change. Free online percentage calculator." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://utilitymega.com/calculators/percentage-calculator.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="ann" id="ann">🚀 100+ Free Tools — No Signup, No Limits!&nbsp;&nbsp;<a href="/index.html#cats">Explore All
+      →</a><button class="ann-x" onclick="this.parentElement.remove()">✕</button></div>
+  <div class="overlay" id="overlay" onclick="cSb()"></div>
+  <aside class="sidebar" id="sb">
+    <div class="sb-head"><a href="../index.html" class="sb-logo"><img src="../assets/logo.svg" width="22" height="22"
+          alt="UtilityMega" />Utility<b>Mega</b></a><button class="sb-close" onclick="cSb()">✕</button></div>
+    <div class="sb-srch">
+      <div class="sb-sw"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg><input type="text" id="sbSrch" placeholder="Search tools…" autocomplete="off" /></div>
+    </div>
+    <nav class="sb-nav">
+      <div class="sb-lbl">Main</div>
+      <a class="sb-link" href="../index.html"><span class="sb-ico" style="background:var(--accent-bg)">🏠</span><span
+          class="sb-txt">Home</span></a>
+      <div class="sb-lbl">Categories</div>
+      <div class="sb-item expanded" id="sn1">
+        <div class="sb-link" onclick="tSb('sn1')"><span class="sb-ico"
+            style="background:var(--accent-bg)">🧮</span><span class="sb-txt">Calculators</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../calculators/index.html">All Calculators</a><a
+            href="../calculators/emi-calculator.html">EMI Calculator</a><a href="../calculators/sip-calculator.html">SIP
+            Calculator</a><a href="../calculators/bmi-calculator.html">BMI Calculator</a><a
+            href="../calculators/bmr-calculator.html">BMR Calculator</a><a href="../calculators/age-calculator.html">Age
+            Calculator</a><a href="../calculators/gst-calculator.html">GST Calculator</a><a
+            href="../calculators/loan-calculator.html">Loan Calculator</a><a
+            href="../calculators/compound-interest.html">Compound Interest</a><a
+            href="../calculators/discount-calculator.html">Discount Calc</a><a
+            href="../calculators/profit-margin.html">Profit Margin</a><a
+            href="../calculators/retirement-calculator.html">Retirement Calc</a></div>
+      </div>
+      <div class="sb-item" id="sn2">
+        <div class="sb-link" onclick="tSb('sn2')"><span class="sb-ico"
+            style="background:rgba(225,29,72,.1)">🖼️</span><span class="sb-txt">Image Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../image-tools/index.html">All Image Tools</a><a
+            href="../image-tools/image-compressor.html">Image Compressor</a><a
+            href="../image-tools/image-resizer.html">Image Resizer</a><a href="../image-tools/jpg-to-png.html">JPG to
+            PNG</a><a href="../image-tools/png-to-jpg.html">PNG to JPG</a><a href="../image-tools/cropper.html">Image
+            Cropper</a><a href="../image-tools/meme-generator.html">Meme Generator</a><a
+            href="../image-tools/watermark-tool.html">Watermark Tool</a></div>
+      </div>
+      <div class="sb-item" id="sn3">
+        <div class="sb-link" onclick="tSb('sn3')"><span class="sb-ico"
+            style="background:rgba(124,58,237,.1)">🎬</span><span class="sb-txt">Video Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../video-tools/index.html">All Video Tools</a><a
+            href="../video-tools/video-compressor.html">Video Compressor</a><a
+            href="../video-tools/video-converter.html">Video Converter</a><a
+            href="../video-tools/video-to-mp3.html">Video to MP3</a><a href="../video-tools/gif-maker.html">GIF
+            Maker</a></div>
+      </div>
+      <div class="sb-item" id="sn4">
+        <div class="sb-link" onclick="tSb('sn4')"><span class="sb-ico" style="background:#ccfbf1">💻</span><span
+            class="sb-txt">Developer Tools</span><span class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../developer-tools/index.html">All Dev Tools</a><a
+            href="../developer-tools/json-formatter.html">JSON Formatter</a><a
+            href="../developer-tools/css-minifier.html">CSS Minifier</a><a href="../developer-tools/js-minifier.html">JS
+            Minifier</a><a href="../developer-tools/base64-encoder.html">Base64 Encoder</a><a
+            href="../developer-tools/url-encoder.html">URL Encoder</a><a
+            href="../developer-tools/regex-tester.html">Regex Tester</a></div>
+      </div>
+      <div class="sb-item" id="sn5">
+        <div class="sb-link" onclick="tSb('sn5')"><span class="sb-ico"
+            style="background:rgba(0,212,180,.12)">📝</span><span class="sb-txt">Text Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../text-tools/index.html">All Text Tools</a><a
+            href="../text-tools/word-counter.html">Word Counter</a><a
+            href="../text-tools/character-counter.html">Character Counter</a><a
+            href="../text-tools/case-converter.html">Case Converter</a><a href="../text-tools/text-sorter.html">Text
+            Sorter</a><a href="../text-tools/duplicate-remover.html">Duplicate Remover</a></div>
+      </div>
+      <div class="sb-item" id="sn6">
+        <div class="sb-link" onclick="tSb('sn6')"><span class="sb-ico"
+            style="background:rgba(217,119,6,.1)">🔒</span><span class="sb-txt">Security Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../security-tools/index.html">All Security Tools</a><a
+            href="../security-tools/password-generator.html">Password Generator</a><a
+            href="../security-tools/password-strength.html">Password Strength</a><a
+            href="../security-tools/hash-generator.html">Hash Generator</a><a
+            href="../security-tools/md5-generator.html">MD5 Generator</a><a
+            href="../security-tools/uuid-generator.html">UUID Generator</a></div>
+      </div>
+      <div class="sb-item" id="sn7">
+        <div class="sb-link" onclick="tSb('sn7')"><span class="sb-ico"
+            style="background:rgba(37,99,235,.1)">🔎</span><span class="sb-txt">SEO Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../seo-tools/index.html">All SEO Tools</a><a
+            href="../seo-tools/meta-tag-generator.html">Meta Tag Generator</a><a
+            href="../seo-tools/robots-generator.html">Robots.txt Generator</a><a
+            href="../seo-tools/keyword-density.html">Keyword Density</a></div>
+      </div>
+      <div class="sb-item" id="sn8">
+        <div class="sb-link" onclick="tSb('sn8')"><span class="sb-ico"
+            style="background:rgba(124,58,237,.1)">🔄</span><span class="sb-txt">Unit Converters</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../unit-converters/index.html">All Converters</a><a
+            href="../unit-converters/length-converter.html">Length Converter</a><a
+            href="../unit-converters/weight-converter.html">Weight Converter</a><a
+            href="../unit-converters/temperature-converter.html">Temperature Converter</a></div>
+      </div>
+      <div class="sb-item" id="sn9">
+        <div class="sb-link" onclick="tSb('sn9')"><span class="sb-ico"
+            style="background:rgba(217,119,6,.1)">🛠️</span><span class="sb-txt">Utility Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../utility-tools/index.html">All Utility Tools</a><a
+            href="../utility-tools/qr-generator.html">QR Code Generator</a><a
+            href="../utility-tools/color-picker.html">Color Picker</a><a
+            href="../utility-tools/random-number.html">Random Number</a></div>
+      </div>
+      <div class="sb-item" id="sn10">
+        <div class="sb-link" onclick="tSb('sn10')"><span class="sb-ico"
+            style="background:rgba(5,150,105,.1)">🌾</span><span class="sb-txt">Farmers Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../farmers-tools/index.html">All Farmers Tools</a><a
+            href="../farmers-tools/crop-calculator.html">Crop Calculator</a><a
+            href="../farmers-tools/fertilizer-calculator.html">Fertilizer Calc</a><a
+            href="../farmers-tools/irrigation-planner.html">Irrigation Planner</a></div>
+      </div>
+      <div class="sb-lbl">Pages</div>
+      <a class="sb-link" href="../about.html"><span class="sb-ico" style="background:var(--accent-bg)">ℹ️</span><span
+          class="sb-txt">About Us</span></a>
+      <a class="sb-link" href="../contact.html"><span class="sb-ico"
+          style="background:rgba(5,150,105,.1)">✉️</span><span class="sb-txt">Contact</span></a>
+      <a class="sb-link" href="../faq.html"><span class="sb-ico" style="background:rgba(13,148,136,.1)">❓</span><span
+          class="sb-txt">FAQ</span></a>
+    </nav>
+    <div class="sb-foot"><button class="sb-tbtn" onclick="tTh()"><span id="sbTi">🌙</span><span id="sbTt">Dark
+          Mode</span></button></div>
+  </aside>
+  <header>
+    <nav class="navbar" id="nav">
+      <button class="nav-mb" onclick="oSb()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.2">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg></button>
+      <a href="../index.html" class="nav-logo">Utility<b>Mega</b></a>
+      <div class="nav-ls">
+        <div class="nav-it"><a href="../calculators/index.html" class="nav-lk dd cur">Calculators <svg width="11"
+              height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <div class="nav-drop"><a href="../calculators/emi-calculator.html" class="nd">
+              <div class="nd-i">💰</div>
+              <div class="nd-t">EMI Calculator</div>
+              <div class="nd-d">Loan EMI</div>
+            </a><a href="../calculators/sip-calculator.html" class="nd">
+              <div class="nd-i">📈</div>
+              <div class="nd-t">SIP Calculator</div>
+              <div class="nd-d">MF Returns</div>
+            </a><a href="../calculators/bmi-calculator.html" class="nd">
+              <div class="nd-i">⚖️</div>
+              <div class="nd-t">BMI Calculator</div>
+              <div class="nd-d">Health check</div>
+            </a><a href="../calculators/gst-calculator.html" class="nd">
+              <div class="nd-i">🧾</div>
+              <div class="nd-t">GST Calculator</div>
+              <div class="nd-d">Tax calc</div>
+            </a><a href="../calculators/age-calculator.html" class="nd">
+              <div class="nd-i">🎂</div>
+              <div class="nd-t">Age Calculator</div>
+              <div class="nd-d">Exact age</div>
+            </a><a href="../calculators/percentage-calculator.html" class="nd">
+              <div class="nd-i">💯</div>
+              <div class="nd-t">Percentage Calc</div>
+              <div class="nd-d">Quick math</div>
+            </a></div>
+        </div>
+        <div class="nav-it"><a href="../image-tools/index.html" class="nav-lk dd">Image Tools <svg width="11"
+              height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <div class="nav-drop"><a href="../image-tools/image-compressor.html" class="nd">
+              <div class="nd-i">🗜️</div>
+              <div class="nd-t">Compressor</div>
+              <div class="nd-d">Reduce size</div>
+            </a><a href="../image-tools/cropper.html" class="nd">
+              <div class="nd-i">✂️</div>
+              <div class="nd-t">Cropper</div>
+              <div class="nd-d">Crop &amp; resize</div>
+            </a><a href="../image-tools/jpg-to-png.html" class="nd">
+              <div class="nd-i">🔄</div>
+              <div class="nd-t">JPG to PNG</div>
+              <div class="nd-d">Convert</div>
+            </a><a href="../image-tools/meme-generator.html" class="nd">
+              <div class="nd-i">😂</div>
+              <div class="nd-t">Meme Gen</div>
+              <div class="nd-d">Create memes</div>
+            </a></div>
+        </div>
+        <div class="nav-it"><a href="../developer-tools/index.html" class="nav-lk dd">Dev Tools <svg width="11"
+              height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <div class="nav-drop"><a href="../developer-tools/json-formatter.html" class="nd">
+              <div class="nd-i">{}</div>
+              <div class="nd-t">JSON Formatter</div>
+              <div class="nd-d">Format &amp; validate</div>
+            </a><a href="../developer-tools/css-minifier.html" class="nd">
+              <div class="nd-i">#</div>
+              <div class="nd-t">CSS Minifier</div>
+              <div class="nd-d">Compress CSS</div>
+            </a><a href="../developer-tools/js-minifier.html" class="nd">
+              <div class="nd-i">JS</div>
+              <div class="nd-t">JS Minifier</div>
+              <div class="nd-d">Compress JS</div>
+            </a><a href="../developer-tools/base64-encoder.html" class="nd">
+              <div class="nd-i">🔡</div>
+              <div class="nd-t">Base64 Encoder</div>
+              <div class="nd-d">Encode</div>
+            </a></div>
+        </div>
+        <a href="../text-tools/index.html" class="nav-lk">Text Tools</a>
+        <a href="../security-tools/index.html" class="nav-lk">Security</a>
+        <a href="../farmers-tools/index.html" class="nav-lk">Farmers</a>
+        <a href="../seo-tools/index.html" class="nav-lk">SEO</a>
+        <a href="../unit-converters/index.html" class="nav-lk">Converters</a>
+      </div>
+      <div class="nav-r">
+        <button class="nav-ib" onclick="oSrch()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg></button>
+        <button class="tpill" onclick="tTh()" id="tp"></button>
+      </div>
+    </nav>
+  </header>
+  <div class="so" id="sOv" onclick="hSO(event)">
+    <div class="sb2">
+      <div class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg><input type="text" id="sIn" placeholder="Search 100+ tools…" autocomplete="off" /><button class="s-esc"
+          onclick="cSrch()">ESC</button></div>
+      <div class="sr" id="sRes"></div>
+      <div class="shf"><span><kbd>↑↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>ESC</kbd>
+          close</span></div>
+    </div>
+  </div>
+  <nav class="bc"><a href="../index.html">🏠 Home</a><span class="bc-sep">›</span><a
+      href="../calculators/index.html">Calculators</a><span class="bc-sep">›</span><span class="bc-cur">Percentage
+      Calculator</span></nav>
+  <div class="page-hd">
+    <div class="ph-chip"><span class="ph-chip-dot"></span>💯 Math Calculator</div>
+    <h1 class="ph-h1">Percentage <em>Calculator</em></h1>
+    <p class="ph-p">Three modes: find X% of Y, calculate what percentage X is of Y, and compute percentage increase or
+      decrease.</p>
+  </div>
+  <div class="adw">
+    <div class="adp">Advertisement — Google AdSense (728×90
+      Leaderboard)<span><!-- ca-pub-XXXXXXXX data-ad-slot="XXXXXXXX" --></span></div>
+  </div>
+  <div class="tool-page">
+    <div class="tool-box">
+      <h2>🔧 Enter Details</h2>
+
+      <div style="margin-bottom:14px"><button class="mode-tab on" onclick="pMode(0,this)"
+          style="font-size:.76rem;padding:6px 10px">X% of Y</button> <button class="mode-tab" onclick="pMode(1,this)"
+          style="font-size:.76rem;padding:6px 10px">X is ?% of Y</button> <button class="mode-tab"
+          onclick="pMode(2,this)" style="font-size:.76rem;padding:6px 10px">% Change</button></div>
+      <div id="pm0">
+        <div class="fr"><label>What is <input type="number" id="p0-pct" value="15"
+              style="width:60px;display:inline-block;padding:4px" /> % of</label><input type="number" id="p0-val"
+            value="200" min="0" /></div>
+      </div>
+      <div id="pm1" style="display:none">
+        <div class="fr"><label>What % is <input type="number" id="p1-x" value="30"
+              style="width:60px;display:inline-block;padding:4px" /> of</label><input type="number" id="p1-y"
+            value="200" /></div>
+      </div>
+      <div id="pm2" style="display:none">
+        <div class="fgrid">
+          <div class="fr"><label>From</label><input type="number" id="p2-from" value="100" /></div>
+          <div class="fr"><label>To</label><input type="number" id="p2-to" value="120" /></div>
+        </div>
+      </div>
+      <button class="calc-btn" onclick="calcPct()">💯 Calculate</button>
+    </div>
+    <div class="tool-box">
+      <h2>📊 Result</h2>
+      <div class="result-box" id="pct-res">
+        <div class="rlabel">Result</div>
+        <div class="rvalue" id="pct-val">—</div>
+        <div class="rsub" id="pct-sub"></div>
+      </div>
+      <p id="pct-empty" style="color:var(--text2);font-size:.82rem">Enter values and click Calculate.</p>
+    </div>
+  </div>
+  <div class="adw">
+    <div class="adp">Advertisement — Google AdSense (300×250
+      Rectangle)<span><!-- ca-pub-XXXXXXXX data-ad-slot="XXXXXXXX" --></span></div>
+  </div>
+  <div class="below">
+    <div class="info-card">
+      <h2>About <span>Percentage Calculator</span></h2>
+      <p>Percentage calculations are used everywhere — discounts, taxes, profit margins, exam scores, and more. Our
+        3-mode calculator covers all common percentage needs.</p>
+      <h3>Formulas</h3>
+      <div class='formula-chip'><code>X% of Y = (X/100) × Y</code><br /><code>% Change = ((New−Old)/Old) × 100</code>
+      </div>
+    </div>
+    <div class="faq-card">
+      <h2>Frequently Asked <span>Questions</span></h2>
+      <div>
+        <div class="faq-item">
+          <div class="faq-q">How to calculate 15% of 200? <span class="faq-arr">▼</span></div>
+          <div class="faq-a">
+            <p>15% of 200 = (15/100) × 200 = 30. Use Mode 1 in our calculator.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How to find percentage increase? <span class="faq-arr">▼</span></div>
+          <div class="faq-a">
+            <p>Use Mode 3 (% Change). Enter old value and new value. E.g. from 100 to 120 = 20% increase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="related-w">
+    <h2>Related <span>Tools</span></h2>
+    <div class="rel-grid"><a href="emi-calculator.html" class="rel-card">💰 EMI Calculator</a>
+      <a href="gst-calculator.html" class="rel-card">🧾 GST Calculator</a>
+      <a href="discount-calculator.html" class="rel-card">🏷️ Discount Calc</a>
+      <a href="index.html" class="rel-card">🧮 All Calculators</a>
+    </div>
+  </div>
+  <footer>
+    <div class="fi">
+      <div class="fg">
+        <div>
+          <div class="flo">Utility<b>Mega</b><span>·</span></div>
+          <p class="fd">100+ free online tools. No signup needed. Fast, accurate, always free.</p>
+          <div class="fsc"><a href="#">𝕏</a><a href="#">f</a><a href="#">in</a><a href="#">▶</a></div>
+        </div>
+        <div class="fc">
+          <h4>Tools</h4>
+          <ul class="fl">
+            <li><a href="../calculators/index.html">Calculators</a></li>
+            <li><a href="../image-tools/index.html">Image Tools</a></li>
+            <li><a href="../video-tools/index.html">Video Tools</a></li>
+            <li><a href="../developer-tools/index.html">Dev Tools</a></li>
+            <li><a href="../security-tools/index.html">Security Tools</a></li>
+            <li><a href="../text-tools/index.html">Text Tools</a></li>
+            <li><a href="../farmers-tools/index.html">Farmers Tools</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Popular</h4>
+          <ul class="fl">
+            <li><a href="../calculators/emi-calculator.html">EMI Calculator</a></li>
+            <li><a href="../calculators/sip-calculator.html">SIP Calculator</a></li>
+            <li><a href="../calculators/bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="../image-tools/image-compressor.html">Image Compressor</a></li>
+            <li><a href="../developer-tools/json-formatter.html">JSON Formatter</a></li>
+            <li><a href="../security-tools/password-generator.html">Password Generator</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Company</h4>
+          <ul class="fl">
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+            <li><a href="../sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fb">
+        <p>© 2025 UtilityMega. All rights reserved. Made with ❤️ for everyone.</p>
+        <div class="fbl"><a href="../privacy-policy.html">Privacy</a><a href="../terms.html">Terms</a><a
+            href="../sitemap.html">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+  <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <script src="./script.js"></script>
+  <script>
+    let pm = 0;
+    function pMode(m, btn) { pm = m; document.querySelectorAll('.mode-tab').forEach(b => b.classList.remove('on')); btn.classList.add('on');[0, 1, 2].forEach(i => document.getElementById('pm' + i).style.display = i === m ? 'block' : 'none'); }
+    function calcPct() {
+      let v, s;
+      if (pm === 0) { const pct = +document.getElementById('p0-pct').value, val = +document.getElementById('p0-val').value; v = (pct / 100) * val; s = pct + '% of ' + val + ' = ' + v.toFixed(2); }
+      else if (pm === 1) { const x = +document.getElementById('p1-x').value, y = +document.getElementById('p1-y').value; v = (x / y * 100); s = x + ' is ' + v.toFixed(2) + '% of ' + y; }
+      else { const fr = +document.getElementById('p2-from').value, to = +document.getElementById('p2-to').value; v = ((to - fr) / fr * 100); s = (v >= 0 ? 'Increase' : 'Decrease') + ' of ' + Math.abs(v).toFixed(2) + '%'; }
+      document.getElementById('pct-val').textContent = typeof v === 'number' ? v.toFixed(2) : '—';
+      document.getElementById('pct-sub').textContent = s;
+      document.getElementById('pct-res').classList.add('show');
+      document.getElementById('pct-empty').style.display = 'none';
+    }
+  </script>
+
+</body>
+
+</html>

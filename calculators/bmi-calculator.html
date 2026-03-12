@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>BMI Calculator — Free Body Mass Index Calculator | UtilityMega</title>
+  <meta name="description"
+    content="Calculate your BMI instantly. Check if you're underweight, normal, overweight or obese. Free online BMI calculator." />
+  <link rel="canonical" href="https://utilitymega.com/calculators/bmi-calculator.html" />
+  <meta property="og:title" content="BMI Calculator — Free Body Mass Index Calculator | UtilityMega" />
+  <meta property="og:description"
+    content="Calculate your BMI instantly. Check if you're underweight, normal, overweight or obese. Free online BMI calculator." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://utilitymega.com/calculators/bmi-calculator.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="ann" id="ann">🚀 100+ Free Tools — No Signup, No Limits!&nbsp;&nbsp;<a href="/index.html#cats">Explore All
+      →</a><button class="ann-x" onclick="this.parentElement.remove()">✕</button></div>
+  <div class="overlay" id="overlay" onclick="cSb()"></div>
+  <aside class="sidebar" id="sb">
+    <div class="sb-head"><a href="../index.html" class="sb-logo"><img src="../assets/logo.svg" width="22" height="22"
+          alt="UtilityMega" />Utility<b>Mega</b></a><button class="sb-close" onclick="cSb()">✕</button></div>
+    <div class="sb-srch">
+      <div class="sb-sw"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg><input type="text" id="sbSrch" placeholder="Search tools…" autocomplete="off" /></div>
+    </div>
+    <nav class="sb-nav">
+      <div class="sb-lbl">Main</div>
+      <a class="sb-link" href="../index.html"><span class="sb-ico" style="background:var(--accent-bg)">🏠</span><span
+          class="sb-txt">Home</span></a>
+      <div class="sb-lbl">Categories</div>
+      <div class="sb-item expanded" id="sn1">
+        <div class="sb-link" onclick="tSb('sn1')"><span class="sb-ico"
+            style="background:var(--accent-bg)">🧮</span><span class="sb-txt">Calculators</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../calculators/index.html">All Calculators</a><a
+            href="../calculators/emi-calculator.html">EMI Calculator</a><a href="../calculators/sip-calculator.html">SIP
+            Calculator</a><a href="../calculators/bmi-calculator.html">BMI Calculator</a><a
+            href="../calculators/bmr-calculator.html">BMR Calculator</a><a href="../calculators/age-calculator.html">Age
+            Calculator</a><a href="../calculators/gst-calculator.html">GST Calculator</a><a
+            href="../calculators/loan-calculator.html">Loan Calculator</a><a
+            href="../calculators/compound-interest.html">Compound Interest</a><a
+            href="../calculators/discount-calculator.html">Discount Calc</a><a
+            href="../calculators/profit-margin.html">Profit Margin</a><a
+            href="../calculators/retirement-calculator.html">Retirement Calc</a></div>
+      </div>
+      <div class="sb-item" id="sn2">
+        <div class="sb-link" onclick="tSb('sn2')"><span class="sb-ico"
+            style="background:rgba(225,29,72,.1)">🖼️</span><span class="sb-txt">Image Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../image-tools/index.html">All Image Tools</a><a
+            href="../image-tools/image-compressor.html">Image Compressor</a><a
+            href="../image-tools/image-resizer.html">Image Resizer</a><a href="../image-tools/jpg-to-png.html">JPG to
+            PNG</a><a href="../image-tools/png-to-jpg.html">PNG to JPG</a><a href="../image-tools/cropper.html">Image
+            Cropper</a><a href="../image-tools/meme-generator.html">Meme Generator</a><a
+            href="../image-tools/watermark-tool.html">Watermark Tool</a></div>
+      </div>
+      <div class="sb-item" id="sn3">
+        <div class="sb-link" onclick="tSb('sn3')"><span class="sb-ico"
+            style="background:rgba(124,58,237,.1)">🎬</span><span class="sb-txt">Video Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../video-tools/index.html">All Video Tools</a><a
+            href="../video-tools/video-compressor.html">Video Compressor</a><a
+            href="../video-tools/video-converter.html">Video Converter</a><a
+            href="../video-tools/video-to-mp3.html">Video to MP3</a><a href="../video-tools/gif-maker.html">GIF
+            Maker</a></div>
+      </div>
+      <div class="sb-item" id="sn4">
+        <div class="sb-link" onclick="tSb('sn4')"><span class="sb-ico" style="background:#ccfbf1">💻</span><span
+            class="sb-txt">Developer Tools</span><span class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../developer-tools/index.html">All Dev Tools</a><a
+            href="../developer-tools/json-formatter.html">JSON Formatter</a><a
+            href="../developer-tools/css-minifier.html">CSS Minifier</a><a href="../developer-tools/js-minifier.html">JS
+            Minifier</a><a href="../developer-tools/base64-encoder.html">Base64 Encoder</a><a
+            href="../developer-tools/url-encoder.html">URL Encoder</a><a
+            href="../developer-tools/regex-tester.html">Regex Tester</a></div>
+      </div>
+      <div class="sb-item" id="sn5">
+        <div class="sb-link" onclick="tSb('sn5')"><span class="sb-ico"
+            style="background:rgba(0,212,180,.12)">📝</span><span class="sb-txt">Text Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../text-tools/index.html">All Text Tools</a><a
+            href="../text-tools/word-counter.html">Word Counter</a><a
+            href="../text-tools/character-counter.html">Character Counter</a><a
+            href="../text-tools/case-converter.html">Case Converter</a><a href="../text-tools/text-sorter.html">Text
+            Sorter</a><a href="../text-tools/duplicate-remover.html">Duplicate Remover</a></div>
+      </div>
+      <div class="sb-item" id="sn6">
+        <div class="sb-link" onclick="tSb('sn6')"><span class="sb-ico"
+            style="background:rgba(217,119,6,.1)">🔒</span><span class="sb-txt">Security Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../security-tools/index.html">All Security Tools</a><a
+            href="../security-tools/password-generator.html">Password Generator</a><a
+            href="../security-tools/password-strength.html">Password Strength</a><a
+            href="../security-tools/hash-generator.html">Hash Generator</a><a
+            href="../security-tools/md5-generator.html">MD5 Generator</a><a
+            href="../security-tools/uuid-generator.html">UUID Generator</a></div>
+      </div>
+      <div class="sb-item" id="sn7">
+        <div class="sb-link" onclick="tSb('sn7')"><span class="sb-ico"
+            style="background:rgba(37,99,235,.1)">🔎</span><span class="sb-txt">SEO Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../seo-tools/index.html">All SEO Tools</a><a
+            href="../seo-tools/meta-tag-generator.html">Meta Tag Generator</a><a
+            href="../seo-tools/robots-generator.html">Robots.txt Generator</a><a
+            href="../seo-tools/keyword-density.html">Keyword Density</a></div>
+      </div>
+      <div class="sb-item" id="sn8">
+        <div class="sb-link" onclick="tSb('sn8')"><span class="sb-ico"
+            style="background:rgba(124,58,237,.1)">🔄</span><span class="sb-txt">Unit Converters</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../unit-converters/index.html">All Converters</a><a
+            href="../unit-converters/length-converter.html">Length Converter</a><a
+            href="../unit-converters/weight-converter.html">Weight Converter</a><a
+            href="../unit-converters/temperature-converter.html">Temperature Converter</a></div>
+      </div>
+      <div class="sb-item" id="sn9">
+        <div class="sb-link" onclick="tSb('sn9')"><span class="sb-ico"
+            style="background:rgba(217,119,6,.1)">🛠️</span><span class="sb-txt">Utility Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../utility-tools/index.html">All Utility Tools</a><a
+            href="../utility-tools/qr-generator.html">QR Code Generator</a><a
+            href="../utility-tools/color-picker.html">Color Picker</a><a
+            href="../utility-tools/random-number.html">Random Number</a></div>
+      </div>
+      <div class="sb-item" id="sn10">
+        <div class="sb-link" onclick="tSb('sn10')"><span class="sb-ico"
+            style="background:rgba(5,150,105,.1)">🌾</span><span class="sb-txt">Farmers Tools</span><span
+            class="sb-arr">▶</span></div>
+        <div class="sb-sub"><a href="../farmers-tools/index.html">All Farmers Tools</a><a
+            href="../farmers-tools/crop-calculator.html">Crop Calculator</a><a
+            href="../farmers-tools/fertilizer-calculator.html">Fertilizer Calc</a><a
+            href="../farmers-tools/irrigation-planner.html">Irrigation Planner</a></div>
+      </div>
+      <div class="sb-lbl">Pages</div>
+      <a class="sb-link" href="../about.html"><span class="sb-ico" style="background:var(--accent-bg)">ℹ️</span><span
+          class="sb-txt">About Us</span></a>
+      <a class="sb-link" href="../contact.html"><span class="sb-ico"
+          style="background:rgba(5,150,105,.1)">✉️</span><span class="sb-txt">Contact</span></a>
+      <a class="sb-link" href="../faq.html"><span class="sb-ico" style="background:rgba(13,148,136,.1)">❓</span><span
+          class="sb-txt">FAQ</span></a>
+    </nav>
+    <div class="sb-foot"><button class="sb-tbtn" onclick="tTh()"><span id="sbTi">🌙</span><span id="sbTt">Dark
+          Mode</span></button></div>
+  </aside>
+  <header>
+    <nav class="navbar" id="nav">
+      <button class="nav-mb" onclick="oSb()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.2">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg></button>
+      <a href="../index.html" class="nav-logo">Utility<b>Mega</b></a>
+      <div class="nav-ls">
+        <div class="nav-it"><a href="../calculators/index.html" class="nav-lk dd cur">Calculators <svg width="11"
+              height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <div class="nav-drop"><a href="../calculators/emi-calculator.html" class="nd">
+              <div class="nd-i">💰</div>
+              <div class="nd-t">EMI Calculator</div>
+              <div class="nd-d">Loan EMI</div>
+            </a><a href="../calculators/sip-calculator.html" class="nd">
+              <div class="nd-i">📈</div>
+              <div class="nd-t">SIP Calculator</div>
+              <div class="nd-d">MF Returns</div>
+            </a><a href="../calculators/bmi-calculator.html" class="nd">
+              <div class="nd-i">⚖️</div>
+              <div class="nd-t">BMI Calculator</div>
+              <div class="nd-d">Health check</div>
+            </a><a href="../calculators/gst-calculator.html" class="nd">
+              <div class="nd-i">🧾</div>
+              <div class="nd-t">GST Calculator</div>
+              <div class="nd-d">Tax calc</div>
+            </a><a href="../calculators/age-calculator.html" class="nd">
+              <div class="nd-i">🎂</div>
+              <div class="nd-t">Age Calculator</div>
+              <div class="nd-d">Exact age</div>
+            </a><a href="../calculators/percentage-calculator.html" class="nd">
+              <div class="nd-i">💯</div>
+              <div class="nd-t">Percentage Calc</div>
+              <div class="nd-d">Quick math</div>
+            </a></div>
+        </div>
+        <div class="nav-it"><a href="../image-tools/index.html" class="nav-lk dd">Image Tools <svg width="11"
+              height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <div class="nav-drop"><a href="../image-tools/image-compressor.html" class="nd">
+              <div class="nd-i">🗜️</div>
+              <div class="nd-t">Compressor</div>
+              <div class="nd-d">Reduce size</div>
+            </a><a href="../image-tools/cropper.html" class="nd">
+              <div class="nd-i">✂️</div>
+              <div class="nd-t">Cropper</div>
+              <div class="nd-d">Crop &amp; resize</div>
+            </a><a href="../image-tools/jpg-to-png.html" class="nd">
+              <div class="nd-i">🔄</div>
+              <div class="nd-t">JPG to PNG</div>
+              <div class="nd-d">Convert</div>
+            </a><a href="../image-tools/meme-generator.html" class="nd">
+              <div class="nd-i">😂</div>
+              <div class="nd-t">Meme Gen</div>
+              <div class="nd-d">Create memes</div>
+            </a></div>
+        </div>
+        <div class="nav-it"><a href="../developer-tools/index.html" class="nav-lk dd">Dev Tools <svg width="11"
+              height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg></a>
+          <div class="nav-drop"><a href="../developer-tools/json-formatter.html" class="nd">
+              <div class="nd-i">{}</div>
+              <div class="nd-t">JSON Formatter</div>
+              <div class="nd-d">Format &amp; validate</div>
+            </a><a href="../developer-tools/css-minifier.html" class="nd">
+              <div class="nd-i">#</div>
+              <div class="nd-t">CSS Minifier</div>
+              <div class="nd-d">Compress CSS</div>
+            </a><a href="../developer-tools/js-minifier.html" class="nd">
+              <div class="nd-i">JS</div>
+              <div class="nd-t">JS Minifier</div>
+              <div class="nd-d">Compress JS</div>
+            </a><a href="../developer-tools/base64-encoder.html" class="nd">
+              <div class="nd-i">🔡</div>
+              <div class="nd-t">Base64 Encoder</div>
+              <div class="nd-d">Encode</div>
+            </a></div>
+        </div>
+        <a href="../text-tools/index.html" class="nav-lk">Text Tools</a>
+        <a href="../security-tools/index.html" class="nav-lk">Security</a>
+        <a href="../farmers-tools/index.html" class="nav-lk">Farmers</a>
+        <a href="../seo-tools/index.html" class="nav-lk">SEO</a>
+        <a href="../unit-converters/index.html" class="nav-lk">Converters</a>
+      </div>
+      <div class="nav-r">
+        <button class="nav-ib" onclick="oSrch()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg></button>
+        <button class="tpill" onclick="tTh()" id="tp"></button>
+      </div>
+    </nav>
+  </header>
+  <div class="so" id="sOv" onclick="hSO(event)">
+    <div class="sb2">
+      <div class="si"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg><input type="text" id="sIn" placeholder="Search 100+ tools…" autocomplete="off" /><button class="s-esc"
+          onclick="cSrch()">ESC</button></div>
+      <div class="sr" id="sRes"></div>
+      <div class="shf"><span><kbd>↑↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>ESC</kbd>
+          close</span></div>
+    </div>
+  </div>
+  <nav class="bc"><a href="../index.html">🏠 Home</a><span class="bc-sep">›</span><a
+      href="../calculators/index.html">Calculators</a><span class="bc-sep">›</span><span class="bc-cur">BMI
+      Calculator</span></nav>
+  <div class="page-hd">
+    <div class="ph-chip"><span class="ph-chip-dot"></span>⚖️ Health Calculator</div>
+    <h1 class="ph-h1">BMI <em>Calculator</em></h1>
+    <p class="ph-p">Calculate your Body Mass Index and check your healthy weight range. Instant results with category
+      classification.</p>
+  </div>
+  <div class="adw">
+    <div class="adp">Advertisement — Google AdSense (728×90
+      Leaderboard)<span><!-- ca-pub-XXXXXXXX data-ad-slot="XXXXXXXX" --></span></div>
+  </div>
+  <div class="tool-page">
+    <div class="tool-box">
+      <h2>🔧 Enter Details</h2>
+
+      <div class="fr"><label>Weight (kg)</label><input type="number" id="bmi-w" value="70" min="20" max="300"
+          step="0.5" /></div>
+      <div class="fr"><label>Height (cm)</label><input type="number" id="bmi-h" value="170" min="100" max="250"
+          step="0.5" /></div>
+      <div class="fr"><label>Gender</label><select id="bmi-g">
+          <option value="m">Male</option>
+          <option value="f">Female</option>
+        </select></div>
+      <div class="fr"><label>Age</label><input type="number" id="bmi-age" value="30" min="5" max="100" /></div>
+      <button class="calc-btn" onclick="calcBMI()">⚖️ Calculate BMI</button>
+    </div>
+    <div class="tool-box">
+      <h2>📊 Result</h2>
+
+      <div class="result-box" id="bmi-res">
+        <div class="rlabel">Your BMI</div>
+        <div class="rvalue" id="bmi-val">—</div>
+        <div class="rsub" id="bmi-cat" style="font-size:.88rem;font-weight:700;margin-top:4px"></div>
+        <div class="rgrid">
+          <div class="ritem">
+            <div class="rl">Category</div>
+            <div class="rv" id="bmi-cat2">—</div>
+          </div>
+          <div class="ritem">
+            <div class="rl">Ideal Weight Range</div>
+            <div class="rv" id="bmi-iw">—</div>
+          </div>
+          <div class="ritem">
+            <div class="rl">BMI Range</div>
+            <div class="rv" id="bmi-range">18.5–24.9</div>
+          </div>
+          <div class="ritem">
+            <div class="rl">Weight to Lose/Gain</div>
+            <div class="rv" id="bmi-diff">—</div>
+          </div>
+        </div>
+        <div id="bmi-bar-wrap" style="margin-top:14px">
+          <div
+            style="height:16px;border-radius:8px;background:linear-gradient(90deg,#60a5fa,#4ade80,#facc15,#f87171);position:relative;overflow:visible">
+            <div id="bmi-needle"
+              style="position:absolute;top:-4px;width:3px;height:24px;background:var(--text);border-radius:2px;transform:translateX(-50%)">
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.65rem;color:var(--text2);margin-top:4px">
+            <span>Under<br>(&lt;18.5)</span><span>Normal<br>(18.5–24.9)</span><span>Over<br>(25–29.9)</span><span>Obese<br>(30+)</span>
+          </div>
+        </div>
+      </div>
+      <p id="bmi-empty" style="color:var(--text2);font-size:.82rem">Enter your details and click Calculate.</p>
+    </div>
+  </div>
+  <div class="adw">
+    <div class="adp">Advertisement — Google AdSense (300×250
+      Rectangle)<span><!-- ca-pub-XXXXXXXX data-ad-slot="XXXXXXXX" --></span></div>
+  </div>
+  <div class="below">
+    <div class="info-card">
+      <h2>About <span>BMI Calculator</span></h2>
+      <p>BMI (Body Mass Index) is a measure of body fat based on height and weight. It's widely used to screen for
+        weight categories that may lead to health problems.</p>
+      <h3>BMI Formula</h3>
+      <div class='formula-chip'><code>BMI = Weight (kg) / Height² (m)</code></div>
+      <h3>BMI Categories</h3>
+      <p>Below 18.5: Underweight | 18.5–24.9: Normal | 25–29.9: Overweight | 30+: Obese</p>
+    </div>
+    <div class="faq-card">
+      <h2>Frequently Asked <span>Questions</span></h2>
+      <div>
+        <div class="faq-item">
+          <div class="faq-q">What is a healthy BMI? <span class="faq-arr">▼</span></div>
+          <div class="faq-a">
+            <p>A BMI between 18.5 and 24.9 is considered healthy. Below 18.5 is underweight; above 25 is overweight;
+              above 30 is obese.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is BMI accurate for everyone? <span class="faq-arr">▼</span></div>
+          <div class="faq-a">
+            <p>BMI is a screening tool, not a diagnostic one. It may overestimate fat in muscular individuals or
+              underestimate it in older adults.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How to reduce BMI? <span class="faq-arr">▼</span></div>
+          <div class="faq-a">
+            <p>A combination of balanced diet, regular exercise (150+ min/week cardio) and strength training is the most
+              effective approach.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="related-w">
+    <h2>Related <span>Tools</span></h2>
+    <div class="rel-grid"><a href="bmr-calculator.html" class="rel-card">🔥 BMR Calculator</a>
+      <a href="emi-calculator.html" class="rel-card">💰 EMI Calculator</a>
+      <a href="sip-calculator.html" class="rel-card">📈 SIP Calculator</a>
+      <a href="index.html" class="rel-card">🧮 All Calculators</a>
+    </div>
+  </div>
+  <footer>
+    <div class="fi">
+      <div class="fg">
+        <div>
+          <div class="flo">Utility<b>Mega</b><span>·</span></div>
+          <p class="fd">100+ free online tools. No signup needed. Fast, accurate, always free.</p>
+          <div class="fsc"><a href="#">𝕏</a><a href="#">f</a><a href="#">in</a><a href="#">▶</a></div>
+        </div>
+        <div class="fc">
+          <h4>Tools</h4>
+          <ul class="fl">
+            <li><a href="../calculators/index.html">Calculators</a></li>
+            <li><a href="../image-tools/index.html">Image Tools</a></li>
+            <li><a href="../video-tools/index.html">Video Tools</a></li>
+            <li><a href="../developer-tools/index.html">Dev Tools</a></li>
+            <li><a href="../security-tools/index.html">Security Tools</a></li>
+            <li><a href="../text-tools/index.html">Text Tools</a></li>
+            <li><a href="../farmers-tools/index.html">Farmers Tools</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Popular</h4>
+          <ul class="fl">
+            <li><a href="../calculators/emi-calculator.html">EMI Calculator</a></li>
+            <li><a href="../calculators/sip-calculator.html">SIP Calculator</a></li>
+            <li><a href="../calculators/bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="../image-tools/image-compressor.html">Image Compressor</a></li>
+            <li><a href="../developer-tools/json-formatter.html">JSON Formatter</a></li>
+            <li><a href="../security-tools/password-generator.html">Password Generator</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Company</h4>
+          <ul class="fl">
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+            <li><a href="../sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fb">
+        <p>© 2025 UtilityMega. All rights reserved. Made with ❤️ for everyone.</p>
+        <div class="fbl"><a href="../privacy-policy.html">Privacy</a><a href="../terms.html">Terms</a><a
+            href="../sitemap.html">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+  <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <script src="./js/script.js"></script>
+  <script>
+    function calcBMI() {
+      const w = +document.getElementById('bmi-w').value;
+      const hcm = +document.getElementById('bmi-h').value;
+      const h = hcm / 100;
+      const bmi = w / (h * h);
+      let cat, clr;
+      if (bmi < 18.5) { cat = 'Underweight'; clr = '#60a5fa'; }
+      else if (bmi < 25) { cat = 'Normal Weight'; clr = 'var(--green)'; }
+      else if (bmi < 30) { cat = 'Overweight'; clr = 'var(--amber)'; }
+      else { cat = 'Obese'; clr = 'var(--rose)'; }
+      const iMin = 18.5 * h * h, iMax = 24.9 * h * h;
+      const diff = bmi < 18.5 ? iMin - w : bmi < 25 ? 0 : w - iMax;
+      document.getElementById('bmi-val').textContent = bmi.toFixed(1);
+      document.getElementById('bmi-val').style.color = clr;
+      document.getElementById('bmi-cat').textContent = cat;
+      document.getElementById('bmi-cat2').textContent = cat;
+      document.getElementById('bmi-iw').textContent = iMin.toFixed(0) + '–' + iMax.toFixed(0) + ' kg';
+      document.getElementById('bmi-diff').textContent = diff > 0 ? diff.toFixed(1) + ' kg ' + (bmi < 18.5 ? 'to gain' : 'to lose') : '—';
+      const pct = Math.min(Math.max((bmi - 10) / (40 - 10), 0), 1) * 100;
+      document.getElementById('bmi-needle').style.left = pct + '%';
+      document.getElementById('bmi-res').classList.add('show');
+      document.getElementById('bmi-empty').style.display = 'none';
+    }
+  </script>
+
+</body>
+
+</html>
