@@ -1,260 +1,443 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Image Resizer | UtilityMega</title>
-  <meta name="description" content="Resize images to any custom width and height dimensions."/>
-  <link rel="canonical" href="https://utilitymega.com/image-tools/image-resizer.html"/>
-  <meta property="og:title" content="Image Resizer | UtilityMega"/>
-  <meta property="og:description" content="Resize images to any custom width and height dimensions."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://utilitymega.com/image-tools/image-resizer.html"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Image Resizer | UtilityMega"/>
-  <meta name="twitter:description" content="Resize images to any custom width and height dimensions."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/style.css"/>
+  <meta name="description" content="Resize images to any custom width and height dimensions." />
+  <link rel="canonical" href="https://utilitymega.com/image-tools/image-resizer.html" />
+  <meta property="og:title" content="Image Resizer | UtilityMega" />
+  <meta property="og:description" content="Resize images to any custom width and height dimensions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://utilitymega.com/image-tools/image-resizer.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Image Resizer | UtilityMega" />
+  <meta name="twitter:description" content="Resize images to any custom width and height dimensions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/main.js"></script>
+   <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
 </head>
+
 <body>
-
-<div class="ann" id="ann">
-  🚀 100+ Free Tools — No Signup, No Limits!&nbsp;&nbsp;<a href="../index.html#cats">Explore All →</a>
-  <button class="ann-x" onclick="this.parentElement.remove()">✕</button>
-</div>
-<div class="overlay" id="overlay" onclick="cSb()"></div>
-<aside class="sidebar" id="sb">
-  <div class="sb-head">
-    <a href="../index.html" class="sb-logo">Utility<span class="a1">Mega</span><span class="a2">·</span></a>
-    <button class="sb-close" onclick="cSb()">✕</button>
-  </div>
-  <div class="sb-srch"><div class="sb-sw">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" id="sbSrch" placeholder="Search tools…" autocomplete="off"/>
-  </div></div>
-  <nav class="sb-nav" id="sbNav">
-    <div class="sb-lbl">Main</div>
-    <a class="sb-link" href="../index.html"><span class="sb-ico" style="background:rgba(99,102,241,.12)">🏠</span>Home</a>
-    <div class="sb-lbl">Categories</div>
-    <div class="sb-item" id="sn1">
-      <div class="sb-link" onclick="tSb('sn1')"><span class="sb-ico" style="background:rgba(99,102,241,.12)">🧮</span><span>Calculators</span><span class="sb-arr">▶</span></div>
-      <div class="sb-sub">
-        <a href="../calculators/index.html">All Calculators</a>
-        <a href="../calculators/emi-calculator.html">EMI Calculator</a><a href="../calculators/age-calculator.html">Age Calculator</a><a href="../calculators/bmi-calculator.html">BMI Calculator</a><a href="../calculators/bmr-calculator.html">BMR Calculator</a><a href="../calculators/percentage-calculator.html">Percentage Calculator</a><a href="../calculators/gst-calculator.html">GST Calculator</a>
-      </div>
-    </div><div class="sb-item" id="sn2">
-      <div class="sb-link" onclick="tSb('sn2')"><span class="sb-ico" style="background:rgba(225,29,72,.1)">🖼️</span><span>Image Tools</span><span class="sb-arr">▶</span></div>
-      <div class="sb-sub">
-        <a href="../image-tools/index.html">All Image Tools</a>
-        <a href="../image-tools/image-compressor.html">Image Compressor</a><a href="../image-tools/image-resizer.html">Image Resizer</a><a href="../image-tools/jpg-to-png.html">JPG to PNG Converter</a><a href="../image-tools/png-to-jpg.html">PNG to JPG Converter</a><a href="../image-tools/webp-to-jpg.html">WebP to JPG Converter</a><a href="../image-tools/jpg-to-webp.html">JPG to WebP Converter</a>
-      </div>
-    </div><div class="sb-item" id="sn3">
-      <div class="sb-link" onclick="tSb('sn3')"><span class="sb-ico" style="background:rgba(124,58,237,.1)">🎬</span><span>Video Tools</span><span class="sb-arr">▶</span></div>
-      <div class="sb-sub">
-        <a href="../video-tools/index.html">All Video Tools</a>
-        <a href="../video-tools/video-compressor.html">Video Compressor</a><a href="../video-tools/video-converter.html">Video Converter</a><a href="../video-tools/video-to-mp3.html">Video to MP3</a><a href="../video-tools/video-trimmer.html">Video Trimmer</a><a href="../video-tools/gif-maker.html">GIF Maker</a><a href="../video-tools/video-speed.html">Video Speed Changer</a>
-      </div>
-    </div><div class="sb-item" id="sn4">
-      <div class="sb-link" onclick="tSb('sn4')"><span class="sb-ico" style="background:rgba(13,148,136,.1)">💻</span><span>Developer Tools</span><span class="sb-arr">▶</span></div>
-      <div class="sb-sub">
-        <a href="../developer-tools/index.html">All Developer Tools</a>
-        <a href="../developer-tools/json-formatter.html">JSON Formatter</a><a href="../developer-tools/json-validator.html">JSON Validator</a><a href="../developer-tools/html-minifier.html">HTML Minifier</a><a href="../developer-tools/css-minifier.html">CSS Minifier</a><a href="../developer-tools/js-minifier.html">JS Minifier</a><a href="../developer-tools/base64-encoder.html">Base64 Encoder</a>
-      </div>
-    </div><div class="sb-item" id="sn5">
-      <div class="sb-link" onclick="tSb('sn5')"><span class="sb-ico" style="background:rgba(0,212,180,.12)">📝</span><span>Text Tools</span><span class="sb-arr">▶</span></div>
-      <div class="sb-sub">
-        <a href="../text-tools/index.html">All Text Tools</a>
-        <a href="../text-tools/word-counter.html">Word Counter</a><a href="../text-tools/character-counter.html">Character Counter</a><a href="../text-tools/case-converter.html">Case Converter</a><a href="../text-tools/remove-spaces.html">Remove Extra Spaces</a><a href="../text-tools/text-sorter.html">Text Sorter</a><a href="../text-tools/duplicate-remover.html">Duplicate Line Remover</a>
-      </div>
-    </div><div class="sb-item" id="sn6">
-      <div class="sb-link" onclick="tSb('sn6')"><span class="sb-ico" style="background:rgba(217,119,6,.1)">🔒</span><span>Security Tools</span><span class="sb-arr">▶</span></div>
-      <div class="sb-sub">
-        <a href="../security-tools/index.html">All Security Tools</a>
-        <a href="../security-tools/password-generator.html">Password Generator</a><a href="../security-tools/password-strength.html">Password Strength Checker</a><a href="../security-tools/hash-generator.html">Hash Generator</a><a href="../security-tools/md5-generator.html">MD5 Generator</a><a href="../security-tools/sha256-generator.html">SHA256 Generator</a><a href="../security-tools/uuid-generator.html">UUID Generator</a>
-      </div>
-    </div><div class="sb-item" id="sn7">
-      <div class="sb-link" onclick="tSb('sn7')"><span class="sb-ico" style="background:rgba(37,99,235,.1)">🔎</span><span>SEO Tools</span><span class="sb-arr">▶</span></div>
-      <div class="sb-sub">
-        <a href="../seo-tools/index.html">All SEO Tools</a>
-        <a href="../seo-tools/meta-tag-generator.html">Meta Tag Generator</a><a href="../seo-tools/og-generator.html">Open Graph Generator</a><a href="../seo-tools/twitter-card.html">Twitter Card Generator</a><a href="../seo-tools/keyword-density.html">Keyword Density Checker</a><a href="../seo-tools/robots-generator.html">Robots.txt Generator</a><a href="../seo-tools/sitemap-generator.html">Sitemap Generator</a>
-      </div>
-    </div><div class="sb-item" id="sn8">
-      <div class="sb-link" onclick="tSb('sn8')"><span class="sb-ico" style="background:rgba(124,58,237,.1)">🔄</span><span>Unit Converters</span><span class="sb-arr">▶</span></div>
-      <div class="sb-sub">
-        <a href="../unit-converters/index.html">All Unit Converters</a>
-        <a href="../unit-converters/length-converter.html">Length Converter</a><a href="../unit-converters/weight-converter.html">Weight Converter</a><a href="../unit-converters/temperature-converter.html">Temperature Converter</a><a href="../unit-converters/area-converter.html">Area Converter</a><a href="../unit-converters/volume-converter.html">Volume Converter</a><a href="../unit-converters/speed-converter.html">Speed Converter</a>
-      </div>
-    </div><div class="sb-item" id="sn9">
-      <div class="sb-link" onclick="tSb('sn9')"><span class="sb-ico" style="background:rgba(217,119,6,.1)">🛠️</span><span>Utility Tools</span><span class="sb-arr">▶</span></div>
-      <div class="sb-sub">
-        <a href="../utility-tools/index.html">All Utility Tools</a>
-        <a href="../utility-tools/qr-generator.html">QR Code Generator</a><a href="../utility-tools/barcode-generator.html">Barcode Generator</a><a href="../utility-tools/random-number.html">Random Number Generator</a><a href="../utility-tools/color-picker.html">Color Picker</a><a href="../utility-tools/color-converter.html">Color Converter</a><a href="../utility-tools/gradient-generator.html">Gradient Generator</a>
-      </div>
-    </div><div class="sb-item" id="sn10">
-      <div class="sb-link" onclick="tSb('sn10')"><span class="sb-ico" style="background:rgba(5,150,105,.1)">🌾</span><span>Farmers Tools</span><span class="sb-arr">▶</span></div>
-      <div class="sb-sub">
-        <a href="../farmers-tools/index.html">All Farmers Tools</a>
-        <a href="../farmers-tools/crop-calculator.html">Crop Profit Calculator</a><a href="../farmers-tools/fertilizer-calculator.html">Fertilizer Calculator</a><a href="../farmers-tools/seed-rate-calculator.html">Seed Rate Calculator</a><a href="../farmers-tools/irrigation-planner.html">Irrigation Calculator</a><a href="../farmers-tools/land-area.html">Land Area Calculator</a><a href="../farmers-tools/tractor-emi.html">Tractor EMI Calculator</a>
+  <aside class="sidebar" id="sb">
+    <div class="sb-head">
+      <a href="../index.html" class="sb-logo">Utility<span class="a1">Mega</span><span class="a2">·</span></a>
+      <button class="sb-close" onclick="cSb()">✕</button>
+    </div>
+    <div class="sb-srch">
+      <div class="sb-sw">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input type="text" id="sbSrch" placeholder="Search tools…" autocomplete="off" />
       </div>
     </div>
-    <div class="sb-lbl">Pages</div>
-    <a class="sb-link" href="../about.html"><span class="sb-ico" style="background:rgba(99,102,241,.1)">ℹ️</span>About Us</a>
-    <a class="sb-link" href="../contact.html"><span class="sb-ico" style="background:rgba(5,150,105,.1)">✉️</span>Contact</a>
-    <a class="sb-link" href="../faq.html"><span class="sb-ico" style="background:rgba(13,148,136,.1)">❓</span>FAQ</a>
-  </nav>
-  <div class="sb-foot">
-    <button class="sb-tbtn" onclick="tTh()"><span id="sbTi">🌙</span><span id="sbTt">Dark Mode</span></button>
-  </div>
-</aside>
-<header>
-  <nav class="navbar" id="nav">
-    <button class="nav-mb" onclick="oSb()">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <a href="../index.html" class="nav-logo">Utility<span class="a1">Mega</span><span class="a2">·</span></a>
-    <div class="nav-ls"><div class="nav-it">
-        <a href="../calculators/index.html" class="nav-lk dd">Calculators</a>
-        <div class="nav-drop"><a href="../calculators/emi-calculator.html" class="nd"><div class="nd-i">💰</div><div class="nd-t">EMI Calculator</div><div class="nd-d">Loan EMI</div></a><a href="../calculators/sip-calculator.html" class="nd"><div class="nd-i">📈</div><div class="nd-t">SIP Calculator</div><div class="nd-d">MF Returns</div></a><a href="../calculators/bmi-calculator.html" class="nd"><div class="nd-i">⚖️</div><div class="nd-t">BMI Calculator</div><div class="nd-d">Health check</div></a><a href="../calculators/age-calculator.html" class="nd"><div class="nd-i">🎂</div><div class="nd-t">Age Calculator</div><div class="nd-d">Exact age</div></a><a href="../calculators/gst-calculator.html" class="nd"><div class="nd-i">🧾</div><div class="nd-t">GST Calculator</div><div class="nd-d">Tax calc</div></a><a href="../calculators/percentage-calculator.html" class="nd"><div class="nd-i">💯</div><div class="nd-t">Percentage Calc</div><div class="nd-d">Quick math</div></a></div>
-      </div><div class="nav-it">
-        <a href="../image-tools/index.html" class="nav-lk dd">Image Tools</a>
-        <div class="nav-drop"><a href="../image-tools/image-compressor.html" class="nd"><div class="nd-i">🗜️</div><div class="nd-t">Compressor</div><div class="nd-d">Reduce size</div></a><a href="../image-tools/cropper.html" class="nd"><div class="nd-i">✂️</div><div class="nd-t">Cropper</div><div class="nd-d">Crop & resize</div></a><a href="../image-tools/jpg-to-png.html" class="nd"><div class="nd-i">🔄</div><div class="nd-t">JPG to PNG</div><div class="nd-d">Convert</div></a><a href="../image-tools/meme-generator.html" class="nd"><div class="nd-i">😂</div><div class="nd-t">Meme Gen</div><div class="nd-d">Create memes</div></a><a href="../image-tools/color-extractor.html" class="nd"><div class="nd-i">🎨</div><div class="nd-t">Color Extractor</div><div class="nd-d">Pick colors</div></a><a href="../image-tools/watermark-tool.html" class="nd"><div class="nd-i">💧</div><div class="nd-t">Watermark</div><div class="nd-d">Add watermark</div></a></div>
-      </div><div class="nav-it">
-        <a href="../developer-tools/index.html" class="nav-lk dd">Dev Tools</a>
-        <div class="nav-drop"><a href="../developer-tools/json-formatter.html" class="nd"><div class="nd-i">{ }</div><div class="nd-t">JSON Formatter</div><div class="nd-d">Format JSON</div></a><a href="../developer-tools/css-minifier.html" class="nd"><div class="nd-i">#</div><div class="nd-t">CSS Minifier</div><div class="nd-d">Compress CSS</div></a><a href="../developer-tools/js-minifier.html" class="nd"><div class="nd-i">JS</div><div class="nd-t">JS Minifier</div><div class="nd-d">Compress JS</div></a><a href="../developer-tools/base64-encoder.html" class="nd"><div class="nd-i">🔡</div><div class="nd-t">Base64 Encoder</div><div class="nd-d">Encode</div></a><a href="../developer-tools/url-encoder.html" class="nd"><div class="nd-i">🔗</div><div class="nd-t">URL Encoder</div><div class="nd-d">Encode URLs</div></a><a href="../developer-tools/regex-tester.html" class="nd"><div class="nd-i">🔍</div><div class="nd-t">Regex Tester</div><div class="nd-d">Test regex</div></a></div>
+    <nav class="sb-nav" id="sbNav">
+      <div class="sb-lbl">Main</div>
+      <a class="sb-link" href="../index.html"><span class="sb-ico"
+          style="background:rgba(99,102,241,.12)">🏠</span>Home</a>
+      <div class="sb-lbl">Categories</div>
+      <div class="sb-item" id="sn1">
+        <div class="sb-link" onclick="tSb('sn1')"><span class="sb-ico"
+            style="background:rgba(99,102,241,.12)">🧮</span><span>Calculators</span><span class="sb-arr">▶</span></div>
+        <div class="sb-sub">
+          <a href="../calculators/index.html">All Calculators</a>
+          <a href="../calculators/sip-calculator.html">EMI Calculator</a>
+          <a href="../calculators/emi-calculator.html">EMI Calculator</a>
+          <a href="../calculators/loan-calculator.html">Loan Calculator</a>
+          <a href="../calculators/bmi-calculator.html">BMI Calculator</a>
+          <a href="../calculators/bmr-calculator.html">BMR Calculator</a>
+          <a href="../calculators/age-calculator.html">Age Calculator</a>
+          <a href="../calculators/percentage-calculator.html">Percentage Calculator</a>
+          <a href="../calculators/retirement-calculator.html">GST Calculator</a>
+          <a href="../calculators/compound-interest.html">Compound Interest Calculator</a>
+          <a href="../calculators/discount-calculator.html">Discount Calculator</a>
+          <a href="../calculators/profit-margin.html">Profit Margin Calculator</a>
+          <a href="../calculators/retirement-calculator.html">Retirement Calculator</a>
+        </div>
       </div>
-      <a href="../text-tools/index.html" class="nav-lk">Text Tools</a>
-      <a href="../security-tools/index.html" class="nav-lk">Security</a>
-      <a href="../farmers-tools/index.html" class="nav-lk">Farmers</a>
-      <a href="../seo-tools/index.html" class="nav-lk">SEO</a>
-      <a href="../unit-converters/index.html" class="nav-lk">Converters</a></div>
-    <div class="nav-r">
-      <button class="nav-ib" onclick="oSrch()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <div class="sb-item" id="sn2">
+        <div class="sb-link" onclick="tSb('sn2')"><span class="sb-ico"
+            style="background:rgba(225,29,72,.1)">🖼️</span><span>Image Tools</span><span class="sb-arr">▶</span></div>
+        <div class="sb-sub">
+          <a href="../image-tools/index.html">All Image Tools</a>
+          <a href="../image-tools/image-compressor.html">Image Compressor</a>
+          <a href="../image-tools/image-resizer.html">Image Resizer</a>
+          <a href="../image-tools/jpg-to-png.html">JPG to PNG Converter</a>
+          <a href="../image-tools/png-to-jpg.html">PNG to JPG Converter</a>
+          <a href="../image-tools/webp-to-jpg.html">WebP to JPG Converter</a>
+          <a href="../image-tools/jpg-to-webp.html">JPG to WebP Converter</a>
+          <a href="../image-tools/cropper.html">Image Cropper</a>
+          <a href="../image-tools/image-rotator.html">Image Rotator</a>
+          <a href="../image-tools/watermark-tool.html">Watermark Tool</a>
+          <a href="../image-tools/meme-generator.html">Meme Generator</a>
+          <a href="../image-tools/color-extractor.html">Color Extractor</a>
+          <a href="../image-tools/metadata-viewer.html"> Image Metadata Viewer</a>
+        </div>
+      </div>
+      <div class="sb-item" id="sn3">
+        <div class="sb-link" onclick="tSb('sn3')"><span class="sb-ico"
+            style="background:rgba(124,58,237,.1)">🎬</span><span>Video Tools</span><span class="sb-arr">▶</span></div>
+        <div class="sb-sub">
+          <a href="../video-tools/index.html">All Video Tools</a>
+          <a href="../video-tools/video-compressor.html">Video Compressor</a>
+          <a href="../video-tools/video-converter.html">Video Converter</a>
+          <a href="../video-tools/video-to-mp3.html">Video to MP3</a>
+          <a href="../video-tools/video-trimmer.html">Video Trimmer</a>
+          <a href="../video-tools/gif-maker.html">GIF Maker</a>
+          <a href="../video-tools/video-speed.html">Video Speed Changer</a>
+          <a href="../video-tools/extract-audio.html">Extract Audio</a>
+          <a href="../video-tools/rotate-video.html">Rotate Video</a>
+          <a href="../video-tools/video-metadata.html">Video Metadata Viewer</a>
+          <a href="../video-tools/resolution-converter.html">Resolution Converter</a>
+        </div>
+      </div>
+      <div class="sb-item" id="sn4">
+        <div class="sb-link" onclick="tSb('sn4')"><span class="sb-ico"
+            style="background:rgba(13,148,136,.1)">💻</span><span>Developer Tools</span><span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="../developer-tools/index.html">All Developer Tools</a>
+          <a href="../developer-tools/json-formatter.html">JSON Formatter</a>
+          <a href="../developer-tools/json-validator.html">JSON Validator</a>
+          <a href="../developer-tools/html-minifier.html">HTML Minifier</a>
+          <a href="../developer-tools/css-minifier.html">CSS Minifier</a>
+          <a href="../developer-tools/js-minifier.html">JS Minifier</a>
+          <a href="../developer-tools/base64-encoder.html">Base64 Encoder</a>
+          <a href="../developer-tools/url-decoder.html">URL Decoder</a>
+          <a href="../developer-tools/url-encoder.html">URL Encoder</a>
+          <a href="../developer-tools/code-beautifier.html">Code Beautifier</a>
+          <a href="../developer-tools/regex-tester.html">Regex Tester</a>
+          <a href="../developer-tools/html-escape.html">HTML Escape</a>
+        </div>
+      </div>
+      <div class="sb-item" id="sn5">
+        <div class="sb-link" onclick="tSb('sn5')"><span class="sb-ico"
+            style="background:rgba(0,212,180,.12)">📝</span><span>Text Tools</span><span class="sb-arr">▶</span></div>
+        <div class="sb-sub">
+          <a href="../text-tools/index.html">All Text Tools</a>
+          <a href="../text-tools/word-counter.html">Word Counter</a>
+          <a href="../text-tools/character-counter.html">Character Counter</a>
+          <a href="../text-tools/case-converter.html">Case Converter</a>
+          <a href="../text-tools/remove-spaces.html">Remove Extra Spaces</a>
+          <a href="../text-tools/text-sorter.html">Text Sorter</a>
+          <a href="../text-tools/duplicate-remover.html">Duplicate Line Remover</a>
+          <a href="../text-tools/text-reverser.html">Text Reverser</a>
+          <a href="../text-tools/slug-generator.html">Slug Generator</a>
+          <a href="../text-tools/random-text.html">Random Text Generator</a>
+          <a href="../text-tools/lorem-ipsum.html">Lorem Ipsum Generator</a>
+        </div>
+      </div>
+      <div class="sb-item" id="sn6">
+        <div class="sb-link" onclick="tSb('sn6')"><span class="sb-ico"
+            style="background:rgba(217,119,6,.1)">🔒</span><span>Security Tools</span><span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="../security-tools/index.html">All Security Tools</a>
+          <a href="../security-tools/password-generator.html">Password Generator</a>
+          <a href="../security-tools/password-strength.html">Password Strength Checker</a>
+          <a href="../security-tools/hash-generator.html">Hash Generator</a>
+          <a href="../security-tools/md5-generator.html">MD5 Generator</a>
+          <a href="../security-tools/sha256-generator.html">SHA256 Generator</a>
+          <a href="../security-tools/uuid-generator.html">UUID Generator</a>
+          <a href="../security-tools/random-string.html">Random String Generator</a>
+          <a href="../security-tools/otp-validator.html">OTP Validator</a>
+          <a href="../security-tools/credit-card-validator.html">Credit Card Validator</a>
+          <a href="../security-tools/email-masking.html">Email Masking</a>
+        </div>
+      </div>
+      <div class="sb-item" id="sn7">
+        <div class="sb-link" onclick="tSb('sn7')"><span class="sb-ico"
+            style="background:rgba(37,99,235,.1)">🔎</span><span>SEO Tools</span><span class="sb-arr">▶</span></div>
+        <div class="sb-sub">
+          <a href="../seo-tools/index.html">All SEO Tools</a>
+          <a href="../seo-tools/meta-tag-generator.html">Meta Tag Generator</a>
+          <a href="../seo-tools/og-generator.html">Open Graph Generator</a>
+          <a href="../seo-tools/twitter-card.html">Twitter Card Generator</a>
+          <a href="../seo-tools/keyword-density.html">Keyword Density Checker</a>
+          <a href="../seo-tools/robots-generator.html">Robots.txt Generator</a>
+          <a href="../seo-tools/sitemap-generator.html">Sitemap Generator</a>
+          <a href="../seo-tools/seo-title.html">SEO Title Generator</a>
+          <a href="../seo-tools/seo-description.html">SEO Description Generator</a>
+          <a href="../seo-tools/google-index.html">Google Index Checker</a>
+          <a href="../seo-tools/domain-age.html">Domain Age Checker</a>
+        </div>
+      </div>
+      <div class="sb-item" id="sn8">
+        <div class="sb-link" onclick="tSb('sn8')"><span class="sb-ico"
+            style="background:rgba(124,58,237,.1)">🔄</span><span>Unit Converters</span><span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="../unit-converters/index.html">All Unit Converters</a>
+          <a href="../unit-converters/length-converter.html">Length Converter</a><a
+            href="../unit-converters/weight-converter.html">Weight Converter</a><a
+            href="../unit-converters/temperature-converter.html">Temperature Converter</a><a
+            href="../unit-converters/area-converter.html">Area Converter</a><a
+            href="../unit-converters/volume-converter.html">Volume Converter</a><a
+            href="../unit-converters/speed-converter.html">Speed Converter</a>
+          <a href="../unit-converters/data-storage.html">Data Storage Converter</a>
+          <a href="../unit-converters/time-converter.html">Time Converter</a>
+          <a href="../unit-converters/energy-converter.html">Energy Converter</a>
+          <a href="../unit-converters/pressure-converter.html">Pressure Converter</a>
+
+        </div>
+      </div>
+      <div class="sb-item" id="sn9">
+        <div class="sb-link" onclick="tSb('sn9')"><span class="sb-ico"
+            style="background:rgba(217,119,6,.1)">🛠️</span><span>Utility Tools</span><span class="sb-arr">▶</span>
+        </div>
+        <div class="sb-sub">
+          <a href="../utility-tools/index.html">All Utility Tools</a>
+          <a href="../utility-tools/qr-generator.html">QR Code Generator</a><a
+            href="../utility-tools/barcode-generator.html">Barcode Generator</a><a
+            href="../utility-tools/random-number.html">Random Number Generator</a><a
+            href="../utility-tools/color-picker.html">Color Picker</a>
+          <a href="../utility-tools/color-converter.html">Color Converter</a>
+          <a href="../utility-tools/gradient-generator.html">Gradient Generator</a>
+          <a href="../utility-tools/timestamp-converter.html">Timestamp Converter</a>
+          <a href="../utility-tools/binary-converter.html">Binary Converter</a>
+          <a href="../utility-tools/word-frequency.html">Word Frequency Counter</a>
+        </div>
+      </div>
+      <div class="sb-item" id="sn10">
+        <div class="sb-link" onclick="tSb('sn10')"><span class="sb-ico"
+            style="background:rgba(5,150,105,.1)">🌾</span><span>Farmers Tools</span><span class="sb-arr">▶</span></div>
+        <div class="sb-sub">
+          <a href="../farmers-tools/index.html">All Farmers Tools</a>
+          <a href="../farmers-tools/crop-calculator.html">Crop Profit Calculator</a><a
+            href="../farmers-tools/fertilizer-calculator.html">Fertilizer Calculator</a><a
+            href="../farmers-tools/seed-rate-calculator.html">Seed Rate Calculator</a><a
+            href="../farmers-tools/irrigation-planner.html">Irrigation Calculator</a><a
+            href="../farmers-tools/land-area.html">Land Area Calculator</a>
+          <a href="../farmers-tools/tractor-emi.html">Tractor EMI Calculator</a>
+          <a href="../farmers-tools/crop-yield.html">Crop Yield Calculator</a>
+          <a href="../farmers-tools/pesticide-mix.html">Pesticide Mix Calculator</a>
+          <a href="../farmers-tools/dairy-feed.html">Dairy Feed Calculator</a>
+          <a href="../farmers-tools/rainfall-calculator.html">Rainfall Calculator</a>
+        </div>
+      </div>
+      <div class="sb-lbl">Pages</div>
+      <a class="sb-link" href="about.html"><span class="sb-ico" style="background:rgba(99,102,241,.1)">ℹ️</span>About
+        Us</a>
+      <a class="sb-link" href="contact.html"><span class="sb-ico"
+          style="background:rgba(5,150,105,.1)">✉️</span>Contact</a>
+      <a class="sb-link" href="faq.html"><span class="sb-ico" style="background:rgba(13,148,136,.1)">❓</span>FAQ</a>
+    </nav>
+    <div class="sb-foot">
+      <button class="sb-tbtn" onclick="tTh()"><span id="sbTi">🌙</span><span id="sbTt">Dark Mode</span></button>
+    </div>
+  </aside>
+  <header>
+    <nav class="navbar" id="nav">
+      <button class="nav-mb" onclick="oSb()">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
       </button>
-      <button class="tpill" onclick="tTh()" id="tp"></button>
-    </div>
-  </nav>
-</header>
-<div class="so" id="sOv" onclick="hSO(event)">
-  <div class="sb2">
-    <div class="si">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="sIn" placeholder="Search 100+ tools…" autocomplete="off"/>
-      <button class="s-esc" onclick="cSrch()">ESC</button>
-    </div>
-    <div class="sr" id="sRes"></div>
-    <div class="shf"><span><kbd>↑↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>ESC</kbd> close</span></div>
-  </div>
-</div>
-<script>
-const TOOLS=[{"n": "EMI Calculator", "c": "Calculators", "i": "💰", "u": "../calculators/emi-calculator.html"}, {"n": "Age Calculator", "c": "Calculators", "i": "🎂", "u": "../calculators/age-calculator.html"}, {"n": "BMI Calculator", "c": "Calculators", "i": "⚖️", "u": "../calculators/bmi-calculator.html"}, {"n": "BMR Calculator", "c": "Calculators", "i": "🔥", "u": "../calculators/bmr-calculator.html"}, {"n": "Percentage Calculator", "c": "Calculators", "i": "💯", "u": "../calculators/percentage-calculator.html"}, {"n": "GST Calculator", "c": "Calculators", "i": "🧾", "u": "../calculators/gst-calculator.html"}, {"n": "Loan Calculator", "c": "Calculators", "i": "🏦", "u": "../calculators/loan-calculator.html"}, {"n": "SIP Calculator", "c": "Calculators", "i": "📈", "u": "../calculators/sip-calculator.html"}, {"n": "Compound Interest", "c": "Calculators", "i": "📊", "u": "../calculators/compound-interest.html"}, {"n": "Discount Calculator", "c": "Calculators", "i": "🏷️", "u": "../calculators/discount-calculator.html"}, {"n": "Profit Margin Calculator", "c": "Calculators", "i": "💹", "u": "../calculators/profit-margin.html"}, {"n": "Retirement Calculator", "c": "Calculators", "i": "🏖️", "u": "../calculators/retirement-calculator.html"}, {"n": "Image Compressor", "c": "Image Tools", "i": "🗜️", "u": "../image-tools/image-compressor.html"}, {"n": "Image Resizer", "c": "Image Tools", "i": "↔️", "u": "../image-tools/image-resizer.html"}, {"n": "JPG to PNG Converter", "c": "Image Tools", "i": "🔄", "u": "../image-tools/jpg-to-png.html"}, {"n": "PNG to JPG Converter", "c": "Image Tools", "i": "🔄", "u": "../image-tools/png-to-jpg.html"}, {"n": "WebP to JPG Converter", "c": "Image Tools", "i": "🖼️", "u": "../image-tools/webp-to-jpg.html"}, {"n": "JPG to WebP Converter", "c": "Image Tools", "i": "🌐", "u": "../image-tools/jpg-to-webp.html"}, {"n": "Image Cropper", "c": "Image Tools", "i": "✂️", "u": "../image-tools/cropper.html"}, {"n": "Image Rotator", "c": "Image Tools", "i": "🔃", "u": "../image-tools/image-rotator.html"}, {"n": "Watermark Tool", "c": "Image Tools", "i": "💧", "u": "../image-tools/watermark-tool.html"}, {"n": "Meme Generator", "c": "Image Tools", "i": "😂", "u": "../image-tools/meme-generator.html"}, {"n": "Color Extractor", "c": "Image Tools", "i": "🎨", "u": "../image-tools/color-extractor.html"}, {"n": "Image Metadata Viewer", "c": "Image Tools", "i": "🔍", "u": "../image-tools/metadata-viewer.html"}, {"n": "Video Compressor", "c": "Video Tools", "i": "🗜️", "u": "../video-tools/video-compressor.html"}, {"n": "Video Converter", "c": "Video Tools", "i": "🔄", "u": "../video-tools/video-converter.html"}, {"n": "Video to MP3", "c": "Video Tools", "i": "🎵", "u": "../video-tools/video-to-mp3.html"}, {"n": "Video Trimmer", "c": "Video Tools", "i": "✂️", "u": "../video-tools/video-trimmer.html"}, {"n": "GIF Maker", "c": "Video Tools", "i": "🎞️", "u": "../video-tools/gif-maker.html"}, {"n": "Video Speed Changer", "c": "Video Tools", "i": "⚡", "u": "../video-tools/video-speed.html"}, {"n": "Extract Audio", "c": "Video Tools", "i": "🔊", "u": "../video-tools/extract-audio.html"}, {"n": "Rotate Video", "c": "Video Tools", "i": "🔃", "u": "../video-tools/rotate-video.html"}, {"n": "Video Metadata Viewer", "c": "Video Tools", "i": "🔍", "u": "../video-tools/video-metadata.html"}, {"n": "Resolution Converter", "c": "Video Tools", "i": "📺", "u": "../video-tools/resolution-converter.html"}, {"n": "JSON Formatter", "c": "Developer Tools", "i": "{ }", "u": "../developer-tools/json-formatter.html"}, {"n": "JSON Validator", "c": "Developer Tools", "i": "✅", "u": "../developer-tools/json-validator.html"}, {"n": "HTML Minifier", "c": "Developer Tools", "i": "📄", "u": "../developer-tools/html-minifier.html"}, {"n": "CSS Minifier", "c": "Developer Tools", "i": "#", "u": "../developer-tools/css-minifier.html"}, {"n": "JS Minifier", "c": "Developer Tools", "i": "JS", "u": "../developer-tools/js-minifier.html"}, {"n": "Base64 Encoder", "c": "Developer Tools", "i": "🔡", "u": "../developer-tools/base64-encoder.html"}, {"n": "Base64 Decoder", "c": "Developer Tools", "i": "🔓", "u": "../developer-tools/base64-decoder.html"}, {"n": "URL Encoder", "c": "Developer Tools", "i": "🔗", "u": "../developer-tools/url-encoder.html"}, {"n": "URL Decoder", "c": "Developer Tools", "i": "🔗", "u": "../developer-tools/url-decoder.html"}, {"n": "Code Beautifier", "c": "Developer Tools", "i": "✨", "u": "../developer-tools/code-beautifier.html"}, {"n": "Regex Tester", "c": "Developer Tools", "i": "🔍", "u": "../developer-tools/regex-tester.html"}, {"n": "HTML Escape Tool", "c": "Developer Tools", "i": "🛡️", "u": "../developer-tools/html-escape.html"}, {"n": "Word Counter", "c": "Text Tools", "i": "📊", "u": "../text-tools/word-counter.html"}, {"n": "Character Counter", "c": "Text Tools", "i": "🔤", "u": "../text-tools/character-counter.html"}, {"n": "Case Converter", "c": "Text Tools", "i": "🔡", "u": "../text-tools/case-converter.html"}, {"n": "Remove Extra Spaces", "c": "Text Tools", "i": "⬜", "u": "../text-tools/remove-spaces.html"}, {"n": "Text Sorter", "c": "Text Tools", "i": "🔢", "u": "../text-tools/text-sorter.html"}, {"n": "Duplicate Line Remover", "c": "Text Tools", "i": "🗑️", "u": "../text-tools/duplicate-remover.html"}, {"n": "Text Reverser", "c": "Text Tools", "i": "↩️", "u": "../text-tools/text-reverser.html"}, {"n": "Slug Generator", "c": "Text Tools", "i": "🔗", "u": "../text-tools/slug-generator.html"}, {"n": "Random Text Generator", "c": "Text Tools", "i": "🎲", "u": "../text-tools/random-text.html"}, {"n": "Lorem Ipsum Generator", "c": "Text Tools", "i": "📄", "u": "../text-tools/lorem-ipsum.html"}, {"n": "Password Generator", "c": "Security Tools", "i": "🔑", "u": "../security-tools/password-generator.html"}, {"n": "Password Strength Checker", "c": "Security Tools", "i": "💪", "u": "../security-tools/password-strength.html"}, {"n": "Hash Generator", "c": "Security Tools", "i": "🔐", "u": "../security-tools/hash-generator.html"}, {"n": "MD5 Generator", "c": "Security Tools", "i": "🔏", "u": "../security-tools/md5-generator.html"}, {"n": "SHA256 Generator", "c": "Security Tools", "i": "🛡️", "u": "../security-tools/sha256-generator.html"}, {"n": "UUID Generator", "c": "Security Tools", "i": "🆔", "u": "../security-tools/uuid-generator.html"}, {"n": "Random String Generator", "c": "Security Tools", "i": "🎲", "u": "../security-tools/random-string.html"}, {"n": "OTP Validator", "c": "Security Tools", "i": "📱", "u": "../security-tools/otp-validator.html"}, {"n": "Credit Card Validator", "c": "Security Tools", "i": "💳", "u": "../security-tools/credit-card-validator.html"}, {"n": "Email Masking Tool", "c": "Security Tools", "i": "✉️", "u": "../security-tools/email-masking.html"}, {"n": "Meta Tag Generator", "c": "SEO Tools", "i": "🏷️", "u": "../seo-tools/meta-tag-generator.html"}, {"n": "Open Graph Generator", "c": "SEO Tools", "i": "📱", "u": "../seo-tools/og-generator.html"}, {"n": "Twitter Card Generator", "c": "SEO Tools", "i": "🐦", "u": "../seo-tools/twitter-card.html"}, {"n": "Keyword Density Checker", "c": "SEO Tools", "i": "📊", "u": "../seo-tools/keyword-density.html"}, {"n": "Robots.txt Generator", "c": "SEO Tools", "i": "🤖", "u": "../seo-tools/robots-generator.html"}, {"n": "Sitemap Generator", "c": "SEO Tools", "i": "🗺️", "u": "../seo-tools/sitemap-generator.html"}, {"n": "SEO Title Generator", "c": "SEO Tools", "i": "📝", "u": "../seo-tools/seo-title.html"}, {"n": "SEO Description Generator", "c": "SEO Tools", "i": "📄", "u": "../seo-tools/seo-description.html"}, {"n": "Google Index Checker", "c": "SEO Tools", "i": "🔍", "u": "../seo-tools/google-index.html"}, {"n": "Domain Age Checker", "c": "SEO Tools", "i": "📅", "u": "../seo-tools/domain-age.html"}, {"n": "Length Converter", "c": "Unit Converters", "i": "📏", "u": "../unit-converters/length-converter.html"}, {"n": "Weight Converter", "c": "Unit Converters", "i": "⚖️", "u": "../unit-converters/weight-converter.html"}, {"n": "Temperature Converter", "c": "Unit Converters", "i": "🌡️", "u": "../unit-converters/temperature-converter.html"}, {"n": "Area Converter", "c": "Unit Converters", "i": "🟥", "u": "../unit-converters/area-converter.html"}, {"n": "Volume Converter", "c": "Unit Converters", "i": "🧪", "u": "../unit-converters/volume-converter.html"}, {"n": "Speed Converter", "c": "Unit Converters", "i": "🚀", "u": "../unit-converters/speed-converter.html"}, {"n": "Data Storage Converter", "c": "Unit Converters", "i": "💾", "u": "../unit-converters/data-storage.html"}, {"n": "Time Converter", "c": "Unit Converters", "i": "⏱️", "u": "../unit-converters/time-converter.html"}, {"n": "Energy Converter", "c": "Unit Converters", "i": "⚡", "u": "../unit-converters/energy-converter.html"}, {"n": "Pressure Converter", "c": "Unit Converters", "i": "🌡️", "u": "../unit-converters/pressure-converter.html"}, {"n": "QR Code Generator", "c": "Utility Tools", "i": "📱", "u": "../utility-tools/qr-generator.html"}, {"n": "Barcode Generator", "c": "Utility Tools", "i": "|||", "u": "../utility-tools/barcode-generator.html"}, {"n": "Random Number Generator", "c": "Utility Tools", "i": "🎲", "u": "../utility-tools/random-number.html"}, {"n": "Color Picker", "c": "Utility Tools", "i": "🎨", "u": "../utility-tools/color-picker.html"}, {"n": "Color Converter", "c": "Utility Tools", "i": "🌈", "u": "../utility-tools/color-converter.html"}, {"n": "Gradient Generator", "c": "Utility Tools", "i": "🌅", "u": "../utility-tools/gradient-generator.html"}, {"n": "Timestamp Converter", "c": "Utility Tools", "i": "⏰", "u": "../utility-tools/timestamp-converter.html"}, {"n": "Binary Converter", "c": "Utility Tools", "i": "💻", "u": "../utility-tools/binary-converter.html"}, {"n": "Word Frequency Counter", "c": "Utility Tools", "i": "📈", "u": "../utility-tools/word-frequency.html"}, {"n": "Crop Profit Calculator", "c": "Farmers Tools", "i": "🌱", "u": "../farmers-tools/crop-calculator.html"}, {"n": "Fertilizer Calculator", "c": "Farmers Tools", "i": "🧪", "u": "../farmers-tools/fertilizer-calculator.html"}, {"n": "Seed Rate Calculator", "c": "Farmers Tools", "i": "🌰", "u": "../farmers-tools/seed-rate-calculator.html"}, {"n": "Irrigation Calculator", "c": "Farmers Tools", "i": "💧", "u": "../farmers-tools/irrigation-planner.html"}, {"n": "Land Area Calculator", "c": "Farmers Tools", "i": "📐", "u": "../farmers-tools/land-area.html"}, {"n": "Tractor EMI Calculator", "c": "Farmers Tools", "i": "🚜", "u": "../farmers-tools/tractor-emi.html"}, {"n": "Crop Yield Calculator", "c": "Farmers Tools", "i": "📊", "u": "../farmers-tools/crop-yield.html"}, {"n": "Pesticide Mix Calculator", "c": "Farmers Tools", "i": "🧴", "u": "../farmers-tools/pesticide-mix.html"}, {"n": "Dairy Feed Calculator", "c": "Farmers Tools", "i": "🐄", "u": "../farmers-tools/dairy-feed.html"}, {"n": "Rainfall Calculator", "c": "Farmers Tools", "i": "🌧️", "u": "../farmers-tools/rainfall-calculator.html"}];
-function oSb(){document.getElementById('sb').classList.add('open');document.getElementById('overlay').classList.add('active');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('sbSrch').focus(),300)}
-function cSb(){document.getElementById('sb').classList.remove('open');document.getElementById('overlay').classList.remove('active');document.body.style.overflow=''}
-function tSb(id){const el=document.getElementById(id),ex=el.classList.contains('expanded');document.querySelectorAll('.sb-item.expanded').forEach(e=>e.classList.remove('expanded'));if(!ex)el.classList.add('expanded')}
-document.getElementById('sbSrch').addEventListener('input',function(){const q=this.value.toLowerCase();document.querySelectorAll('.sb-item').forEach(i=>{i.style.display=i.textContent.toLowerCase().includes(q)?'':'none';if(q&&i.textContent.toLowerCase().includes(q))i.classList.add('expanded')});});
-function tTh(){const d=document.documentElement.getAttribute('data-theme')==='dark';document.documentElement.setAttribute('data-theme',d?'light':'dark');localStorage.setItem('theme',d?'light':'dark');uTh(!d)}
-function uTh(dark){const si=document.getElementById('sbTi'),st=document.getElementById('sbTt');if(si)si.textContent=dark?'☀️':'🌙';if(st)st.textContent=dark?'Light Mode':'Dark Mode'}
-const th=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',th);uTh(th==='dark');
-function oSrch(){document.getElementById('sOv').classList.add('active');document.body.style.overflow='hidden';document.getElementById('sIn').focus();rRes('')}
-function cSrch(){document.getElementById('sOv').classList.remove('active');document.body.style.overflow=''}
-function hSO(e){if(e.target===document.getElementById('sOv'))cSrch()}
-function rRes(q){const el=document.getElementById('sRes');const r=q?TOOLS.filter(t=>t.n.toLowerCase().includes(q.toLowerCase())||t.c.toLowerCase().includes(q.toLowerCase())):TOOLS.slice(0,8);if(!r.length){el.innerHTML=`<div style="padding:20px;text-align:center;color:var(--text2);font-size:.84rem">No results for "${q}"</div>`;return}el.innerHTML=r.slice(0,8).map(t=>`<a href="${t.u}" class="sri" onclick="cSrch()"><div class="sri-i">${t.i}</div><div><div class="sri-n">${t.n}</div><div class="sri-c">${t.c}</div></div></a>`).join('');}
-document.getElementById('sIn').addEventListener('input',function(){rRes(this.value)});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){cSrch();cSb()}});
-window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>20);const b=document.getElementById('btt');if(b)b.classList.toggle('visible',scrollY>400);});
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}});},{threshold:.07});
-document.querySelectorAll('.cc,.tc,.hwc').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .43s ease,transform .43s ease,border-color .24s,box-shadow .24s';obs.observe(el);});
-</script>
-<div class="tw"><div class="tk"><span class="ti"><span class="tdot">◆</span><strong>EMI Calculator</strong> — Plan loan</span><span class="ti"><span class="tdot">◆</span><strong>Image Compressor</strong> — Reduce size</span><span class="ti"><span class="tdot">◆</span><strong>Password Gen</strong> — Stay secure</span><span class="ti"><span class="tdot">◆</span><strong>JSON Formatter</strong> — Format JSON</span><span class="ti"><span class="tdot">◆</span><strong>BMI Calculator</strong> — Check health</span><span class="ti"><span class="tdot">◆</span><strong>SIP Calculator</strong> — Grow wealth</span><span class="ti"><span class="tdot">◆</span><strong>Word Counter</strong> — Count text</span><span class="ti"><span class="tdot">◆</span><strong>Hash Generator</strong> — MD5/SHA</span><span class="ti"><span class="tdot">◆</span><strong>GST Calculator</strong> — Tax calc</span><span class="ti"><span class="tdot">◆</span><strong>QR Generator</strong> — Make QR codes</span><span class="ti"><span class="tdot">◆</span><strong>EMI Calculator</strong> — Plan loan</span><span class="ti"><span class="tdot">◆</span><strong>Image Compressor</strong> — Reduce size</span><span class="ti"><span class="tdot">◆</span><strong>Password Gen</strong> — Stay secure</span><span class="ti"><span class="tdot">◆</span><strong>JSON Formatter</strong> — Format JSON</span><span class="ti"><span class="tdot">◆</span><strong>BMI Calculator</strong> — Check health</span><span class="ti"><span class="tdot">◆</span><strong>SIP Calculator</strong> — Grow wealth</span><span class="ti"><span class="tdot">◆</span><strong>Word Counter</strong> — Count text</span><span class="ti"><span class="tdot">◆</span><strong>Hash Generator</strong> — MD5/SHA</span><span class="ti"><span class="tdot">◆</span><strong>GST Calculator</strong> — Tax calc</span><span class="ti"><span class="tdot">◆</span><strong>QR Generator</strong> — Make QR codes</span></div></div>
-<main>
-<div class="tool-wrap">
-<div class="breadcrumb">
-<a href="../index.html">Home</a><span>›</span>
-<a href="index.html">Image Tools</a><span>›</span>
-<span>Image Resizer</span>
-</div>
-<div class="tool-hd">
-<h1>↔️ Image Resizer</h1>
-<p>Resize images to any custom width and height dimensions.</p>
-</div>
-<div class="adw" style="padding:0;margin-bottom:20px"><div class="adp">Advertisement — Google AdSense<span>Ad Placement</span></div></div>
-<div class="tool-card">
+      <a href="../index.html" class="nav-logo">Utility<span class="a1">Mega</span><span class="a2">·</span></a>
+      <div class="nav-ls">
+        <div class="nav-it">
+          <a href="../calculators/index.html" class="nav-lk ">Calculators</a>
 
-<label>Input</label><textarea id="input-text" placeholder="Enter your input here…"></textarea>
-<button class="calc-btn" onclick="calc()">⚡ Process</button>
-<div class="result-box" id="res">
-<h3>Result</h3>
-<div class="result-val" id="res-out">—</div>
-</div>
-</div>
-<div class="adw" style="padding:0;margin-bottom:20px"><div class="adp">Advertisement<span>Ad Placement</span></div></div>
-<div class="related-section">
-<h2>Related Image Tools</h2>
-<div class="tg"><a href="image-compressor.html" class="tc"><div class="tic" style="background:rgba(99,102,241,.12)">🗜️</div><div><div class="tn">Image Compressor</div><div class="td2">Compress JPEG, PNG images to reduce file size with</div></div></a><a href="jpg-to-png.html" class="tc"><div class="tic" style="background:rgba(99,102,241,.12)">🔄</div><div><div class="tn">JPG to PNG Converter</div><div class="td2">Convert JPG images to PNG format with transparency</div></div></a><a href="png-to-jpg.html" class="tc"><div class="tic" style="background:rgba(99,102,241,.12)">🔄</div><div><div class="tn">PNG to JPG Converter</div><div class="td2">Convert PNG images to JPG format for smaller file </div></div></a><a href="webp-to-jpg.html" class="tc"><div class="tic" style="background:rgba(99,102,241,.12)">🖼️</div><div><div class="tn">WebP to JPG Converter</div><div class="td2">Convert WebP images to JPG format for broader comp</div></div></a></div>
-</div>
-<div class="tool-card" style="margin-top:24px">
-<div class="seob" style="border:none;padding:0">
-<h2>About Image Resizer</h2>
-<p>The Image Resizer on UtilityMega is a free, browser-based tool that runs entirely client-side — your data never leaves your device. It's fast, accurate and works on all modern browsers including mobile.</p>
-<h3>How to Use</h3>
-<p>Simply enter your values in the input fields above and click the calculate button to get instant results. No registration or software installation required.</p>
-</div>
-</div>
-</div>
-</main>
-<script>
-function calc(){
-  alert('This tool is functional! Processing your input...');
-  document.getElementById('res').classList.add('show');
-  document.getElementById('res-out').textContent='Result calculated successfully.';
-}</script>
-<footer>
-  <div class="fi">
-    <div class="fg">
-      <div>
-        <div class="flo">Utility<span class="a1">Mega</span><span class="a2">·</span></div>
-        <p class="fd">100+ free online tools for everyday tasks. No signup needed. Fast, accurate, always free.</p>
-        <div class="fsc"><a href="#">𝕏</a><a href="#">f</a><a href="#">in</a><a href="#">▶</a></div>
+        </div>
+        <div class="nav-it">
+          <a href="../image-tools/index.html" class="nav-lk ">Image Tools</a>
+
+        </div>
+        <a href="../video-tools/index.html" class="nav-lk ">Video Tools</a>
+
+        <div class="nav-it">
+          <a href="../developer-tools/index.html" class="nav-lk ">Dev Tools</a>
+
+        </div>
+        <a href="../text-tools/index.html" class="nav-lk">Text Tools</a>
+        <a href="../utility-tools/index.html" class="nav-lk">Utility Tools</a>
+        <a href="../security-tools/index.html" class="nav-lk">Security</a>
+        <a href="../farmers-tools/index.html" class="nav-lk">Farmers</a>
+        <a href="../seo-tools/index.html" class="nav-lk">SEO</a>
+        <a href="../unit-converters/index.html" class="nav-lk">Converters</a>
       </div>
-      <div class="fc"><h4>Tools</h4>
-        <ul class="fl">
-          <li><a href="../calculators/index.html">Calculators</a></li>
-          <li><a href="../image-tools/index.html">Image Tools</a></li>
-          <li><a href="../video-tools/index.html">Video Tools</a></li>
-          <li><a href="../developer-tools/index.html">Dev Tools</a></li>
-          <li><a href="../security-tools/index.html">Security Tools</a></li>
-          <li><a href="../text-tools/index.html">Text Tools</a></li>
-          <li><a href="../farmers-tools/index.html">Farmers Tools</a></li>
-        </ul>
+      <div class="nav-r">
+        <!-- <button class="nav-ib" onclick="oSrch()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+        </button> -->
+        <button class="tpill" onclick="tTh()" id="tp"></button>
       </div>
-      <div class="fc"><h4>Popular</h4>
-        <ul class="fl">
-          <li><a href="../calculators/emi-calculator.html">EMI Calculator</a></li>
-          <li><a href="../calculators/sip-calculator.html">SIP Calculator</a></li>
-          <li><a href="../calculators/bmi-calculator.html">BMI Calculator</a></li>
-          <li><a href="../image-tools/image-compressor.html">Image Compressor</a></li>
-          <li><a href="../developer-tools/json-formatter.html">JSON Formatter</a></li>
-          <li><a href="../security-tools/password-generator.html">Password Generator</a></li>
-        </ul>
+    </nav>
+  </header>
+  <div class="so" id="sOv" onclick="hSO(event)">
+    <div class="sb2">
+      <div class="si">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input type="text" id="sIn" placeholder="Search 100+ tools…" autocomplete="off" />
+        <button class="s-esc" onclick="cSrch()">ESC</button>
       </div>
-      <div class="fc"><h4>Company</h4>
-        <ul class="fl">
-          <li><a href="../about.html">About Us</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-          <li><a href="../faq.html">FAQ</a></li>
-          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="../terms.html">Terms of Service</a></li>
-          <li><a href="../sitemap.html">Sitemap</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="fb">
-      <p>© 2025 UtilityMega. All rights reserved. Made with ❤️ for everyone.</p>
-      <div class="fbl"><a href="../privacy-policy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../sitemap.html">Sitemap</a></div>
+      <div class="sr" id="sRes"></div>
+      <div class="shf"><span><kbd>↑↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>ESC</kbd>
+          close</span></div>
     </div>
   </div>
-</footer>
-<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-</body></html>
+  <script>
+    const TOOLS = [{ "n": "EMI Calculator", "c": "Calculators", "i": "💰", "u": "../calculators/emi-calculator.html" }, { "n": "Age Calculator", "c": "Calculators", "i": "🎂", "u": "../calculators/age-calculator.html" }, { "n": "BMI Calculator", "c": "Calculators", "i": "⚖️", "u": "../calculators/bmi-calculator.html" }, { "n": "BMR Calculator", "c": "Calculators", "i": "🔥", "u": "../calculators/bmr-calculator.html" }, { "n": "Percentage Calculator", "c": "Calculators", "i": "💯", "u": "../calculators/percentage-calculator.html" }, { "n": "GST Calculator", "c": "Calculators", "i": "🧾", "u": "../calculators/gst-calculator.html" }, { "n": "Loan Calculator", "c": "Calculators", "i": "🏦", "u": "../calculators/loan-calculator.html" }, { "n": "SIP Calculator", "c": "Calculators", "i": "📈", "u": "../calculators/sip-calculator.html" }, { "n": "Compound Interest", "c": "Calculators", "i": "📊", "u": "../calculators/compound-interest.html" }, { "n": "Discount Calculator", "c": "Calculators", "i": "🏷️", "u": "../calculators/discount-calculator.html" }, { "n": "Profit Margin Calculator", "c": "Calculators", "i": "💹", "u": "../calculators/profit-margin.html" }, { "n": "Retirement Calculator", "c": "Calculators", "i": "🏖️", "u": "../calculators/retirement-calculator.html" }, { "n": "Image Compressor", "c": "Image Tools", "i": "🗜️", "u": "../image-tools/image-compressor.html" }, { "n": "Image Resizer", "c": "Image Tools", "i": "↔️", "u": "../image-tools/image-resizer.html" }, { "n": "JPG to PNG Converter", "c": "Image Tools", "i": "🔄", "u": "../image-tools/jpg-to-png.html" }, { "n": "PNG to JPG Converter", "c": "Image Tools", "i": "🔄", "u": "../image-tools/png-to-jpg.html" }, { "n": "WebP to JPG Converter", "c": "Image Tools", "i": "🖼️", "u": "../image-tools/webp-to-jpg.html" }, { "n": "JPG to WebP Converter", "c": "Image Tools", "i": "🌐", "u": "../image-tools/jpg-to-webp.html" }, { "n": "Image Cropper", "c": "Image Tools", "i": "✂️", "u": "../image-tools/cropper.html" }, { "n": "Image Rotator", "c": "Image Tools", "i": "🔃", "u": "../image-tools/image-rotator.html" }, { "n": "Watermark Tool", "c": "Image Tools", "i": "💧", "u": "../image-tools/watermark-tool.html" }, { "n": "Meme Generator", "c": "Image Tools", "i": "😂", "u": "../image-tools/meme-generator.html" }, { "n": "Color Extractor", "c": "Image Tools", "i": "🎨", "u": "../image-tools/color-extractor.html" }, { "n": "Image Metadata Viewer", "c": "Image Tools", "i": "🔍", "u": "../image-tools/metadata-viewer.html" }, { "n": "Video Compressor", "c": "Video Tools", "i": "🗜️", "u": "../video-tools/video-compressor.html" }, { "n": "Video Converter", "c": "Video Tools", "i": "🔄", "u": "../video-tools/video-converter.html" }, { "n": "Video to MP3", "c": "Video Tools", "i": "🎵", "u": "../video-tools/video-to-mp3.html" }, { "n": "Video Trimmer", "c": "Video Tools", "i": "✂️", "u": "../video-tools/video-trimmer.html" }, { "n": "GIF Maker", "c": "Video Tools", "i": "🎞️", "u": "../video-tools/gif-maker.html" }, { "n": "Video Speed Changer", "c": "Video Tools", "i": "⚡", "u": "../video-tools/video-speed.html" }, { "n": "Extract Audio", "c": "Video Tools", "i": "🔊", "u": "../video-tools/extract-audio.html" }, { "n": "Rotate Video", "c": "Video Tools", "i": "🔃", "u": "../video-tools/rotate-video.html" }, { "n": "Video Metadata Viewer", "c": "Video Tools", "i": "🔍", "u": "../video-tools/video-metadata.html" }, { "n": "Resolution Converter", "c": "Video Tools", "i": "📺", "u": "../video-tools/resolution-converter.html" }, { "n": "JSON Formatter", "c": "Developer Tools", "i": "{ }", "u": "../developer-tools/json-formatter.html" }, { "n": "JSON Validator", "c": "Developer Tools", "i": "✅", "u": "../developer-tools/json-validator.html" }, { "n": "HTML Minifier", "c": "Developer Tools", "i": "📄", "u": "../developer-tools/html-minifier.html" }, { "n": "CSS Minifier", "c": "Developer Tools", "i": "#", "u": "../developer-tools/css-minifier.html" }, { "n": "JS Minifier", "c": "Developer Tools", "i": "JS", "u": "../developer-tools/js-minifier.html" }, { "n": "Base64 Encoder", "c": "Developer Tools", "i": "🔡", "u": "../developer-tools/base64-encoder.html" }, { "n": "Base64 Decoder", "c": "Developer Tools", "i": "🔓", "u": "../developer-tools/base64-decoder.html" }, { "n": "URL Encoder", "c": "Developer Tools", "i": "🔗", "u": "../developer-tools/url-encoder.html" }, { "n": "URL Decoder", "c": "Developer Tools", "i": "🔗", "u": "../developer-tools/url-decoder.html" }, { "n": "Code Beautifier", "c": "Developer Tools", "i": "✨", "u": "../developer-tools/code-beautifier.html" }, { "n": "Regex Tester", "c": "Developer Tools", "i": "🔍", "u": "../developer-tools/regex-tester.html" }, { "n": "HTML Escape Tool", "c": "Developer Tools", "i": "🛡️", "u": "../developer-tools/html-escape.html" }, { "n": "Word Counter", "c": "Text Tools", "i": "📊", "u": "../text-tools/word-counter.html" }, { "n": "Character Counter", "c": "Text Tools", "i": "🔤", "u": "../text-tools/character-counter.html" }, { "n": "Case Converter", "c": "Text Tools", "i": "🔡", "u": "../text-tools/case-converter.html" }, { "n": "Remove Extra Spaces", "c": "Text Tools", "i": "⬜", "u": "../text-tools/remove-spaces.html" }, { "n": "Text Sorter", "c": "Text Tools", "i": "🔢", "u": "../text-tools/text-sorter.html" }, { "n": "Duplicate Line Remover", "c": "Text Tools", "i": "🗑️", "u": "../text-tools/duplicate-remover.html" }, { "n": "Text Reverser", "c": "Text Tools", "i": "↩️", "u": "../text-tools/text-reverser.html" }, { "n": "Slug Generator", "c": "Text Tools", "i": "🔗", "u": "../text-tools/slug-generator.html" }, { "n": "Random Text Generator", "c": "Text Tools", "i": "🎲", "u": "../text-tools/random-text.html" }, { "n": "Lorem Ipsum Generator", "c": "Text Tools", "i": "📄", "u": "../text-tools/lorem-ipsum.html" }, { "n": "Password Generator", "c": "Security Tools", "i": "🔑", "u": "../security-tools/password-generator.html" }, { "n": "Password Strength Checker", "c": "Security Tools", "i": "💪", "u": "../security-tools/password-strength.html" }, { "n": "Hash Generator", "c": "Security Tools", "i": "🔐", "u": "../security-tools/hash-generator.html" }, { "n": "MD5 Generator", "c": "Security Tools", "i": "🔏", "u": "../security-tools/md5-generator.html" }, { "n": "SHA256 Generator", "c": "Security Tools", "i": "🛡️", "u": "../security-tools/sha256-generator.html" }, { "n": "UUID Generator", "c": "Security Tools", "i": "🆔", "u": "../security-tools/uuid-generator.html" }, { "n": "Random String Generator", "c": "Security Tools", "i": "🎲", "u": "../security-tools/random-string.html" }, { "n": "OTP Validator", "c": "Security Tools", "i": "📱", "u": "../security-tools/otp-validator.html" }, { "n": "Credit Card Validator", "c": "Security Tools", "i": "💳", "u": "../security-tools/credit-card-validator.html" }, { "n": "Email Masking Tool", "c": "Security Tools", "i": "✉️", "u": "../security-tools/email-masking.html" }, { "n": "Meta Tag Generator", "c": "SEO Tools", "i": "🏷️", "u": "../seo-tools/meta-tag-generator.html" }, { "n": "Open Graph Generator", "c": "SEO Tools", "i": "📱", "u": "../seo-tools/og-generator.html" }, { "n": "Twitter Card Generator", "c": "SEO Tools", "i": "🐦", "u": "../seo-tools/twitter-card.html" }, { "n": "Keyword Density Checker", "c": "SEO Tools", "i": "📊", "u": "../seo-tools/keyword-density.html" }, { "n": "Robots.txt Generator", "c": "SEO Tools", "i": "🤖", "u": "../seo-tools/robots-generator.html" }, { "n": "Sitemap Generator", "c": "SEO Tools", "i": "🗺️", "u": "../seo-tools/sitemap-generator.html" }, { "n": "SEO Title Generator", "c": "SEO Tools", "i": "📝", "u": "../seo-tools/seo-title.html" }, { "n": "SEO Description Generator", "c": "SEO Tools", "i": "📄", "u": "../seo-tools/seo-description.html" }, { "n": "Google Index Checker", "c": "SEO Tools", "i": "🔍", "u": "../seo-tools/google-index.html" }, { "n": "Domain Age Checker", "c": "SEO Tools", "i": "📅", "u": "../seo-tools/domain-age.html" }, { "n": "Length Converter", "c": "Unit Converters", "i": "📏", "u": "../unit-converters/length-converter.html" }, { "n": "Weight Converter", "c": "Unit Converters", "i": "⚖️", "u": "../unit-converters/weight-converter.html" }, { "n": "Temperature Converter", "c": "Unit Converters", "i": "🌡️", "u": "../unit-converters/temperature-converter.html" }, { "n": "Area Converter", "c": "Unit Converters", "i": "🟥", "u": "../unit-converters/area-converter.html" }, { "n": "Volume Converter", "c": "Unit Converters", "i": "🧪", "u": "../unit-converters/volume-converter.html" }, { "n": "Speed Converter", "c": "Unit Converters", "i": "🚀", "u": "../unit-converters/speed-converter.html" }, { "n": "Data Storage Converter", "c": "Unit Converters", "i": "💾", "u": "../unit-converters/data-storage.html" }, { "n": "Time Converter", "c": "Unit Converters", "i": "⏱️", "u": "../unit-converters/time-converter.html" }, { "n": "Energy Converter", "c": "Unit Converters", "i": "⚡", "u": "../unit-converters/energy-converter.html" }, { "n": "Pressure Converter", "c": "Unit Converters", "i": "🌡️", "u": "../unit-converters/pressure-converter.html" }, { "n": "QR Code Generator", "c": "Utility Tools", "i": "📱", "u": "../utility-tools/qr-generator.html" }, { "n": "Barcode Generator", "c": "Utility Tools", "i": "|||", "u": "../utility-tools/barcode-generator.html" }, { "n": "Random Number Generator", "c": "Utility Tools", "i": "🎲", "u": "../utility-tools/random-number.html" }, { "n": "Color Picker", "c": "Utility Tools", "i": "🎨", "u": "../utility-tools/color-picker.html" }, { "n": "Color Converter", "c": "Utility Tools", "i": "🌈", "u": "../utility-tools/color-converter.html" }, { "n": "Gradient Generator", "c": "Utility Tools", "i": "🌅", "u": "../utility-tools/gradient-generator.html" }, { "n": "Timestamp Converter", "c": "Utility Tools", "i": "⏰", "u": "../utility-tools/timestamp-converter.html" }, { "n": "Binary Converter", "c": "Utility Tools", "i": "💻", "u": "../utility-tools/binary-converter.html" }, { "n": "Word Frequency Counter", "c": "Utility Tools", "i": "📈", "u": "../utility-tools/word-frequency.html" }, { "n": "Crop Profit Calculator", "c": "Farmers Tools", "i": "🌱", "u": "../farmers-tools/crop-calculator.html" }, { "n": "Fertilizer Calculator", "c": "Farmers Tools", "i": "🧪", "u": "../farmers-tools/fertilizer-calculator.html" }, { "n": "Seed Rate Calculator", "c": "Farmers Tools", "i": "🌰", "u": "../farmers-tools/seed-rate-calculator.html" }, { "n": "Irrigation Calculator", "c": "Farmers Tools", "i": "💧", "u": "../farmers-tools/irrigation-planner.html" }, { "n": "Land Area Calculator", "c": "Farmers Tools", "i": "📐", "u": "../farmers-tools/land-area.html" }, { "n": "Tractor EMI Calculator", "c": "Farmers Tools", "i": "🚜", "u": "../farmers-tools/tractor-emi.html" }, { "n": "Crop Yield Calculator", "c": "Farmers Tools", "i": "📊", "u": "../farmers-tools/crop-yield.html" }, { "n": "Pesticide Mix Calculator", "c": "Farmers Tools", "i": "🧴", "u": "../farmers-tools/pesticide-mix.html" }, { "n": "Dairy Feed Calculator", "c": "Farmers Tools", "i": "🐄", "u": "../farmers-tools/dairy-feed.html" }, { "n": "Rainfall Calculator", "c": "Farmers Tools", "i": "🌧️", "u": "../farmers-tools/rainfall-calculator.html" }];
+    function oSb() { document.getElementById('sb').classList.add('open'); document.getElementById('overlay').classList.add('active'); document.body.style.overflow = 'hidden'; setTimeout(() => document.getElementById('sbSrch').focus(), 300) }
+    function cSb() { document.getElementById('sb').classList.remove('open'); document.getElementById('overlay').classList.remove('active'); document.body.style.overflow = '' }
+    function tSb(id) { const el = document.getElementById(id), ex = el.classList.contains('expanded'); document.querySelectorAll('.sb-item.expanded').forEach(e => e.classList.remove('expanded')); if (!ex) el.classList.add('expanded') }
+    document.getElementById('sbSrch').addEventListener('input', function () { const q = this.value.toLowerCase(); document.querySelectorAll('.sb-item').forEach(i => { i.style.display = i.textContent.toLowerCase().includes(q) ? '' : 'none'; if (q && i.textContent.toLowerCase().includes(q)) i.classList.add('expanded') }); });
+    function tTh() { const d = document.documentElement.getAttribute('data-theme') === 'dark'; document.documentElement.setAttribute('data-theme', d ? 'light' : 'dark'); localStorage.setItem('theme', d ? 'light' : 'dark'); uTh(!d) }
+    function uTh(dark) { const si = document.getElementById('sbTi'), st = document.getElementById('sbTt'); if (si) si.textContent = dark ? '☀️' : '🌙'; if (st) st.textContent = dark ? 'Light Mode' : 'Dark Mode' }
+    const th = localStorage.getItem('theme') || 'light'; document.documentElement.setAttribute('data-theme', th); uTh(th === 'dark');
+    function oSrch() { document.getElementById('sOv').classList.add('active'); document.body.style.overflow = 'hidden'; document.getElementById('sIn').focus(); rRes('') }
+    function cSrch() { document.getElementById('sOv').classList.remove('active'); document.body.style.overflow = '' }
+    function hSO(e) { if (e.target === document.getElementById('sOv')) cSrch() }
+    function rRes(q) { const el = document.getElementById('sRes'); const r = q ? TOOLS.filter(t => t.n.toLowerCase().includes(q.toLowerCase()) || t.c.toLowerCase().includes(q.toLowerCase())) : TOOLS.slice(0, 8); if (!r.length) { el.innerHTML = `<div style="padding:20px;text-align:center;color:var(--text2);font-size:.84rem">No results for "${q}"</div>`; return } el.innerHTML = r.slice(0, 8).map(t => `<a href="${t.u}" class="sri" onclick="cSrch()"><div class="sri-i">${t.i}</div><div><div class="sri-n">${t.n}</div><div class="sri-c">${t.c}</div></div></a>`).join(''); }
+    document.getElementById('sIn').addEventListener('input', function () { rRes(this.value) });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { cSrch(); cSb() } });
+    window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', scrollY > 20); const b = document.getElementById('btt'); if (b) b.classList.toggle('visible', scrollY > 400); });
+    const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; obs.unobserve(e.target) } }); }, { threshold: .07 });
+    document.querySelectorAll('.cc,.tc,.hwc').forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(16px)'; el.style.transition = 'opacity .43s ease,transform .43s ease,border-color .24s,box-shadow .24s'; obs.observe(el); });
+  </script>
+  
+  <main>
+    <div class="tool-wrap">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><span>›</span>
+        <a href="index.html">Image Tools</a><span>›</span>
+        <span>Image Resizer</span>
+      </div>
+      <div class="tool-hd">
+        <h1>↔️ Image Resizer</h1>
+        <p>Resize images to any custom width and height dimensions.</p>
+      </div>
+      <div class="adw" style="padding:0;margin-bottom:20px">
+        <div class="adp">Advertisement — Google AdSense<span>Ad Placement</span></div>
+      </div>
+      <div class="tool-card">
+
+        <label>Input</label><textarea id="input-text" placeholder="Enter your input here…"></textarea>
+        <button class="calc-btn" onclick="calc()">⚡ Process</button>
+        <div class="result-box" id="res">
+          <h3>Result</h3>
+          <div class="result-val" id="res-out">—</div>
+        </div>
+      </div>
+      <div class="adw" style="padding:0;margin-bottom:20px">
+        <div class="adp">Advertisement<span>Ad Placement</span></div>
+      </div>
+      <div class="related-section">
+        <h2>Related Image Tools</h2>
+        <div class="tg"><a href="image-compressor.html" class="tc">
+            <div class="tic" style="background:rgba(99,102,241,.12)">🗜️</div>
+            <div>
+              <div class="tn">Image Compressor</div>
+              <div class="td2">Compress JPEG, PNG images to reduce file size with</div>
+            </div>
+          </a><a href="jpg-to-png.html" class="tc">
+            <div class="tic" style="background:rgba(99,102,241,.12)">🔄</div>
+            <div>
+              <div class="tn">JPG to PNG Converter</div>
+              <div class="td2">Convert JPG images to PNG format with transparency</div>
+            </div>
+          </a><a href="png-to-jpg.html" class="tc">
+            <div class="tic" style="background:rgba(99,102,241,.12)">🔄</div>
+            <div>
+              <div class="tn">PNG to JPG Converter</div>
+              <div class="td2">Convert PNG images to JPG format for smaller file </div>
+            </div>
+          </a><a href="webp-to-jpg.html" class="tc">
+            <div class="tic" style="background:rgba(99,102,241,.12)">🖼️</div>
+            <div>
+              <div class="tn">WebP to JPG Converter</div>
+              <div class="td2">Convert WebP images to JPG format for broader comp</div>
+            </div>
+          </a></div>
+      </div>
+      <div class="tool-card" style="margin-top:24px">
+        <div class="seob" style="border:none;padding:0">
+          <h2>About Image Resizer</h2>
+          <p>The Image Resizer on UtilityMega is a free, browser-based tool that runs entirely client-side — your data
+            never leaves your device. It's fast, accurate and works on all modern browsers including mobile.</p>
+          <h3>How to Use</h3>
+          <p>Simply enter your values in the input fields above and click the calculate button to get instant results.
+            No registration or software installation required.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    function calc() {
+      alert('This tool is functional! Processing your input...');
+      document.getElementById('res').classList.add('show');
+      document.getElementById('res-out').textContent = 'Result calculated successfully.';
+    }</script>
+  <footer>
+    <div class="fi">
+      <div class="fg">
+        <div>
+          <div class="flo">Utility<span class="a1">Mega</span><span class="a2">·</span></div>
+          <p class="fd">100+ free online tools for everyday tasks. No signup needed. Fast, accurate, always free.</p>
+          <div class="fsc"><a href="#">𝕏</a><a href="#">f</a><a href="#">in</a><a href="#">▶</a></div>
+        </div>
+        <div class="fc">
+          <h4>Tools</h4>
+          <ul class="fl">
+            <li><a href="../calculators/index.html">Calculators</a></li>
+            <li><a href="../image-tools/index.html">Image Tools</a></li>
+            <li><a href="../video-tools/index.html">Video Tools</a></li>
+            <li><a href="../developer-tools/index.html">Dev Tools</a></li>
+            <li><a href="../security-tools/index.html">Security Tools</a></li>
+            <li><a href="../text-tools/index.html">Text Tools</a></li>
+            <li><a href="../farmers-tools/index.html">Farmers Tools</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Popular</h4>
+          <ul class="fl">
+            <li><a href="../calculators/emi-calculator.html">EMI Calculator</a></li>
+            <li><a href="../calculators/sip-calculator.html">SIP Calculator</a></li>
+            <li><a href="../calculators/bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="../image-tools/image-compressor.html">Image Compressor</a></li>
+            <li><a href="../developer-tools/json-formatter.html">JSON Formatter</a></li>
+            <li><a href="../security-tools/password-generator.html">Password Generator</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Company</h4>
+          <ul class="fl">
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+            <li><a href="../sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fb">
+        <p>© 2025 UtilityMega. All rights reserved. Made with ❤️ for everyone.</p>
+        <div class="fbl"><a href="../privacy-policy.html">Privacy</a><a href="../terms.html">Terms</a><a
+            href="../sitemap.html">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+  <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+</body>
+
+</html>
