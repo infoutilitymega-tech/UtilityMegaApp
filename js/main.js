@@ -33,4 +33,3 @@ document.body.appendChild(speedInsights);
 
 
 });
-s
