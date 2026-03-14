@@ -24,7 +24,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="../js/main.js"></script>
-   <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="shortcut icon" href="../favicon.ico">
   <link rel="icon" type="image/png" href="./assets/icon.png">
   <link rel="apple-touch-icon" href="./assets/icon.png">
@@ -318,7 +318,7 @@
     const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; obs.unobserve(e.target) } }); }, { threshold: .07 });
     document.querySelectorAll('.cc,.tc,.hwc').forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(16px)'; el.style.transition = 'opacity .43s ease,transform .43s ease,border-color .24s,box-shadow .24s'; obs.observe(el); });
   </script>
-  
+
   <main>
     <div class="page-wrap">
       <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>About Us</span></div>

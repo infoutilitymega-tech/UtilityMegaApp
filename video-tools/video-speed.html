@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Video Speed Changer | UtilityMega</title>
-  <meta name="description" content="Speed up or slow down video playback rate."/>
-  <link rel="canonical" href="https://utilitymega.com/video-tools/video-speed.html"/>
-  <meta property="og:title" content="Video Speed Changer | UtilityMega"/>
-  <meta property="og:description" content="Speed up or slow down video playback rate."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://utilitymega.com/video-tools/video-speed.html"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Video Speed Changer | UtilityMega"/>
-  <meta name="twitter:description" content="Speed up or slow down video playback rate."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/style.css"/>
-  <script src="../js/main.js"></script>
-   <link rel="icon" href="../favicon.ico" sizes="any">
-  <link rel="shortcut icon" href="../favicon.ico">
-  <link rel="icon" type="image/png" href="../assets/icon.png">
-  <link rel="apple-touch-icon" href="../assets/icon.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Speed Changer | UtilityMega</title>
+    <meta name="description" content="Speed up or slow down video playback rate." />
+    <link rel="canonical" href="https://utilitymega.com/video-tools/video-speed.html" />
+    <meta property="og:title" content="Video Speed Changer | UtilityMega" />
+    <meta property="og:description" content="Speed up or slow down video playback rate." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://utilitymega.com/video-tools/video-speed.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Video Speed Changer | UtilityMega" />
+    <meta name="twitter:description" content="Speed up or slow down video playback rate." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/main.js"></script>
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" href="../assets/icon.png">
+    <link rel="apple-touch-icon" href="../assets/icon.png">
 </head>
+
 <body>
 
     <aside class="sidebar" id="sb">
@@ -289,124 +293,166 @@
             </div>
         </nav>
     </header>
-<div class="so" id="sOv" onclick="hSO(event)">
-  <div class="sb2">
-    <div class="si">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="text" id="sIn" placeholder="Search 100+ tools…" autocomplete="off"/>
-      <button class="s-esc" onclick="cSrch()">ESC</button>
+    <div class="so" id="sOv" onclick="hSO(event)">
+        <div class="sb2">
+            <div class="si">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+                <input type="text" id="sIn" placeholder="Search 100+ tools…" autocomplete="off" />
+                <button class="s-esc" onclick="cSrch()">ESC</button>
+            </div>
+            <div class="sr" id="sRes"></div>
+            <div class="shf"><span><kbd>↑↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>ESC</kbd>
+                    close</span></div>
+        </div>
     </div>
-    <div class="sr" id="sRes"></div>
-    <div class="shf"><span><kbd>↑↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>ESC</kbd> close</span></div>
-  </div>
-</div>
-<script>
-const TOOLS=[{"n": "EMI Calculator", "c": "Calculators", "i": "💰", "u": "../calculators/emi-calculator.html"}, {"n": "Age Calculator", "c": "Calculators", "i": "🎂", "u": "../calculators/age-calculator.html"}, {"n": "BMI Calculator", "c": "Calculators", "i": "⚖️", "u": "../calculators/bmi-calculator.html"}, {"n": "BMR Calculator", "c": "Calculators", "i": "🔥", "u": "../calculators/bmr-calculator.html"}, {"n": "Percentage Calculator", "c": "Calculators", "i": "💯", "u": "../calculators/percentage-calculator.html"}, {"n": "GST Calculator", "c": "Calculators", "i": "🧾", "u": "../calculators/gst-calculator.html"}, {"n": "Loan Calculator", "c": "Calculators", "i": "🏦", "u": "../calculators/loan-calculator.html"}, {"n": "SIP Calculator", "c": "Calculators", "i": "📈", "u": "../calculators/sip-calculator.html"}, {"n": "Compound Interest", "c": "Calculators", "i": "📊", "u": "../calculators/compound-interest.html"}, {"n": "Discount Calculator", "c": "Calculators", "i": "🏷️", "u": "../calculators/discount-calculator.html"}, {"n": "Profit Margin Calculator", "c": "Calculators", "i": "💹", "u": "../calculators/profit-margin.html"}, {"n": "Retirement Calculator", "c": "Calculators", "i": "🏖️", "u": "../calculators/retirement-calculator.html"}, {"n": "Image Compressor", "c": "Image Tools", "i": "🗜️", "u": "../image-tools/image-compressor.html"}, {"n": "Image Resizer", "c": "Image Tools", "i": "↔️", "u": "../image-tools/image-resizer.html"}, {"n": "JPG to PNG Converter", "c": "Image Tools", "i": "🔄", "u": "../image-tools/jpg-to-png.html"}, {"n": "PNG to JPG Converter", "c": "Image Tools", "i": "🔄", "u": "../image-tools/png-to-jpg.html"}, {"n": "WebP to JPG Converter", "c": "Image Tools", "i": "🖼️", "u": "../image-tools/webp-to-jpg.html"}, {"n": "JPG to WebP Converter", "c": "Image Tools", "i": "🌐", "u": "../image-tools/jpg-to-webp.html"}, {"n": "Image Cropper", "c": "Image Tools", "i": "✂️", "u": "../image-tools/cropper.html"}, {"n": "Image Rotator", "c": "Image Tools", "i": "🔃", "u": "../image-tools/image-rotator.html"}, {"n": "Watermark Tool", "c": "Image Tools", "i": "💧", "u": "../image-tools/watermark-tool.html"}, {"n": "Meme Generator", "c": "Image Tools", "i": "😂", "u": "../image-tools/meme-generator.html"}, {"n": "Color Extractor", "c": "Image Tools", "i": "🎨", "u": "../image-tools/color-extractor.html"}, {"n": "Image Metadata Viewer", "c": "Image Tools", "i": "🔍", "u": "../image-tools/metadata-viewer.html"}, {"n": "Video Compressor", "c": "Video Tools", "i": "🗜️", "u": "../video-tools/video-compressor.html"}, {"n": "Video Converter", "c": "Video Tools", "i": "🔄", "u": "../video-tools/video-converter.html"}, {"n": "Video to MP3", "c": "Video Tools", "i": "🎵", "u": "../video-tools/video-to-mp3.html"}, {"n": "Video Trimmer", "c": "Video Tools", "i": "✂️", "u": "../video-tools/video-trimmer.html"}, {"n": "GIF Maker", "c": "Video Tools", "i": "🎞️", "u": "../video-tools/gif-maker.html"}, {"n": "Video Speed Changer", "c": "Video Tools", "i": "⚡", "u": "../video-tools/video-speed.html"}, {"n": "Extract Audio", "c": "Video Tools", "i": "🔊", "u": "../video-tools/extract-audio.html"}, {"n": "Rotate Video", "c": "Video Tools", "i": "🔃", "u": "../video-tools/rotate-video.html"}, {"n": "Video Metadata Viewer", "c": "Video Tools", "i": "🔍", "u": "../video-tools/video-metadata.html"}, {"n": "Resolution Converter", "c": "Video Tools", "i": "📺", "u": "../video-tools/resolution-converter.html"}, {"n": "JSON Formatter", "c": "Developer Tools", "i": "{ }", "u": "../developer-tools/json-formatter.html"}, {"n": "JSON Validator", "c": "Developer Tools", "i": "✅", "u": "../developer-tools/json-validator.html"}, {"n": "HTML Minifier", "c": "Developer Tools", "i": "📄", "u": "../developer-tools/html-minifier.html"}, {"n": "CSS Minifier", "c": "Developer Tools", "i": "#", "u": "../developer-tools/css-minifier.html"}, {"n": "JS Minifier", "c": "Developer Tools", "i": "JS", "u": "../developer-tools/js-minifier.html"}, {"n": "Base64 Encoder", "c": "Developer Tools", "i": "🔡", "u": "../developer-tools/base64-encoder.html"}, {"n": "Base64 Decoder", "c": "Developer Tools", "i": "🔓", "u": "../developer-tools/base64-decoder.html"}, {"n": "URL Encoder", "c": "Developer Tools", "i": "🔗", "u": "../developer-tools/url-encoder.html"}, {"n": "URL Decoder", "c": "Developer Tools", "i": "🔗", "u": "../developer-tools/url-decoder.html"}, {"n": "Code Beautifier", "c": "Developer Tools", "i": "✨", "u": "../developer-tools/code-beautifier.html"}, {"n": "Regex Tester", "c": "Developer Tools", "i": "🔍", "u": "../developer-tools/regex-tester.html"}, {"n": "HTML Escape Tool", "c": "Developer Tools", "i": "🛡️", "u": "../developer-tools/html-escape.html"}, {"n": "Word Counter", "c": "Text Tools", "i": "📊", "u": "../text-tools/word-counter.html"}, {"n": "Character Counter", "c": "Text Tools", "i": "🔤", "u": "../text-tools/character-counter.html"}, {"n": "Case Converter", "c": "Text Tools", "i": "🔡", "u": "../text-tools/case-converter.html"}, {"n": "Remove Extra Spaces", "c": "Text Tools", "i": "⬜", "u": "../text-tools/remove-spaces.html"}, {"n": "Text Sorter", "c": "Text Tools", "i": "🔢", "u": "../text-tools/text-sorter.html"}, {"n": "Duplicate Line Remover", "c": "Text Tools", "i": "🗑️", "u": "../text-tools/duplicate-remover.html"}, {"n": "Text Reverser", "c": "Text Tools", "i": "↩️", "u": "../text-tools/text-reverser.html"}, {"n": "Slug Generator", "c": "Text Tools", "i": "🔗", "u": "../text-tools/slug-generator.html"}, {"n": "Random Text Generator", "c": "Text Tools", "i": "🎲", "u": "../text-tools/random-text.html"}, {"n": "Lorem Ipsum Generator", "c": "Text Tools", "i": "📄", "u": "../text-tools/lorem-ipsum.html"}, {"n": "Password Generator", "c": "Security Tools", "i": "🔑", "u": "../security-tools/password-generator.html"}, {"n": "Password Strength Checker", "c": "Security Tools", "i": "💪", "u": "../security-tools/password-strength.html"}, {"n": "Hash Generator", "c": "Security Tools", "i": "🔐", "u": "../security-tools/hash-generator.html"}, {"n": "MD5 Generator", "c": "Security Tools", "i": "🔏", "u": "../security-tools/md5-generator.html"}, {"n": "SHA256 Generator", "c": "Security Tools", "i": "🛡️", "u": "../security-tools/sha256-generator.html"}, {"n": "UUID Generator", "c": "Security Tools", "i": "🆔", "u": "../security-tools/uuid-generator.html"}, {"n": "Random String Generator", "c": "Security Tools", "i": "🎲", "u": "../security-tools/random-string.html"}, {"n": "OTP Validator", "c": "Security Tools", "i": "📱", "u": "../security-tools/otp-validator.html"}, {"n": "Credit Card Validator", "c": "Security Tools", "i": "💳", "u": "../security-tools/credit-card-validator.html"}, {"n": "Email Masking Tool", "c": "Security Tools", "i": "✉️", "u": "../security-tools/email-masking.html"}, {"n": "Meta Tag Generator", "c": "SEO Tools", "i": "🏷️", "u": "../seo-tools/meta-tag-generator.html"}, {"n": "Open Graph Generator", "c": "SEO Tools", "i": "📱", "u": "../seo-tools/og-generator.html"}, {"n": "Twitter Card Generator", "c": "SEO Tools", "i": "🐦", "u": "../seo-tools/twitter-card.html"}, {"n": "Keyword Density Checker", "c": "SEO Tools", "i": "📊", "u": "../seo-tools/keyword-density.html"}, {"n": "Robots.txt Generator", "c": "SEO Tools", "i": "🤖", "u": "../seo-tools/robots-generator.html"}, {"n": "Sitemap Generator", "c": "SEO Tools", "i": "🗺️", "u": "../seo-tools/sitemap-generator.html"}, {"n": "SEO Title Generator", "c": "SEO Tools", "i": "📝", "u": "../seo-tools/seo-title.html"}, {"n": "SEO Description Generator", "c": "SEO Tools", "i": "📄", "u": "../seo-tools/seo-description.html"}, {"n": "Google Index Checker", "c": "SEO Tools", "i": "🔍", "u": "../seo-tools/google-index.html"}, {"n": "Domain Age Checker", "c": "SEO Tools", "i": "📅", "u": "../seo-tools/domain-age.html"}, {"n": "Length Converter", "c": "Unit Converters", "i": "📏", "u": "../unit-converters/length-converter.html"}, {"n": "Weight Converter", "c": "Unit Converters", "i": "⚖️", "u": "../unit-converters/weight-converter.html"}, {"n": "Temperature Converter", "c": "Unit Converters", "i": "🌡️", "u": "../unit-converters/temperature-converter.html"}, {"n": "Area Converter", "c": "Unit Converters", "i": "🟥", "u": "../unit-converters/area-converter.html"}, {"n": "Volume Converter", "c": "Unit Converters", "i": "🧪", "u": "../unit-converters/volume-converter.html"}, {"n": "Speed Converter", "c": "Unit Converters", "i": "🚀", "u": "../unit-converters/speed-converter.html"}, {"n": "Data Storage Converter", "c": "Unit Converters", "i": "💾", "u": "../unit-converters/data-storage.html"}, {"n": "Time Converter", "c": "Unit Converters", "i": "⏱️", "u": "../unit-converters/time-converter.html"}, {"n": "Energy Converter", "c": "Unit Converters", "i": "⚡", "u": "../unit-converters/energy-converter.html"}, {"n": "Pressure Converter", "c": "Unit Converters", "i": "🌡️", "u": "../unit-converters/pressure-converter.html"}, {"n": "QR Code Generator", "c": "Utility Tools", "i": "📱", "u": "../utility-tools/qr-generator.html"}, {"n": "Barcode Generator", "c": "Utility Tools", "i": "|||", "u": "../utility-tools/barcode-generator.html"}, {"n": "Random Number Generator", "c": "Utility Tools", "i": "🎲", "u": "../utility-tools/random-number.html"}, {"n": "Color Picker", "c": "Utility Tools", "i": "🎨", "u": "../utility-tools/color-picker.html"}, {"n": "Color Converter", "c": "Utility Tools", "i": "🌈", "u": "../utility-tools/color-converter.html"}, {"n": "Gradient Generator", "c": "Utility Tools", "i": "🌅", "u": "../utility-tools/gradient-generator.html"}, {"n": "Timestamp Converter", "c": "Utility Tools", "i": "⏰", "u": "../utility-tools/timestamp-converter.html"}, {"n": "Binary Converter", "c": "Utility Tools", "i": "💻", "u": "../utility-tools/binary-converter.html"}, {"n": "Word Frequency Counter", "c": "Utility Tools", "i": "📈", "u": "../utility-tools/word-frequency.html"}, {"n": "Crop Profit Calculator", "c": "Farmers Tools", "i": "🌱", "u": "../farmers-tools/crop-calculator.html"}, {"n": "Fertilizer Calculator", "c": "Farmers Tools", "i": "🧪", "u": "../farmers-tools/fertilizer-calculator.html"}, {"n": "Seed Rate Calculator", "c": "Farmers Tools", "i": "🌰", "u": "../farmers-tools/seed-rate-calculator.html"}, {"n": "Irrigation Calculator", "c": "Farmers Tools", "i": "💧", "u": "../farmers-tools/irrigation-planner.html"}, {"n": "Land Area Calculator", "c": "Farmers Tools", "i": "📐", "u": "../farmers-tools/land-area.html"}, {"n": "Tractor EMI Calculator", "c": "Farmers Tools", "i": "🚜", "u": "../farmers-tools/tractor-emi.html"}, {"n": "Crop Yield Calculator", "c": "Farmers Tools", "i": "📊", "u": "../farmers-tools/crop-yield.html"}, {"n": "Pesticide Mix Calculator", "c": "Farmers Tools", "i": "🧴", "u": "../farmers-tools/pesticide-mix.html"}, {"n": "Dairy Feed Calculator", "c": "Farmers Tools", "i": "🐄", "u": "../farmers-tools/dairy-feed.html"}, {"n": "Rainfall Calculator", "c": "Farmers Tools", "i": "🌧️", "u": "../farmers-tools/rainfall-calculator.html"}];
-function oSb(){document.getElementById('sb').classList.add('open');document.getElementById('overlay').classList.add('active');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('sbSrch').focus(),300)}
-function cSb(){document.getElementById('sb').classList.remove('open');document.getElementById('overlay').classList.remove('active');document.body.style.overflow=''}
-function tSb(id){const el=document.getElementById(id),ex=el.classList.contains('expanded');document.querySelectorAll('.sb-item.expanded').forEach(e=>e.classList.remove('expanded'));if(!ex)el.classList.add('expanded')}
-document.getElementById('sbSrch').addEventListener('input',function(){const q=this.value.toLowerCase();document.querySelectorAll('.sb-item').forEach(i=>{i.style.display=i.textContent.toLowerCase().includes(q)?'':'none';if(q&&i.textContent.toLowerCase().includes(q))i.classList.add('expanded')});});
-function tTh(){const d=document.documentElement.getAttribute('data-theme')==='dark';document.documentElement.setAttribute('data-theme',d?'light':'dark');localStorage.setItem('theme',d?'light':'dark');uTh(!d)}
-function uTh(dark){const si=document.getElementById('sbTi'),st=document.getElementById('sbTt');if(si)si.textContent=dark?'☀️':'🌙';if(st)st.textContent=dark?'Light Mode':'Dark Mode'}
-const th=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',th);uTh(th==='dark');
-function oSrch(){document.getElementById('sOv').classList.add('active');document.body.style.overflow='hidden';document.getElementById('sIn').focus();rRes('')}
-function cSrch(){document.getElementById('sOv').classList.remove('active');document.body.style.overflow=''}
-function hSO(e){if(e.target===document.getElementById('sOv'))cSrch()}
-function rRes(q){const el=document.getElementById('sRes');const r=q?TOOLS.filter(t=>t.n.toLowerCase().includes(q.toLowerCase())||t.c.toLowerCase().includes(q.toLowerCase())):TOOLS.slice(0,8);if(!r.length){el.innerHTML=`<div style="padding:20px;text-align:center;color:var(--text2);font-size:.84rem">No results for "${q}"</div>`;return}el.innerHTML=r.slice(0,8).map(t=>`<a href="${t.u}" class="sri" onclick="cSrch()"><div class="sri-i">${t.i}</div><div><div class="sri-n">${t.n}</div><div class="sri-c">${t.c}</div></div></a>`).join('');}
-document.getElementById('sIn').addEventListener('input',function(){rRes(this.value)});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){cSrch();cSb()}});
-window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>20);const b=document.getElementById('btt');if(b)b.classList.toggle('visible',scrollY>400);});
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target)}});},{threshold:.07});
-document.querySelectorAll('.cc,.tc,.hwc').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .43s ease,transform .43s ease,border-color .24s,box-shadow .24s';obs.observe(el);});
-</script>
-<div class="tw"><div class="tk"><span class="ti"><span class="tdot">◆</span><strong>EMI Calculator</strong> — Plan loan</span><span class="ti"><span class="tdot">◆</span><strong>Image Compressor</strong> — Reduce size</span><span class="ti"><span class="tdot">◆</span><strong>Password Gen</strong> — Stay secure</span><span class="ti"><span class="tdot">◆</span><strong>JSON Formatter</strong> — Format JSON</span><span class="ti"><span class="tdot">◆</span><strong>BMI Calculator</strong> — Check health</span><span class="ti"><span class="tdot">◆</span><strong>SIP Calculator</strong> — Grow wealth</span><span class="ti"><span class="tdot">◆</span><strong>Word Counter</strong> — Count text</span><span class="ti"><span class="tdot">◆</span><strong>Hash Generator</strong> — MD5/SHA</span><span class="ti"><span class="tdot">◆</span><strong>GST Calculator</strong> — Tax calc</span><span class="ti"><span class="tdot">◆</span><strong>QR Generator</strong> — Make QR codes</span><span class="ti"><span class="tdot">◆</span><strong>EMI Calculator</strong> — Plan loan</span><span class="ti"><span class="tdot">◆</span><strong>Image Compressor</strong> — Reduce size</span><span class="ti"><span class="tdot">◆</span><strong>Password Gen</strong> — Stay secure</span><span class="ti"><span class="tdot">◆</span><strong>JSON Formatter</strong> — Format JSON</span><span class="ti"><span class="tdot">◆</span><strong>BMI Calculator</strong> — Check health</span><span class="ti"><span class="tdot">◆</span><strong>SIP Calculator</strong> — Grow wealth</span><span class="ti"><span class="tdot">◆</span><strong>Word Counter</strong> — Count text</span><span class="ti"><span class="tdot">◆</span><strong>Hash Generator</strong> — MD5/SHA</span><span class="ti"><span class="tdot">◆</span><strong>GST Calculator</strong> — Tax calc</span><span class="ti"><span class="tdot">◆</span><strong>QR Generator</strong> — Make QR codes</span></div></div>
-<main>
-<div class="tool-wrap">
-<div class="breadcrumb">
-<a href="../index.html">Home</a><span>›</span>
-<a href="index.html">Video Tools</a><span>›</span>
-<span>Video Speed Changer</span>
-</div>
-<div class="tool-hd">
-<h1>⚡ Video Speed Changer</h1>
-<p>Speed up or slow down video playback rate.</p>
-</div>
-<div class="adw" style="padding:0;margin-bottom:20px"><div class="adp">Advertisement — Google AdSense<span>Ad Placement</span></div></div>
-<div class="tool-card">
+    <script>
+        const TOOLS = [{ "n": "EMI Calculator", "c": "Calculators", "i": "💰", "u": "../calculators/emi-calculator.html" }, { "n": "Age Calculator", "c": "Calculators", "i": "🎂", "u": "../calculators/age-calculator.html" }, { "n": "BMI Calculator", "c": "Calculators", "i": "⚖️", "u": "../calculators/bmi-calculator.html" }, { "n": "BMR Calculator", "c": "Calculators", "i": "🔥", "u": "../calculators/bmr-calculator.html" }, { "n": "Percentage Calculator", "c": "Calculators", "i": "💯", "u": "../calculators/percentage-calculator.html" }, { "n": "GST Calculator", "c": "Calculators", "i": "🧾", "u": "../calculators/gst-calculator.html" }, { "n": "Loan Calculator", "c": "Calculators", "i": "🏦", "u": "../calculators/loan-calculator.html" }, { "n": "SIP Calculator", "c": "Calculators", "i": "📈", "u": "../calculators/sip-calculator.html" }, { "n": "Compound Interest", "c": "Calculators", "i": "📊", "u": "../calculators/compound-interest.html" }, { "n": "Discount Calculator", "c": "Calculators", "i": "🏷️", "u": "../calculators/discount-calculator.html" }, { "n": "Profit Margin Calculator", "c": "Calculators", "i": "💹", "u": "../calculators/profit-margin.html" }, { "n": "Retirement Calculator", "c": "Calculators", "i": "🏖️", "u": "../calculators/retirement-calculator.html" }, { "n": "Image Compressor", "c": "Image Tools", "i": "🗜️", "u": "../image-tools/image-compressor.html" }, { "n": "Image Resizer", "c": "Image Tools", "i": "↔️", "u": "../image-tools/image-resizer.html" }, { "n": "JPG to PNG Converter", "c": "Image Tools", "i": "🔄", "u": "../image-tools/jpg-to-png.html" }, { "n": "PNG to JPG Converter", "c": "Image Tools", "i": "🔄", "u": "../image-tools/png-to-jpg.html" }, { "n": "WebP to JPG Converter", "c": "Image Tools", "i": "🖼️", "u": "../image-tools/webp-to-jpg.html" }, { "n": "JPG to WebP Converter", "c": "Image Tools", "i": "🌐", "u": "../image-tools/jpg-to-webp.html" }, { "n": "Image Cropper", "c": "Image Tools", "i": "✂️", "u": "../image-tools/cropper.html" }, { "n": "Image Rotator", "c": "Image Tools", "i": "🔃", "u": "../image-tools/image-rotator.html" }, { "n": "Watermark Tool", "c": "Image Tools", "i": "💧", "u": "../image-tools/watermark-tool.html" }, { "n": "Meme Generator", "c": "Image Tools", "i": "😂", "u": "../image-tools/meme-generator.html" }, { "n": "Color Extractor", "c": "Image Tools", "i": "🎨", "u": "../image-tools/color-extractor.html" }, { "n": "Image Metadata Viewer", "c": "Image Tools", "i": "🔍", "u": "../image-tools/metadata-viewer.html" }, { "n": "Video Compressor", "c": "Video Tools", "i": "🗜️", "u": "../video-tools/video-compressor.html" }, { "n": "Video Converter", "c": "Video Tools", "i": "🔄", "u": "../video-tools/video-converter.html" }, { "n": "Video to MP3", "c": "Video Tools", "i": "🎵", "u": "../video-tools/video-to-mp3.html" }, { "n": "Video Trimmer", "c": "Video Tools", "i": "✂️", "u": "../video-tools/video-trimmer.html" }, { "n": "GIF Maker", "c": "Video Tools", "i": "🎞️", "u": "../video-tools/gif-maker.html" }, { "n": "Video Speed Changer", "c": "Video Tools", "i": "⚡", "u": "../video-tools/video-speed.html" }, { "n": "Extract Audio", "c": "Video Tools", "i": "🔊", "u": "../video-tools/extract-audio.html" }, { "n": "Rotate Video", "c": "Video Tools", "i": "🔃", "u": "../video-tools/rotate-video.html" }, { "n": "Video Metadata Viewer", "c": "Video Tools", "i": "🔍", "u": "../video-tools/video-metadata.html" }, { "n": "Resolution Converter", "c": "Video Tools", "i": "📺", "u": "../video-tools/resolution-converter.html" }, { "n": "JSON Formatter", "c": "Developer Tools", "i": "{ }", "u": "../developer-tools/json-formatter.html" }, { "n": "JSON Validator", "c": "Developer Tools", "i": "✅", "u": "../developer-tools/json-validator.html" }, { "n": "HTML Minifier", "c": "Developer Tools", "i": "📄", "u": "../developer-tools/html-minifier.html" }, { "n": "CSS Minifier", "c": "Developer Tools", "i": "#", "u": "../developer-tools/css-minifier.html" }, { "n": "JS Minifier", "c": "Developer Tools", "i": "JS", "u": "../developer-tools/js-minifier.html" }, { "n": "Base64 Encoder", "c": "Developer Tools", "i": "🔡", "u": "../developer-tools/base64-encoder.html" }, { "n": "Base64 Decoder", "c": "Developer Tools", "i": "🔓", "u": "../developer-tools/base64-decoder.html" }, { "n": "URL Encoder", "c": "Developer Tools", "i": "🔗", "u": "../developer-tools/url-encoder.html" }, { "n": "URL Decoder", "c": "Developer Tools", "i": "🔗", "u": "../developer-tools/url-decoder.html" }, { "n": "Code Beautifier", "c": "Developer Tools", "i": "✨", "u": "../developer-tools/code-beautifier.html" }, { "n": "Regex Tester", "c": "Developer Tools", "i": "🔍", "u": "../developer-tools/regex-tester.html" }, { "n": "HTML Escape Tool", "c": "Developer Tools", "i": "🛡️", "u": "../developer-tools/html-escape.html" }, { "n": "Word Counter", "c": "Text Tools", "i": "📊", "u": "../text-tools/word-counter.html" }, { "n": "Character Counter", "c": "Text Tools", "i": "🔤", "u": "../text-tools/character-counter.html" }, { "n": "Case Converter", "c": "Text Tools", "i": "🔡", "u": "../text-tools/case-converter.html" }, { "n": "Remove Extra Spaces", "c": "Text Tools", "i": "⬜", "u": "../text-tools/remove-spaces.html" }, { "n": "Text Sorter", "c": "Text Tools", "i": "🔢", "u": "../text-tools/text-sorter.html" }, { "n": "Duplicate Line Remover", "c": "Text Tools", "i": "🗑️", "u": "../text-tools/duplicate-remover.html" }, { "n": "Text Reverser", "c": "Text Tools", "i": "↩️", "u": "../text-tools/text-reverser.html" }, { "n": "Slug Generator", "c": "Text Tools", "i": "🔗", "u": "../text-tools/slug-generator.html" }, { "n": "Random Text Generator", "c": "Text Tools", "i": "🎲", "u": "../text-tools/random-text.html" }, { "n": "Lorem Ipsum Generator", "c": "Text Tools", "i": "📄", "u": "../text-tools/lorem-ipsum.html" }, { "n": "Password Generator", "c": "Security Tools", "i": "🔑", "u": "../security-tools/password-generator.html" }, { "n": "Password Strength Checker", "c": "Security Tools", "i": "💪", "u": "../security-tools/password-strength.html" }, { "n": "Hash Generator", "c": "Security Tools", "i": "🔐", "u": "../security-tools/hash-generator.html" }, { "n": "MD5 Generator", "c": "Security Tools", "i": "🔏", "u": "../security-tools/md5-generator.html" }, { "n": "SHA256 Generator", "c": "Security Tools", "i": "🛡️", "u": "../security-tools/sha256-generator.html" }, { "n": "UUID Generator", "c": "Security Tools", "i": "🆔", "u": "../security-tools/uuid-generator.html" }, { "n": "Random String Generator", "c": "Security Tools", "i": "🎲", "u": "../security-tools/random-string.html" }, { "n": "OTP Validator", "c": "Security Tools", "i": "📱", "u": "../security-tools/otp-validator.html" }, { "n": "Credit Card Validator", "c": "Security Tools", "i": "💳", "u": "../security-tools/credit-card-validator.html" }, { "n": "Email Masking Tool", "c": "Security Tools", "i": "✉️", "u": "../security-tools/email-masking.html" }, { "n": "Meta Tag Generator", "c": "SEO Tools", "i": "🏷️", "u": "../seo-tools/meta-tag-generator.html" }, { "n": "Open Graph Generator", "c": "SEO Tools", "i": "📱", "u": "../seo-tools/og-generator.html" }, { "n": "Twitter Card Generator", "c": "SEO Tools", "i": "🐦", "u": "../seo-tools/twitter-card.html" }, { "n": "Keyword Density Checker", "c": "SEO Tools", "i": "📊", "u": "../seo-tools/keyword-density.html" }, { "n": "Robots.txt Generator", "c": "SEO Tools", "i": "🤖", "u": "../seo-tools/robots-generator.html" }, { "n": "Sitemap Generator", "c": "SEO Tools", "i": "🗺️", "u": "../seo-tools/sitemap-generator.html" }, { "n": "SEO Title Generator", "c": "SEO Tools", "i": "📝", "u": "../seo-tools/seo-title.html" }, { "n": "SEO Description Generator", "c": "SEO Tools", "i": "📄", "u": "../seo-tools/seo-description.html" }, { "n": "Google Index Checker", "c": "SEO Tools", "i": "🔍", "u": "../seo-tools/google-index.html" }, { "n": "Domain Age Checker", "c": "SEO Tools", "i": "📅", "u": "../seo-tools/domain-age.html" }, { "n": "Length Converter", "c": "Unit Converters", "i": "📏", "u": "../unit-converters/length-converter.html" }, { "n": "Weight Converter", "c": "Unit Converters", "i": "⚖️", "u": "../unit-converters/weight-converter.html" }, { "n": "Temperature Converter", "c": "Unit Converters", "i": "🌡️", "u": "../unit-converters/temperature-converter.html" }, { "n": "Area Converter", "c": "Unit Converters", "i": "🟥", "u": "../unit-converters/area-converter.html" }, { "n": "Volume Converter", "c": "Unit Converters", "i": "🧪", "u": "../unit-converters/volume-converter.html" }, { "n": "Speed Converter", "c": "Unit Converters", "i": "🚀", "u": "../unit-converters/speed-converter.html" }, { "n": "Data Storage Converter", "c": "Unit Converters", "i": "💾", "u": "../unit-converters/data-storage.html" }, { "n": "Time Converter", "c": "Unit Converters", "i": "⏱️", "u": "../unit-converters/time-converter.html" }, { "n": "Energy Converter", "c": "Unit Converters", "i": "⚡", "u": "../unit-converters/energy-converter.html" }, { "n": "Pressure Converter", "c": "Unit Converters", "i": "🌡️", "u": "../unit-converters/pressure-converter.html" }, { "n": "QR Code Generator", "c": "Utility Tools", "i": "📱", "u": "../utility-tools/qr-generator.html" }, { "n": "Barcode Generator", "c": "Utility Tools", "i": "|||", "u": "../utility-tools/barcode-generator.html" }, { "n": "Random Number Generator", "c": "Utility Tools", "i": "🎲", "u": "../utility-tools/random-number.html" }, { "n": "Color Picker", "c": "Utility Tools", "i": "🎨", "u": "../utility-tools/color-picker.html" }, { "n": "Color Converter", "c": "Utility Tools", "i": "🌈", "u": "../utility-tools/color-converter.html" }, { "n": "Gradient Generator", "c": "Utility Tools", "i": "🌅", "u": "../utility-tools/gradient-generator.html" }, { "n": "Timestamp Converter", "c": "Utility Tools", "i": "⏰", "u": "../utility-tools/timestamp-converter.html" }, { "n": "Binary Converter", "c": "Utility Tools", "i": "💻", "u": "../utility-tools/binary-converter.html" }, { "n": "Word Frequency Counter", "c": "Utility Tools", "i": "📈", "u": "../utility-tools/word-frequency.html" }, { "n": "Crop Profit Calculator", "c": "Farmers Tools", "i": "🌱", "u": "../farmers-tools/crop-calculator.html" }, { "n": "Fertilizer Calculator", "c": "Farmers Tools", "i": "🧪", "u": "../farmers-tools/fertilizer-calculator.html" }, { "n": "Seed Rate Calculator", "c": "Farmers Tools", "i": "🌰", "u": "../farmers-tools/seed-rate-calculator.html" }, { "n": "Irrigation Calculator", "c": "Farmers Tools", "i": "💧", "u": "../farmers-tools/irrigation-planner.html" }, { "n": "Land Area Calculator", "c": "Farmers Tools", "i": "📐", "u": "../farmers-tools/land-area.html" }, { "n": "Tractor EMI Calculator", "c": "Farmers Tools", "i": "🚜", "u": "../farmers-tools/tractor-emi.html" }, { "n": "Crop Yield Calculator", "c": "Farmers Tools", "i": "📊", "u": "../farmers-tools/crop-yield.html" }, { "n": "Pesticide Mix Calculator", "c": "Farmers Tools", "i": "🧴", "u": "../farmers-tools/pesticide-mix.html" }, { "n": "Dairy Feed Calculator", "c": "Farmers Tools", "i": "🐄", "u": "../farmers-tools/dairy-feed.html" }, { "n": "Rainfall Calculator", "c": "Farmers Tools", "i": "🌧️", "u": "../farmers-tools/rainfall-calculator.html" }];
+        function oSb() { document.getElementById('sb').classList.add('open'); document.getElementById('overlay').classList.add('active'); document.body.style.overflow = 'hidden'; setTimeout(() => document.getElementById('sbSrch').focus(), 300) }
+        function cSb() { document.getElementById('sb').classList.remove('open'); document.getElementById('overlay').classList.remove('active'); document.body.style.overflow = '' }
+        function tSb(id) { const el = document.getElementById(id), ex = el.classList.contains('expanded'); document.querySelectorAll('.sb-item.expanded').forEach(e => e.classList.remove('expanded')); if (!ex) el.classList.add('expanded') }
+        document.getElementById('sbSrch').addEventListener('input', function () { const q = this.value.toLowerCase(); document.querySelectorAll('.sb-item').forEach(i => { i.style.display = i.textContent.toLowerCase().includes(q) ? '' : 'none'; if (q && i.textContent.toLowerCase().includes(q)) i.classList.add('expanded') }); });
+        function tTh() { const d = document.documentElement.getAttribute('data-theme') === 'dark'; document.documentElement.setAttribute('data-theme', d ? 'light' : 'dark'); localStorage.setItem('theme', d ? 'light' : 'dark'); uTh(!d) }
+        function uTh(dark) { const si = document.getElementById('sbTi'), st = document.getElementById('sbTt'); if (si) si.textContent = dark ? '☀️' : '🌙'; if (st) st.textContent = dark ? 'Light Mode' : 'Dark Mode' }
+        const th = localStorage.getItem('theme') || 'light'; document.documentElement.setAttribute('data-theme', th); uTh(th === 'dark');
+        function oSrch() { document.getElementById('sOv').classList.add('active'); document.body.style.overflow = 'hidden'; document.getElementById('sIn').focus(); rRes('') }
+        function cSrch() { document.getElementById('sOv').classList.remove('active'); document.body.style.overflow = '' }
+        function hSO(e) { if (e.target === document.getElementById('sOv')) cSrch() }
+        function rRes(q) { const el = document.getElementById('sRes'); const r = q ? TOOLS.filter(t => t.n.toLowerCase().includes(q.toLowerCase()) || t.c.toLowerCase().includes(q.toLowerCase())) : TOOLS.slice(0, 8); if (!r.length) { el.innerHTML = `<div style="padding:20px;text-align:center;color:var(--text2);font-size:.84rem">No results for "${q}"</div>`; return } el.innerHTML = r.slice(0, 8).map(t => `<a href="${t.u}" class="sri" onclick="cSrch()"><div class="sri-i">${t.i}</div><div><div class="sri-n">${t.n}</div><div class="sri-c">${t.c}</div></div></a>`).join(''); }
+        document.getElementById('sIn').addEventListener('input', function () { rRes(this.value) });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { cSrch(); cSb() } });
+        window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', scrollY > 20); const b = document.getElementById('btt'); if (b) b.classList.toggle('visible', scrollY > 400); });
+        const obs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; obs.unobserve(e.target) } }); }, { threshold: .07 });
+        document.querySelectorAll('.cc,.tc,.hwc').forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(16px)'; el.style.transition = 'opacity .43s ease,transform .43s ease,border-color .24s,box-shadow .24s'; obs.observe(el); });
+    </script>
+    
+    <main>
+        <div class="tool-wrap">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a><span>›</span>
+                <a href="index.html">Video Tools</a><span>›</span>
+                <span>Video Speed Changer</span>
+            </div>
+            <div class="tool-hd">
+                <h1>⚡ Video Speed Changer</h1>
+                <p>Speed up or slow down video playback rate.</p>
+            </div>
+            <div class="adw" style="padding:0;margin-bottom:20px">
+                <div class="adp">Advertisement — Google AdSense<span>Ad Placement</span></div>
+            </div>
+            <div class="tool-card">
 
-<label>Input</label><textarea id="input-text" placeholder="Enter your input here…"></textarea>
-<button class="calc-btn" onclick="calc()">⚡ Process</button>
-<div class="result-box" id="res">
-<h3>Result</h3>
-<div class="result-val" id="res-out">—</div>
-</div>
-</div>
-<div class="adw" style="padding:0;margin-bottom:20px"><div class="adp">Advertisement<span>Ad Placement</span></div></div>
-<div class="related-section">
-<h2>Related Video Tools</h2>
-<div class="tg"><a href="video-compressor.html" class="tc"><div class="tic" style="background:rgba(99,102,241,.12)">🗜️</div><div><div class="tn">Video Compressor</div><div class="td2">Compress MP4 and other video files to reduce file </div></div></a><a href="video-converter.html" class="tc"><div class="tic" style="background:rgba(99,102,241,.12)">🔄</div><div><div class="tn">Video Converter</div><div class="td2">Convert videos between MP4, AVI, MOV, MKV and more</div></div></a><a href="video-to-mp3.html" class="tc"><div class="tic" style="background:rgba(99,102,241,.12)">🎵</div><div><div class="tn">Video to MP3</div><div class="td2">Extract audio from video files and save as MP3.</div></div></a><a href="video-trimmer.html" class="tc"><div class="tic" style="background:rgba(99,102,241,.12)">✂️</div><div><div class="tn">Video Trimmer</div><div class="td2">Trim and cut video clips to your desired start and</div></div></a></div>
-</div>
-<div class="tool-card" style="margin-top:24px">
-<div class="seob" style="border:none;padding:0">
-<h2>About Video Speed Changer</h2>
-<p>The Video Speed Changer on UtilityMega is a free, browser-based tool that runs entirely client-side — your data never leaves your device. It's fast, accurate and works on all modern browsers including mobile.</p>
-<h3>How to Use</h3>
-<p>Simply enter your values in the input fields above and click the calculate button to get instant results. No registration or software installation required.</p>
-</div>
-</div>
-</div>
-</main>
-<script>
-function calc(){
-  alert('This tool is functional! Processing your input...');
-  document.getElementById('res').classList.add('show');
-  document.getElementById('res-out').textContent='Result calculated successfully.';
-}</script>
-<footer>
-  <div class="fi">
-    <div class="fg">
-      <div>
-        <div class="flo">Utility<span class="a1">Mega</span><span class="a2">·</span></div>
-        <p class="fd">100+ free online tools for everyday tasks. No signup needed. Fast, accurate, always free.</p>
-        <div class="fsc"><a href="#">𝕏</a><a href="#">f</a><a href="#">in</a><a href="#">▶</a></div>
-      </div>
-      <div class="fc"><h4>Tools</h4>
-        <ul class="fl">
-          <li><a href="../calculators/index.html">Calculators</a></li>
-          <li><a href="../image-tools/index.html">Image Tools</a></li>
-          <li><a href="../video-tools/index.html">Video Tools</a></li>
-          <li><a href="../developer-tools/index.html">Dev Tools</a></li>
-          <li><a href="../security-tools/index.html">Security Tools</a></li>
-          <li><a href="../text-tools/index.html">Text Tools</a></li>
-          <li><a href="../farmers-tools/index.html">Farmers Tools</a></li>
-        </ul>
-      </div>
-      <div class="fc"><h4>Popular</h4>
-        <ul class="fl">
-          <li><a href="../calculators/emi-calculator.html">EMI Calculator</a></li>
-          <li><a href="../calculators/sip-calculator.html">SIP Calculator</a></li>
-          <li><a href="../calculators/bmi-calculator.html">BMI Calculator</a></li>
-          <li><a href="../image-tools/image-compressor.html">Image Compressor</a></li>
-          <li><a href="../developer-tools/json-formatter.html">JSON Formatter</a></li>
-          <li><a href="../security-tools/password-generator.html">Password Generator</a></li>
-        </ul>
-      </div>
-      <div class="fc"><h4>Company</h4>
-        <ul class="fl">
-          <li><a href="../about.html">About Us</a></li>
-          <li><a href="../contact.html">Contact</a></li>
-          <li><a href="../faq.html">FAQ</a></li>
-          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="../terms.html">Terms of Service</a></li>
-          <li><a href="../sitemap.html">Sitemap</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="fb">
-      <p>© 2025 UtilityMega. All rights reserved. Made with ❤️ for everyone.</p>
-      <div class="fbl"><a href="../privacy-policy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../sitemap.html">Sitemap</a></div>
-    </div>
-  </div>
-</footer>
-<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-</body></html>
+                <label>Input</label><textarea id="input-text" placeholder="Enter your input here…"></textarea>
+                <button class="calc-btn" onclick="calc()">⚡ Process</button>
+                <div class="result-box" id="res">
+                    <h3>Result</h3>
+                    <div class="result-val" id="res-out">—</div>
+                </div>
+            </div>
+            <div class="adw" style="padding:0;margin-bottom:20px">
+                <div class="adp">Advertisement<span>Ad Placement</span></div>
+            </div>
+            <div class="related-section">
+                <h2>Related Video Tools</h2>
+                <div class="tg"><a href="video-compressor.html" class="tc">
+                        <div class="tic" style="background:rgba(99,102,241,.12)">🗜️</div>
+                        <div>
+                            <div class="tn">Video Compressor</div>
+                            <div class="td2">Compress MP4 and other video files to reduce file </div>
+                        </div>
+                    </a><a href="video-converter.html" class="tc">
+                        <div class="tic" style="background:rgba(99,102,241,.12)">🔄</div>
+                        <div>
+                            <div class="tn">Video Converter</div>
+                            <div class="td2">Convert videos between MP4, AVI, MOV, MKV and more</div>
+                        </div>
+                    </a><a href="video-to-mp3.html" class="tc">
+                        <div class="tic" style="background:rgba(99,102,241,.12)">🎵</div>
+                        <div>
+                            <div class="tn">Video to MP3</div>
+                            <div class="td2">Extract audio from video files and save as MP3.</div>
+                        </div>
+                    </a><a href="video-trimmer.html" class="tc">
+                        <div class="tic" style="background:rgba(99,102,241,.12)">✂️</div>
+                        <div>
+                            <div class="tn">Video Trimmer</div>
+                            <div class="td2">Trim and cut video clips to your desired start and</div>
+                        </div>
+                    </a></div>
+            </div>
+            <div class="tool-card" style="margin-top:24px">
+                <div class="seob" style="border:none;padding:0">
+                    <h2>About Video Speed Changer</h2>
+                    <p>The Video Speed Changer on UtilityMega is a free, browser-based tool that runs entirely
+                        client-side — your data never leaves your device. It's fast, accurate and works on all modern
+                        browsers including mobile.</p>
+                    <h3>How to Use</h3>
+                    <p>Simply enter your values in the input fields above and click the calculate button to get instant
+                        results. No registration or software installation required.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function calc() {
+            alert('This tool is functional! Processing your input...');
+            document.getElementById('res').classList.add('show');
+            document.getElementById('res-out').textContent = 'Result calculated successfully.';
+        }</script>
+    <footer>
+        <div class="fi">
+            <div class="fg">
+                <div>
+                    <div class="flo">Utility<span class="a1">Mega</span><span class="a2">·</span></div>
+                    <p class="fd">100+ free online tools for everyday tasks. No signup needed. Fast, accurate, always
+                        free.</p>
+                    <div class="fsc"><a href="#">𝕏</a><a href="#">f</a><a href="#">in</a><a href="#">▶</a></div>
+                </div>
+                <div class="fc">
+                    <h4>Tools</h4>
+                    <ul class="fl">
+                        <li><a href="../calculators/index.html">Calculators</a></li>
+                        <li><a href="../image-tools/index.html">Image Tools</a></li>
+                        <li><a href="../video-tools/index.html">Video Tools</a></li>
+                        <li><a href="../developer-tools/index.html">Dev Tools</a></li>
+                        <li><a href="../security-tools/index.html">Security Tools</a></li>
+                        <li><a href="../text-tools/index.html">Text Tools</a></li>
+                        <li><a href="../farmers-tools/index.html">Farmers Tools</a></li>
+                    </ul>
+                </div>
+                <div class="fc">
+                    <h4>Popular</h4>
+                    <ul class="fl">
+                        <li><a href="../calculators/emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="../calculators/sip-calculator.html">SIP Calculator</a></li>
+                        <li><a href="../calculators/bmi-calculator.html">BMI Calculator</a></li>
+                        <li><a href="../image-tools/image-compressor.html">Image Compressor</a></li>
+                        <li><a href="../developer-tools/json-formatter.html">JSON Formatter</a></li>
+                        <li><a href="../security-tools/password-generator.html">Password Generator</a></li>
+                    </ul>
+                </div>
+                <div class="fc">
+                    <h4>Company</h4>
+                    <ul class="fl">
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../faq.html">FAQ</a></li>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms.html">Terms of Service</a></li>
+                        <li><a href="../sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fb">
+                <p>© 2025 UtilityMega. All rights reserved. Made with ❤️ for everyone.</p>
+                <div class="fbl"><a href="../privacy-policy.html">Privacy</a><a href="../terms.html">Terms</a><a
+                        href="../sitemap.html">Sitemap</a></div>
+            </div>
+        </div>
+    </footer>
+    <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+</body>
+
+</html>
