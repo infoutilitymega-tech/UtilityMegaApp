@@ -311,7 +311,6 @@
     function oSb() { document.getElementById('sb').classList.add('open'); document.getElementById('overlay').classList.add('active'); document.body.style.overflow = 'hidden'; setTimeout(() => document.getElementById('sbSrch').focus(), 300) }
     function cSb() { document.getElementById('sb').classList.remove('open'); document.getElementById('overlay').classList.remove('active'); document.body.style.overflow = '' }
     function tSb(id) { const el = document.getElementById(id), ex = el.classList.contains('expanded'); document.querySelectorAll('.sb-item.expanded').forEach(e => e.classList.remove('expanded')); if (!ex) el.classList.add('expanded') }
-    document.getElementById('sbSrch').addEventListener('input', function () { const q = this.value.toLowerCase(); document.querySelectorAll('.sb-item').forEach(i => { i.style.display = i.textContent.toLowerCase().includes(q) ? '' : 'none'; if (q && i.textContent.toLowerCase().includes(q)) i.classList.add('expanded') }); });
     function tTh() { const d = document.documentElement.getAttribute('data-theme') === 'dark'; document.documentElement.setAttribute('data-theme', d ? 'light' : 'dark'); localStorage.setItem('theme', d ? 'light' : 'dark'); uTh(!d) }
     function uTh(dark) { const si = document.getElementById('sbTi'), st = document.getElementById('sbTt'); if (si) si.textContent = dark ? '☀️' : '🌙'; if (st) st.textContent = dark ? 'Light Mode' : 'Dark Mode' }
     const th = localStorage.getItem('theme') || 'light'; document.documentElement.setAttribute('data-theme', th); uTh(th === 'dark');
