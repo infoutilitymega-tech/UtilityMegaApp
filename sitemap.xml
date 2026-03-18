@@ -45,7 +45,7 @@
 <url><loc>https://utilitymega.com/developer-tools/json-formatter.html</loc><priority>0.6</priority></url>
 <url><loc>https://utilitymega.com/developer-tools/json-validator.html</loc><priority>0.6</priority></url>
 <url><loc>https://utilitymega.com/developer-tools/html-minifier.html</loc><priority>0.6</priority></url>
-<url><loc>https://utilitymega.com/developer-tools/css-minifier.html</loc><priority>0.6</priority></url>
+<url><loc>https://utilitymega.com/developer-tools/html-minifier.html</loc><priority>0.6</priority></url>
 <url><loc>https://utilitymega.com/developer-tools/js-minifier.html</loc><priority>0.6</priority></url>
 <url><loc>https://utilitymega.com/developer-tools/base64-encoder.html</loc><priority>0.6</priority></url>
 <url><loc>https://utilitymega.com/developer-tools/base64-decoder.html</loc><priority>0.6</priority></url>
